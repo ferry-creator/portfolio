@@ -1,0 +1,18 @@
+// https://www.npmjs.com/package/font-face-generator
+
+@import '../node_modules/font-face-generator/mixin';
+
+@include font-face(
+  $fonts: (
+    'PPNeueBit': (
+      400: 'PPNeueBit-Bold',
+    ),
+    'PPMondwest': (
+      400: 'PPMondwest-Regular',
+    ),
+    'PPFraktionMono': (
+      400: 'PPFraktionMono-Bold',
+    ),
+  ),
+  $types: 'otf'
+);

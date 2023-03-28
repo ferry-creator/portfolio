@@ -1,0 +1,26 @@
+/* Write your global styles here, in PostCSS syntax */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+::selection  {
+  color: black;
+  background: greenyellow;
+}
+
+body {
+  background: theme(colors.void);
+}
+
+:root {
+  --email-height: 2rem;
+  --nav-height: 4.6rem;
+  --page-margin: 1rem;
+  --pin-margin: 30px;
+  --bottom-h: 6.6rem;/* email+nav */
+  --sep-height: 4.5rem;
+}
+
+h2 {
+  font-family: "PPNeueBit";
+}
