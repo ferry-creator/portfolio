@@ -8,6 +8,10 @@
     @apply mx-auto;
     max-width: 14.7rem;
     text-align: justify;
-    /* @apply text-lg; */
+    
+    @media screen(md) {
+      max-width: 32rem;
+      @apply px-[5rem];
+    }
   }
 </style>

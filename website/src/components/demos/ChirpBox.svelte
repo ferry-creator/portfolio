@@ -2,13 +2,14 @@
   export let w, h
   export let cx=-1.5, cy=-1.5, r=0.4
   
-  import ChirpBox from "./ChirpBox.js"
+  import ChirpBoxFunction from "./ChirpBox.js"
+  const ChirpBox = ChirpBoxFunction()
 
   let canvas
 
   import { onMount } from "svelte"
   onMount(() => {
-    const ctx = canvas.getContext("2d")
+    const ctx = canvas.getContext("2d", {willReadFrequently: true})
     const props = { cx, cy, radius:r }
     const loopID = ChirpBox(ctx, w, h, props)
     return () => cancelAnimationFrame(loopID)

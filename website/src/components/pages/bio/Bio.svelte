@@ -10,13 +10,15 @@
   <span class="left-[var(--pin-margin)]">
     <Pin --color="currentColor" />
   </span>
-  <span class="right-[var(--pin-margin)]">
+  <span class="right-[var(--pin-margin)] md:hidden">
     <Pin --color="currentColor" />
   </span>
 </div>
 <Container>
   <ContentBox>
-    <h2 class="text-7xl">Bio</h2>
+    <h2 class="text-7xl">
+      Bio
+    </h2>
     <p class="leading-tight">
       As a kid, I quickly discovered the creative potential of computers and started creating my own games at age 12.
     </p>

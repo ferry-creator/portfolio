@@ -1,4 +1,6 @@
 <script>
+  import Footer from '$components/Footer.svelte'
+  import DesktopSplitter from '$components/DesktopSplitter.svelte'
   import Smiley from '$gfx/Smiley.svelte'
   import Pin from '$components/Pin.svelte'
   import LogoSeperator from '$components/LogoSeperator.svelte'
@@ -19,7 +21,6 @@
       right-[var(--pin-margin)]">
       <Pin --color="white" />
     </span>
-  
     <div class="content">
       <div class="helloworld">
         <span>Hello world.</span>
@@ -35,31 +36,38 @@
     <div class="logoseperator">
       <LogoSeperator />
     </div>
-    <div class="profile">
-      <Profile />
-    </div>
-    <div class="bio-content">
-      <Bio />
-    </div>
+    <DesktopSplitter --top="7rem">
+      <div class="profile order-last">
+        <Profile />
+      </div>
+      <div class="md:my-0 my-[8rem] order-first">
+        <Bio />
+      </div>
+    </DesktopSplitter>
     <div class="seperator">
       <Seperator />
     </div>
-    <div class="hackerimg">
-      <span class="left-[var(--pin-margin)]">
-        <Pin --color="white" />
-      </span>
-      <span class="right-[var(--pin-margin)]">
-        <Pin --color="white" />
-      </span>
-      <img src={Hacker}
-        alt="Jonathan posing as a hacker">
-      <p>
-        artsy pic in my dorm room
-      </p>
-    </div>
-    <div class="xp">
-      <Xp />
-    </div>
+    <DesktopSplitter --top="2rem">
+      <div class="contents md:block order-last">
+        <div class="hackerimg">
+          <span class="left-[var(--pin-margin)]">
+            <Pin --color="white" />
+          </span>
+          <span class="right-[var(--pin-margin)]">
+            <Pin --color="white" />
+          </span>
+          <img src={Hacker}
+            alt="Jonathan posing as a hacker">
+          <p>
+            artsy pic in my dorm room
+          </p>
+        </div>
+      </div>
+      <div class="xp order-first">
+        <Xp />
+      </div>
+    </DesktopSplitter>
+    <Footer />
   </main>
 </div>
 
@@ -108,6 +116,11 @@
   }
 
   main {
+    @apply pb-[var(--bottom-h)];
+    @media screen(md) {
+      @apply pb-0;
+    }
+
     background: theme(colors.void);
     position: relative;
     top: var(--split);
@@ -130,10 +143,16 @@
         - var(--sep-height)
         - var(--page-margin) - 1px
       );
+      @media screen(md) {
+        height: auto;
+        margin-top: 5rem;
+      }
     }
 
-    .bio-content { @apply my-[8rem] }
-    .seperator {@apply pt-[4rem] mb-[3rem] }
+    .seperator {
+      @apply pt-[4rem] mb-[3rem];
+      @apply md:pt-[10rem];
+    }
     
     .hackerimg {
       @apply relative;
@@ -151,28 +170,26 @@
         transform: rotate(90deg) translateY(-50%);
         mix-blend-mode: exclusion;
       }
+      @media screen(md) {
+        @apply mx-[var(--page-margin)];
+        @apply mt-[4rem];
+        /* max-width: 315px; */
+      }
     }
     
-    .xp { @apply mt-[4rem] }
-
-    @apply pb-[calc(var(--bottom-h)+8rem)];
-    @media screen(md) {
-      padding-bottom: 8rem;
-    }
+    .xp { @apply mt-[4rem] md:mt-[13px] }
   }
 
   /* parallax -------------------------- */
-  @supports (transform-style: preserve-3d) {
-    @media screen(md) {
-      .container-3d {
-        transform-style: preserve-3d;
-      }
-      header {
-        position: absolute;
-        top: 0;
-        transform: translateY(calc(var(--email-height) / 2))
-          translateZ(-10px) scale(2);
-      }
+  @media screen(md) {
+    .container-3d {
+      transform-style: preserve-3d;
+    }
+    header {
+      position: absolute;
+      top: 0;
+      transform: translateY(calc(var(--email-height) / 2))
+        translateZ(-10px) scale(2);
     }
   }
 </style>
