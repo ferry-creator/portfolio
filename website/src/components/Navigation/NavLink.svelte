@@ -16,7 +16,7 @@
     height: 100%;
     @apply flex items-center;
 
-    @apply relative top-[-4px]; 
+    @apply relative top-[-4px] md:top-[-3px]; 
     span {
       color: theme(colors.greyDark);
       line-height: 2rem;
@@ -25,16 +25,17 @@
       @apply relative z-[0];
       &.active {
         color: black;
-        /* color: white; */
         &:after {
-          background: #98fb98;
+          /* background: #98fb98; */
           background: greenyellow;
-          /* background: #8381F7; */
           top: 2px;
-          /* border-radius: 4px; */
           @apply absolute z-[-1];
           @apply w-full h-full left-0;
           content:"";
+          /* @media screen(md) {
+            top: 6px;
+            height: 88%;
+          } */
         }
       }
     }

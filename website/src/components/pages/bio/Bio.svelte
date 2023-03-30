@@ -26,7 +26,7 @@
       In a way, I actually became a developer by accident. Initially, I thought I'd only pursue art and leave coding to the "nerds", but while in high school, I ended up loving code, and got obsessed with learning the Unity game engine. After high school, I attempted to start a freelance design business but struggled to make it profitable, realizing the importance of business skills in the process.
     </p>
     <p class="leading-tight mt-5">
-      Today, I'm a skilled designer and programmer with experience working in startups, and pursuing a B.Sc. in Design & Innovation at the Technical University of Denmark.
+      <span>Today</span>, I'm a skilled designer + programmer with experience working in <span>startups</span>, and pursuing a B.Sc. in Design & Innovation at the Technical University of Denmark.
     </p>
   </ContentBox>
   <div class="create4ever mt-[4rem]">

@@ -10,7 +10,6 @@ export default defineConfig({
 			'$theme': path.resolve('./src/theme'),
 			'$gfx': path.resolve('./src/gfx'),
 			'$assets': path.resolve('./src/assets'),
-			'$root': path.resolve('./'),
 		}
 	}
 });

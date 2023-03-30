@@ -38,14 +38,14 @@
       At age 16, I worked in an SMMA doing "monkey work" like sorting SEO keywords. At 17, I worked for two years in a local animal park before quitting in 2017 to focus on my last year of high school.
     </p>
     <p class="leading-tight mt-5">
-      In <span>2019</span>, I worked part-time as a cold canvas phoner while studying web development. Same year, I got my first developer-related job at Danguitar. The company was still a startup, so I wore many hats, such as preparing parcels, creating content for advertisement, and managing the product catalog in their CMS. I started automating repetetive tasks with Python, which led to my first professional development job: creating a performance monitor for the customer service department.
+      In <span>2019</span>, I worked part-time as a cold canvas phoner while studying web development. Same year, I got my first developer-related job at <a href="https://www.danguitar.dk/" target="_blank">Danguitar</a>. The company was still a startup, so I wore many hats, such as preparing parcels, creating content for advertisement, and managing the product catalog in their CMS. I started automating repetetive tasks with Python, which led to my first professional development job: creating a performance monitor for the customer service department.
     </p>
     <p class="leading-tight mt-5">
       In <span>2020</span>, I started working for Mads Sastakauskas Østergaard, as his only employee and grew exponentially as a developer with him as my mentor.
       We were both very interested in serverless and SSG with React back then.
     </p>
     <p class="leading-tight mt-5">
-      In the summer of <span>2022</span>, his company merged with our biggest client, Clevertrack (a startup), who immediately employed me, and that's where I'm still working today, building their web app and creating internal tools for automation.
+      In the summer of <span>2022</span>, his company merged with our biggest client, <a href="https://www.clevertrack.dk/" target="_blank">Clevertrack</a> (a startup), who immediately employed me, and that's where I'm still working today, building their web app and creating internal tools for automation.
     </p>
   </ContentBox>
 </Container>
@@ -72,10 +72,5 @@
       @apply text-2xl;
       @apply px-[0.7rem] pb-[0.4rem];
     }
-  }
-
-  p span {
-    color: theme(colors.purple);
-    font-weight: bold;
   }
 </style>

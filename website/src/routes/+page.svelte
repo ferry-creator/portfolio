@@ -7,7 +7,7 @@
   import Profile from '$components/pages/bio/Profile.svelte'
   import Bio from '$components/pages/bio/Bio.svelte'
   import Seperator from '$components/Seperator.svelte'
-  import Hacker from '$assets/hackerpose.png'
+  import Powerpose from '$assets/powerpose.png'
   import Xp from '$components/pages/bio/Xp.svelte'
 </script>
 
@@ -56,7 +56,7 @@
           <span class="right-[var(--pin-margin)]">
             <Pin --color="white" />
           </span>
-          <img src={Hacker}
+          <img src={Powerpose}
             alt="Jonathan posing as a hacker">
           <p>
             artsy pic in my dorm room
@@ -73,10 +73,8 @@
 
 <style lang="postcss">
   header,main { /* local variable */
-    --split: calc((100vh - var(--bottom-h))/2);
-    
     --offset: 15px;
-    --split: calc((var(--vh) - var(--bottom-h))/2
+    --split: calc((var(--vh, 100vh) - var(--bottom-h))/2
       + var(--offset));
     @media screen(md) {
       --split: calc((100vh - var(--bottom-h))/2);
