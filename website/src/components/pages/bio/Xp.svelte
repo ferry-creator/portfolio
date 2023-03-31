@@ -71,6 +71,11 @@
       font-family: "PPFraktionMono";
       @apply text-2xl;
       @apply px-[0.7rem] pb-[0.4rem];
+
+      &:hover, &:active {
+        color: black;
+        background: greenyellow;
+      }
     }
   }
 </style>

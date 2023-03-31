@@ -1,28 +1,35 @@
 <script>
-  // export let projects
+  export let title, year
 
   import Container from '$components/Container.svelte'
   import ContentBox from '$components/ContentBox.svelte'
   import Pin from '$components/Pin.svelte'
 </script>
 
-{#each Array(2) as NULL}
 <div class="project relative h-full">
   <div class="box" />
   <div class="line"/>
   <Container>
     <div class="content">
       <ContentBox full>
-        <h4>2022</h4>
-        <div class="text-body">
-          <h3>shelly.run</h3>
+        <h4 class="md:hidden">{year}</h4>
+        <div class="text-body md:relative">
+          <h3>{title}</h3>
+          <span class="desktop-pin hidden md:block">
+            <Pin --color="currentColor" />
+          </span>
+          <span class="desktop-pin desktop-pin2 hidden md:block">
+            <Pin --color="currentColor" />
+          </span>
           <div class="paragraph-img">
             <div class="paragraph">
+              <h4 class="hidden md:block">{year}</h4>
+              <div class="pin-line desktop-line hidden md:block"></div>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                <slot />
               </p>
-              <div class="pin-line"/>
-              <span class="phone-pin">
+              <div class="pin-line md:hidden"/>
+              <span class="phone-pin md:hidden">
                 <Pin --color="currentColor" />
               </span>
             </div>
@@ -33,7 +40,6 @@
     </div>
   </Container>
 </div>
-{/each}
 
 <style lang="postcss">
   .box, .line {
@@ -62,6 +68,8 @@
       font-family: "PPMondwest";
     }
     h3 {
+      text-align: left;
+      word-spacing: 0.2em;
       @apply text-5xl;
       font-family: "PPNeueBit";
     }
@@ -69,9 +77,15 @@
       @apply leading-tight;
       padding-right: 5rem;
       max-width: 35rem;
+      @media screen(md) {
+        @apply max-w-none pr-0;
+      }
     }
     .paragraph {
       min-height: 10rem;
+      @media screen(md) {
+        min-height: auto;
+      }
       @apply relative;
       .phone-pin {
         color: theme(colors.grey);
@@ -93,7 +107,7 @@
     }
     .text-body {
       padding-left: 2.5rem;
-      margin-bottom: 4rem;
+      padding-bottom: 64px;
       img {
         margin-top: 1rem;
       }
@@ -102,7 +116,54 @@
 
   .project:last-child .content {
     .text-body {
-      margin-bottom: 1rem;
+      padding-bottom: 16px;
+    }
+  }
+
+  @media screen(md) {
+    .content {
+      --text-w: 15rem;
+      .paragraph-img {
+        @apply flex;
+      }
+
+      h3, .paragraph {
+        width: var(--text-w);
+      }
+      .text-body {
+        padding-left: 3rem;
+        padding-bottom: 96px;
+        img {
+          margin-top: 3.15rem;
+          padding-left: 4rem;
+          width: calc(100% - var(--text-w));
+        }
+      }
+
+      .desktop-pin {
+        color: theme(colors.grey);
+        @apply absolute top-[1.2rem] right-0;
+      }
+      .desktop-pin2 {
+        left: calc(var(--text-w) + 5.5rem)
+      }
+      .desktop-line {
+        top: 0;
+        left: 1rem;
+        height: 2.8rem !important;
+      }
+
+      .paragraph h4 {
+        transform: none;
+        text-align: right;
+        @apply relative top-[-0.6rem];
+      }
+    }
+  }
+
+  @media screen(lg) {
+    .content .desktop-pin {
+      right: -1.3rem;
     }
   }
 </style>

@@ -4,7 +4,7 @@
   import Pin from '$components/Pin.svelte'
   import LogoSeperator from '$components/LogoSeperator.svelte'
   import Hacker from '$assets/hackerpose.png'
-  import Timeline from '$components/pages/projects/Timeline.svelte'
+  import Project from '$components/pages/projects/Project.svelte'
 </script>
 
 <div class="container-3d">
@@ -39,21 +39,28 @@
     <div class="logoseperator">
       <LogoSeperator />
     </div>
-    <div class="timeline">
-      <Timeline />
-    </div>
-    <div class="hackerimg mt-[5rem]">
-      <span class="left-[var(--pin-margin)]">
-        <Pin --color="white" />
-      </span>
-      <span class="right-[var(--pin-margin)]">
-        <Pin --color="white" />
-      </span>
-      <img src={Hacker}
-        alt="Jonathan posing as a hacker">
-      <p>
-        Some of my projects are WIP
-      </p>
+    <div class="max-w-[60rem] mx-auto">
+      <div class="mt-[3rem]">
+        <Project title="shelly.run" year=2022>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        </Project>
+        <Project title="shelly.run" year=2022>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        </Project>
+      </div>
+      <div class="hackerimg mt-[5rem]">
+        <span class="left-[var(--pin-margin)]">
+          <Pin --color="white" />
+        </span>
+        <span class="right-[var(--pin-margin)]">
+          <Pin --color="white" />
+        </span>
+        <img src={Hacker}
+          alt="Jonathan posing as a hacker">
+        <p>
+          Some of my projects are WIP
+        </p>
+      </div>
     </div>
     <Footer />
   </main>
@@ -152,9 +159,8 @@
         mix-blend-mode: exclusion;
       }
       @media screen(md) {
-        @apply mx-[var(--page-margin)];
         @apply mt-[4rem];
-        /* max-width: 315px; */
+        @apply max-w-[30rem] ml-auto mr-[2rem];
       }
     }
   }

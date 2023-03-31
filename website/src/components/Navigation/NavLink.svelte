@@ -23,20 +23,28 @@
       @apply px-[10px];
 
       @apply relative z-[0];
-      &.active {
-        color: black;
-        &:after {
-          /* background: #98fb98; */
-          background: greenyellow;
-          top: 2px;
-          @apply absolute z-[-1];
-          @apply w-full h-full left-0;
-          content:"";
-          /* @media screen(md) {
-            top: 6px;
-            height: 88%;
-          } */
-        }
+      &:after {
+        top: 2px;
+        @apply absolute z-[-1];
+        @apply w-full h-full left-0;
+        content:"";
+        /* @media screen(md) {
+          top: 6px;
+          height: 88%;
+        } */
+      }
+    }
+    &:hover span {
+      color: white;
+      &:after {
+        background: theme(colors.purple);
+      }
+    }
+    span.active, &:active span {
+      color: black;
+      &:after {
+        /* background: #98fb98; */
+        background: greenyellow;
       }
     }
   }

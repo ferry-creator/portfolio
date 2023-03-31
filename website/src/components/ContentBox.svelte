@@ -20,6 +20,9 @@
 
     &.full {
       max-width: none;
+      @media screen(md) {
+        @apply px-0;
+      }
     }
 
     :global(p span) {
@@ -28,7 +31,7 @@
     }
     :global(p a) {
       border-bottom: dotted 2px black;
-      &:hover {
+      &:hover, &:active {
         background: greenyellow;
         color: black;
       }
