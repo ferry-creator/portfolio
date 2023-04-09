@@ -1,5 +1,5 @@
 <script>
-  export let title, year
+  export let title, year, img, link
 
   import Container from '$components/Container.svelte'
   import ContentBox from '$components/ContentBox.svelte'
@@ -14,7 +14,7 @@
       <ContentBox full>
         <h4 class="md:hidden">{year}</h4>
         <div class="text-body md:relative">
-          <h3>{title}</h3>
+          <h3 id={title}>{title}</h3>
           <span class="desktop-pin hidden md:block">
             <Pin --color="currentColor" />
           </span>
@@ -25,7 +25,7 @@
             <div class="paragraph">
               <h4 class="hidden md:block">{year}</h4>
               <div class="pin-line desktop-line hidden md:block"></div>
-              <p>
+              <p class="mt-5">
                 <slot />
               </p>
               <div class="pin-line md:hidden"/>
@@ -33,7 +33,9 @@
                 <Pin --color="currentColor" />
               </span>
             </div>
-            <img src="/projects/shelly-run.png" alt="shelly.run project">
+            <a href={link} target="_blank" class="img-link">
+              <img src={img} alt="shelly.run project">
+            </a>
           </div>
         </div>
       </ContentBox>
@@ -44,7 +46,7 @@
 <style lang="postcss">
   .box, .line {
     background: theme(colors.purple);
-    @apply absolute top-[0.8rem];
+    @apply absolute top-[0.25rem];
   }
   .box {
     --box-s: 20px;
@@ -70,10 +72,11 @@
     h3 {
       text-align: left;
       word-spacing: 0.2em;
-      @apply text-5xl;
+      @apply text-5xl leading-[0.7em];
       font-family: "PPNeueBit";
+      margin-right: 3rem;
     }
-    p {
+    :global(p) {
       @apply leading-tight;
       padding-right: 5rem;
       max-width: 35rem;
@@ -108,8 +111,8 @@
     .text-body {
       padding-left: 2.5rem;
       padding-bottom: 64px;
-      img {
-        margin-top: 1rem;
+      .img-link img {
+        margin-top: 2rem;
       }
     }
   }
@@ -124,7 +127,7 @@
     .content {
       --text-w: 15rem;
       .paragraph-img {
-        @apply flex;
+        @apply flex items-start;
       }
 
       h3, .paragraph {
@@ -133,30 +136,32 @@
       .text-body {
         padding-left: 3rem;
         padding-bottom: 96px;
-        img {
-          margin-top: 3.15rem;
-          padding-left: 4rem;
-          width: calc(100% - var(--text-w));
+        .img-link {
+          img {
+            margin-top: 4.5rem;
+          }
+          margin-left: 4rem;
+          width: calc(100% - var(--text-w) - 4rem);
         }
       }
 
       .desktop-pin {
         color: theme(colors.grey);
-        @apply absolute top-[1.2rem] right-0;
+        @apply absolute top-[1rem] right-0;
       }
       .desktop-pin2 {
         left: calc(var(--text-w) + 5.5rem)
       }
       .desktop-line {
-        top: 0;
+        top: 0.5rem;
         left: 1rem;
-        height: 2.8rem !important;
+        height: 3rem !important;
       }
 
       .paragraph h4 {
         transform: none;
         text-align: right;
-        @apply relative top-[-0.6rem];
+        @apply relative top-[-0.25rem];
       }
     }
   }

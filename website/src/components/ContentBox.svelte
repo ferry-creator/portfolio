@@ -30,10 +30,12 @@
       font-weight: bold;
     }
     :global(p a) {
+      color: black;
+      background: greenyellow;
       border-bottom: dotted 2px black;
       &:hover, &:active {
-        background: greenyellow;
-        color: black;
+        background: theme(colors.purple);
+        color: white;
       }
     }
   }
