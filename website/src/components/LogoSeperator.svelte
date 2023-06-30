@@ -1,5 +1,5 @@
 <script>
-  import Segefjord from '$gfx/Segefjord.svelte'
+  import segefjord from "$gfx/segefjord.svg?src"
   import Pin from '$components/Pin.svelte'
 </script>
 
@@ -10,7 +10,7 @@
     <Pin --color="currentColor" />
   </span>
   <span class="relative text-greyText">
-    <Segefjord />
+    {@html segefjord}
   </span>
   <!-- <span class="md:hidden">  
   </span> -->

@@ -1,9 +1,13 @@
 import { sveltekit } from '@sveltejs/kit/vite';
 import { defineConfig } from 'vite';
 import path from 'path'
+import svg from '@poppanator/sveltekit-svg'
 
 export default defineConfig({
-	plugins: [sveltekit()],
+	plugins: [
+		sveltekit(),
+		svg()
+	],
 	resolve: {
 		alias: {
 			'$components': path.resolve('./src/components'),
