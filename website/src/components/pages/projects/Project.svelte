@@ -1,49 +1,111 @@
 <script>
-  export let title, year, img, link
+  export let title, year, img, link, techstack
 
   import Container from '$components/Container.svelte'
   import ContentBox from '$components/ContentBox.svelte'
   import Pin from '$components/Pin.svelte'
+  import Accordion from '$components/Accordion.svelte'
+  import PSplitTextW from "./PSplitTextW.svelte"
+  import ParagraphSplit from './ParagraphSplit.svelte'
+
+  import info from '$gfx/skeuo-icons/Info-alt-shadowless.png'
 </script>
 
+<!-- <div class="w-[100vw] absolute left-0">
+  <span class="desktop-pin desktop-pin3 hidden md:block xl:hidden">
+    <Pin --color="currentColor" />
+  </span>
+</div> -->
 <div class="project relative h-full">
   <div class="box" />
   <div class="line"/>
   <Container>
     <div class="content">
       <ContentBox full>
-        <h4 class="md:hidden">{year}</h4>
-        <div class="text-body md:relative">
-          <h3 id={title}>{title}</h3>
-          <span class="desktop-pin hidden md:block">
-            <Pin --color="currentColor" />
-          </span>
-          <span class="desktop-pin desktop-pin2 hidden md:block">
-            <Pin --color="currentColor" />
-          </span>
-          <div class="paragraph-img">
-            <div class="paragraph">
-              <h4 class="hidden md:block">{year}</h4>
-              <div class="pin-line desktop-line hidden md:block"></div>
-              <p class="mt-5">
-                <slot />
-              </p>
-              <div class="pin-line md:hidden"/>
-              <span class="phone-pin md:hidden">
-                <Pin --color="currentColor" />
-              </span>
+        <PSplitTextW>
+          <h4 class="md:hidden">{year}</h4>
+          <div class="text-body md:relative">
+            <h3 id={title}>{title}</h3>
+            <span class="desktop-pin hidden md:block">
+              <Pin --color="currentColor" />
+            </span>
+            <span class="desktop-pin desktop-pin2 hidden md:block">
+              <Pin --color="currentColor" />
+            </span>
+            <ParagraphSplit>
+              <div slot="paragraph" class="paragraph">
+                <h4 class="hidden md:block">{year}</h4>
+                <div class="pin-line desktop-line hidden md:block"></div>
+                <ul class="tag-cloud mt-3">
+                  {#each techstack as tag}
+                  <li>
+                    <a href="#">#{tag}</a>
+                  </li>
+                  {/each}
+                </ul>
+                <p class="mt-5">
+                  <slot />
+                </p>
+                <div class="pin-line md:hidden"/>
+                <span class="phone-pin md:hidden">
+                  <Pin --color="currentColor" />
+                </span>
+              </div>
+              <div slot="split" class="img-link">
+                <a href={link} target="_blank">
+                  <img src={img} alt="shelly.run project">
+                </a>
+              </div>
+            </ParagraphSplit>
+            <!-- <div class="paragraph-img">
+              <div class="paragraph">
+                <h4 class="hidden md:block">{year}</h4>
+                <div class="pin-line desktop-line hidden md:block"></div>
+                <ul class="tag-cloud mt-3">
+                  {#each techstack as tag}
+                  <li>
+                    <a href="#">#{tag}</a>
+                  </li>
+                  {/each}
+                </ul>
+                <p class="mt-5">
+                  <slot />
+                </p>
+                <div class="pin-line md:hidden"/>
+                <span class="phone-pin md:hidden">
+                  <Pin --color="currentColor" />
+                </span>
+              </div>
+              <a href={link} target="_blank" class="img-link">
+                <img src={img} alt="shelly.run project">
+              </a>
+            </div> -->
+
+            <div class="mt-3 relative">
+              <Accordion>
+                <div slot="summary" class="summary sticky top-[100px] z-[10000000000000000]">
+                  <img src={info} alt="Info Icon" class="inline w-[26px] relative bottom-[2px]">
+                  DETAILS
+                </div>
+                <div slot="content" class="pt-[.4rem]">
+                  <slot name="details" />
+                </div>
+              </Accordion>
             </div>
-            <a href={link} target="_blank" class="img-link">
-              <img src={img} alt="shelly.run project">
-            </a>
           </div>
-        </div>
+        </PSplitTextW>
       </ContentBox>
     </div>
   </Container>
 </div>
 
 <style lang="postcss">
+  .summary {
+    font-family: "PPFraktionMono";
+    @apply text-lg font-bold text-greyDark tracking-tighter;
+    /* @apply bg-[greenyellow]; */
+  }
+
   .box, .line {
     background: theme(colors.purple);
     @apply absolute top-[0.25rem];
@@ -93,8 +155,7 @@
       .phone-pin {
         color: theme(colors.grey);
         position: absolute;
-        right: calc(var(--pin-margin)
-          - var(--page-margin));
+        right: calc(var(--pin-margin) - var(--page-margin));
         bottom: 1rem;
       }
       .pin-line {
@@ -104,13 +165,15 @@
         width: 3px;
         position: absolute;
         bottom: var(--bottom);
-        right: calc(var(--pin-margin)
-          - var(--page-margin) - 1.5px);
+        right: calc(var(--pin-margin) - var(--page-margin) - 1.5px);
       }
     }
     .text-body {
+      position: relative;
+      top: -4px;
+
       padding-left: 2.5rem;
-      padding-bottom: 64px;
+      padding-bottom: 3rem;
       .img-link img {
         margin-top: 2rem;
       }
@@ -119,39 +182,40 @@
 
   .project:last-child .content {
     .text-body {
-      padding-bottom: 16px;
+      /* padding-bottom: 16px; */
     }
   }
 
   @media screen(md) {
+    .desktop-pin {
+      color: theme(colors.grey);
+      @apply absolute top-[1rem] right-0;
+    }
+    .desktop-pin2 {
+      left: calc(var(--text-w) + 5.5rem);
+      /* display: none; */
+    }
+    .desktop-pin3 {
+      top: 12px;
+      right: calc(-0.5px + var(--pin-margin) + var(--page-margin)/2);
+    }
     .content {
-      --text-w: 15rem;
-      .paragraph-img {
-        @apply flex items-start;
-      }
+      padding-right: 14px;
 
-      h3, .paragraph {
+      h3 {
         width: var(--text-w);
       }
       .text-body {
         padding-left: 3rem;
-        padding-bottom: 96px;
+        /* padding-bottom: 96px; */
         .img-link {
+          padding-left: 4rem;
           img {
             margin-top: 4.5rem;
           }
-          margin-left: 4rem;
-          width: calc(100% - var(--text-w) - 4rem);
         }
       }
 
-      .desktop-pin {
-        color: theme(colors.grey);
-        @apply absolute top-[1rem] right-0;
-      }
-      .desktop-pin2 {
-        left: calc(var(--text-w) + 5.5rem)
-      }
       .desktop-line {
         top: 0.5rem;
         left: 1rem;
@@ -169,6 +233,28 @@
   @media screen(lg) {
     .content .desktop-pin {
       right: -1.3rem;
+    }
+  }
+
+  .tag-cloud {
+    /* display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; */
+    li {
+      @apply inline-block;
+      @apply mr-[0.5rem] mt-[0.5rem];
+    }
+    a {
+      background: theme(colors.purple);
+      color: white;
+      font-family: "PPFraktionMono";
+      /* @apply text-lg; */
+      @apply px-[0.2rem] pb-[0.3rem] pt-[0.1rem];
+
+      &:hover, &:active {
+        color: black;
+        background: greenyellow;
+      }
     }
   }
 </style>

@@ -80,7 +80,7 @@
         <br class="hidden md:inline">
         <br>
         <span class="text-[1.45em] leading-[1.4em] md:leading-[inherit]">
-          creative developer
+          goofy developer
         </span>
       </div>
 
@@ -169,8 +169,8 @@
       }
     }
     @keyframes wacka {
-      from{transform: rotate(0deg)}
-      to  {transform: rotate(0deg)}
+      from{transform: rotate(-7deg)}
+      to  {transform: rotate(-4deg)}
     }
   }
 </style>

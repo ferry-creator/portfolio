@@ -59,7 +59,8 @@
           <img src={Powerpose}
             alt="Jonathan posing as a hacker">
           <p>
-            artsy pic in my dorm room
+            chilling in my dorm room
+            <!-- turn your head to read lmao -->
           </p>
         </div>
       </div>

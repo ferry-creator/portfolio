@@ -5,6 +5,9 @@
   import LogoSeperator from '$components/LogoSeperator.svelte'
   import Hacker from '$assets/hackerpose.png'
   import Project from '$components/pages/projects/Project.svelte'
+
+  import PSplitTextW from "$components/pages/projects/PSplitTextW.svelte"
+  import ParagraphSplit from '$components/pages/projects/ParagraphSplit.svelte'
 </script>
 
 <div class="container-3d">
@@ -26,7 +29,7 @@
       </div><br>
       <div class="shit">
         <span>
-          Shit I created
+          Shit I Created
           <br>{`:-)`}
         </span>
         <div class="mostly">
@@ -50,28 +53,100 @@
           </span>
           <img src={Hacker} alt="Jonathan pretending to use his computer">
           <p class="sidetext">
-            Me pretending to use my computer
+            playing counter-strike rn
           </p>
         </div>
       </div>
       <div class="mt-[3rem]">
         <Project
-          title="Clevertrack"
+          title="Symbolik.ai"
           year=2023
+          img="/projects/symbolik-ai/thumbnail.png"
+          link="https://symbolik.ai/"
+          techstack={["Startup", "AI", "C-Sharp"]}
+        >
+          Before I became a web developer, I worked an <strong>incredibly boring</strong> office job.
+          I tried automating my tasks using Python, AutoIT scripting and other hacks,
+          but discovered many limitations.
+          <br><br>
+          Seeing the LLM space emerge rapidly in 2023, I knew everything was about to change!
+          <br><br>
+          So — I tried to create a startup.
+          <div slot="details" class="project-details">
+            <PSplitTextW>
+              <ParagraphSplit>
+                <p slot="paragraph">
+                  What I'm building: 
+                  An AI co-worker, that office employees interact with and train in their tasks,
+                  simply by talking to the AI co-worker. The AI system builds a mental model (in a knowledge-like graph structure)
+                  which enables cheap automations once the system has correctly understood a task.
+                  <br><br>
+                  While I was studying webdev in 2018 and 19', I was working a part time job in
+                  a webshop warehouse. I was eventually promoted into their office space,
+                  but I was so bored that I began trying to automate my tasks.
+                  <br><br>
+                  Today, millions of humans are employed in office cubicles,
+                  doing very easy and boring manual labor on computers.
+                  It's expensive for businesses, and oftens comes with high employee turnover rates.
+                  <br><br>
+                  I worked directly together with two big Danish coorporations and their office workers
+                  to understand how it might be possible to finally solve this problem by utilizing AI.
+                  <br><br>
+                </p>
+                <div slot="split">
+                  <!-- svelte-ignore a11y-media-has-caption -->
+                  <video controls>
+                    <source src="/projects/symbolik-ai/ai-mode-compressed.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                  </video>
+                </div>
+              </ParagraphSplit>
+            </PSplitTextW>
+          </div>
+        </Project>
+        <Project
+          title="Clevertrack"
+          year=2022
           img="/projects/clevertrack-dark.png"
           link="https://www.clevertrack.dk/"
+          techstack={["React", "IoT", "SSG", "UX"]}
         >
-          In 2022 I joined <a href="https://www.clevertrack.dk/" target="_blank">Clevertrack</a> as a part-time fullstack designer + developer. I build internal tools to help them scale up, and maintain the website. I also develop new features on the web app.
-          <br><br>
+          <!-- In 2022 I joined <a href="https://www.clevertrack.dk/" target="_blank">Clevertrack</a> as a part-time fullstack designer + developer. I build internal tools to help them scale up, and maintain the website. I also develop new features on the web app. -->
+          <!-- <br><br> -->
           <!-- <a href="#Mostly Code">I was already working with Clevertrack in 2020.</a> -->
           <!-- <br><br> -->
-          In 2023 I created the website blog (coming soon), and also aggregated some legacy .NET code to be used for internal tooling. I made a big push in the organisation to utilize the existing code, as my main focus is to make great business decisions, rather than coding for beauty.
+          <!-- In 2023 I created the website blog (coming soon), and also aggregated some legacy .NET code to be used for internal tooling. I made a big push in the organisation to utilize the existing code, as my main focus is to make great business decisions, rather than coding for beauty. -->
+          My career began at <strong>Mostly Code</strong> in <strong>early 2020</strong>, working full-time with my mentor
+          <a href="https://www.linkedin.com/in/madsmadsdk/" target="_blank">Mads Østergaard</a>
+          on different web projects and a SaaS startup — an experience that shaped my
+          foundation as a developer.
+          <br><br>
+          After Mostly Code closed in <strong>2022</strong>, our biggest client
+          <a href="https://www.clevertrack.dk/" target="_blank">Clevertrack</a>
+          hired me in a part-time role while I pursued my university studies.
+
+          <div slot="details" class="project-details">
+            <PSplitTextW>
+              <ParagraphSplit>
+                <p slot="paragraph">
+                  While I was studying webdev in 2018 and 19', I was working a part time job in
+                  a webshop warehouse. Eventually I made my way into the office, but I was so bored
+                  with the mundane and repetiive office work, that I began automating tasks with
+                  Python, AutoIT scripting and other hacks.
+                </p>
+                <div slot="split">
+                  <img src="/projects/clevertrack/app.png" alt="wow" />
+                </div>
+              </ParagraphSplit>
+            </PSplitTextW>
+          </div>
         </Project>
         <Project
           title="shelly.run"
           year=2022
           img="/projects/shelly-run.png"
           link="https://github.com/nemzyx/shelly.run"
+          techstack={["React", "IoT", "SSG", "UX"]}
         >
           Initially created to teach my older sister how to code, <a href="https://github.com/nemzyx/shelly.run" target="_blank">shelly.run</a> evolved into a project with the potential to help many others.
           I designed Shelly the turtle as a relatable character to help beginners understand how state and variables eventually turn into useful systems.
@@ -88,6 +163,7 @@
           year=2022
           img="/projects/FPGA-pong.png"
           link="https://www.youtube.com/watch?v=oZGwaHUg-Vk&t=170s"
+          techstack={["React", "IoT", "SSG", "UX"]}
         >
           This project was the result of a DTU course in FPGA programming. Initially the goal of the project was to create the controller for a vending machine.
           <br><br>
@@ -103,6 +179,7 @@
           year=2022
           img="/projects/sourdough.png"
           link="https://www.youtube.com/watch?v=Z9Q-h7dPK7k"
+          techstack={["React", "IoT", "SSG", "UX"]}
         >
           We had 3 weeks at DTU to build a fully automated IoT enabled sourdough machine. I lead the software team from hardware programming, to code and deployment of all the IoT layers using Azure and Node-red. I also maintained and created the <a href="https://kryptokongerne.vercel.app/" target="_blank">blog</a>.
           <br><br>
@@ -113,6 +190,7 @@
           year=2020
           img="/projects/mostlycode.png"
           link="https://www.youtube.com/watch?v=n5alpcJM6nE"
+          techstack={["React", "IoT", "SSG", "UX"]}
         >
           <a href="https://www.youtube.com/watch?v=n5alpcJM6nE" target="_blank">Mostly Code</a>
           was my first real developer job. I worked along my mentor Mads Østergaard, who hired me as his only employee. My work in Clevertrack actually began all the way back in 2020, as they were our biggest client. Mostly Code merged with Clevertrack in 2022.
@@ -222,6 +300,7 @@
 
       @media screen(md) {
         @apply max-w-[30rem] ml-auto mr-[2rem];
+        @apply hidden;
       }
     }
   }
@@ -237,5 +316,22 @@
       transform: translateY(calc(var(--email-height) / 2))
         translateZ(-10px) scale(2);
     }
+  }
+
+  .project-details {
+    border: 5px solid greenyellow;
+    padding-top: .3rem;
+    @apply px-[.5rem];
+
+    & p:first-child {
+      width: calc(100% - 5px - .5rem);
+    }
+
+    @media screen(md) {
+      & div:nth-child(1) {
+        padding-left: calc(4rem - 5px - .5rem);
+        padding-top: .2rem;
+      }
+    }    
   }
 </style>

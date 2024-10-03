@@ -5,7 +5,7 @@
   import Navigation from '$components/Navigation/index.svelte'
 </script>
 
-<div class="parallax-wrapper">
+<div class="parallax-group">
   <slot/>
 </div>
 <div class="navigation-layout">
@@ -37,7 +37,7 @@
   }
 
   @media screen(md) {
-    .parallax-wrapper {
+    .parallax-group {
       position: relative;
       height: 100vh;
       overflow-y: auto;

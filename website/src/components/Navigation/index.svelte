@@ -22,7 +22,7 @@
   </ul>
 </nav>
 
-<style>
+<style lang="postcss">
   nav {
     height: var(--nav-height);
     background: white;

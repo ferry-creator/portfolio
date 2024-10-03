@@ -14,7 +14,7 @@
   </div>
 </a>
 
-<style>
+<style lang="postcss">
   ._container {
     height: var(--email-height);
 
