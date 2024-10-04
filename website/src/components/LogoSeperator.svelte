@@ -21,6 +21,7 @@
 
 <style lang="postcss">
   ._container {
+    overflow-x: hidden;
     color: theme(colors.grey);
     height: var(--sep-height);
     /* background: rgba(0,255,0,0.2); */

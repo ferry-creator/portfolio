@@ -1,4 +1,5 @@
 <script>
+  import Header from '$components/Header.svelte'
   import Footer from '$components/Footer.svelte'
   import DesktopSplitter from '$components/DesktopSplitter.svelte'
   import Smiley from '$gfx/Smiley.svelte'
@@ -11,27 +12,19 @@
   import Xp from '$components/pages/bio/Xp.svelte'
 </script>
 
-<div class="container-3d">
-  <header>
-    <span class="absolute top-[calc(var(--sep-height)/2)]
-      left-[var(--pin-margin)]">
-      <Pin --color="white" />
-    </span>
-    <span class="absolute top-[calc(var(--sep-height)/2)]
-      right-[var(--pin-margin)]">
-      <Pin --color="white" />
-    </span>
-    <div class="content">
-      <div class="helloworld">
+<div class="page-context-vars">
+  <Header parallaxOffset="3rem">
+    <div class="header-content">
+      <div class="text-5xl md:text-6xl">
         <span>Hello world.</span>
         <span class="smiley"><Smiley/></span>
       </div><br>
-      <div class="mypage">
+      <div class="mt-[1rem] text-4xl md:text-5xl">
         <span>THIS IS MY PAGE ON THE</span><br>
-        <div class="interwebs">INTERWEBS</div>
+        <div class="text-[2em] leading-[0.6em]">INTERWEBS</div>
       </div>
     </div>
-  </header>
+  </Header>
   <main>
     <div class="logoseperator">
       <LogoSeperator />
@@ -73,7 +66,7 @@
 </div>
 
 <style lang="postcss">
-  header,main { /* local variable */
+  .page-context-vars {
     --offset: 15px;
     --split: calc((var(--vh, 100vh) - var(--bottom-h))/2
       + var(--offset));
@@ -82,35 +75,14 @@
     }
   }
 
-  header {
-    @apply fixed top-0 w-[100%];
-    height: var(--split);
-    @media screen(md) {
-      top: var(--email-height);
-      height: calc(100vh - var(--email-height) - var(--sep-height));
-    }
-    
-    background-image: linear-gradient(90deg,
-    #E7E7E7 0%,#E7E7E7 3%, #8381F7 46%,
-    #9860FF 59%, #CEB0B0 86%, #EAB9FF 100%);
+  .header-content {
+    color: white;
+    font-family: 'PPNeueBit';
+    @apply inline-block;
+    div { @apply inline-block; }
 
-    @apply flex justify-center items-center;
-    .content {
-      color: white;
-      font-family: 'PPNeueBit';
-      @apply inline-block;
-      div { @apply inline-block; }
-      .helloworld { @apply text-5xl }
-      .smiley :global(img) {
-        @apply h-[0.57em] mb-[0.22em] ml-[0.32em]
-      }
-      .mypage { @apply mt-[1rem] text-4xl  }
-      .interwebs { @apply text-[2em]; line-height: 0.6em; }
-
-      @media screen(md) {
-        .helloworld { @apply text-6xl }
-        .mypage { @apply text-5xl  }
-      }
+    .smiley :global(img) {
+      @apply h-[0.57em] mb-[0.22em] ml-[0.32em]
     }
   }
 
@@ -177,18 +149,5 @@
     }
     
     .xp { @apply mt-[4rem] md:mt-[13px] }
-  }
-
-  /* parallax -------------------------- */
-  @media screen(md) {
-    .container-3d {
-      transform-style: preserve-3d;
-    }
-    header {
-      position: absolute;
-      top: 0;
-      transform: translateY(calc(var(--email-height) / 2))
-        translateZ(-10px) scale(2);
-    }
   }
 </style>

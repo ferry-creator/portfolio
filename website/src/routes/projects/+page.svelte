@@ -1,4 +1,5 @@
 <script>
+  import Header from '$components/Header.svelte'
   import Footer from '$components/Footer.svelte'
   import Graph from '$gfx/Graph.svg'
   import Pin from '$components/Pin.svelte'
@@ -10,34 +11,26 @@
   import ParagraphSplit from '$components/pages/projects/ParagraphSplit.svelte'
 </script>
 
-<div class="container-3d">
-  <header>
-    <span class="absolute top-[calc(var(--sep-height)/2)]
-      left-[var(--pin-margin)]">
-      <Pin --color="white" />
-    </span>
-    <span class="absolute top-[calc(var(--sep-height)/2)]
-      right-[var(--pin-margin)]">
-      <Pin --color="white" />
-    </span>
-    <div class="content">
-      <div class="graph">
-        <img src={Graph} alt="graph.svg">
+<div class="page-context-vars">
+  <Header parallaxOffset="-1rem">
+    <div class="header-content relative top-[30px]">
+      <div class="absolute top-[-3.3em] right-[2em] md:top-[-5em] md:right-[3em]">
+        <img src={Graph} alt="graph.svg" class="h-[8em] md:h-[11em]">
       </div>
-      <div class="projectstext">
+      <div class="relative text-5xl md:text-6xl">
         <span>projects.</span>
       </div><br>
-      <div class="shit">
+      <div class="relative mt-[1rem] leading-[0.8em] text-7xl md:text-8xl">
         <span>
           Shit I Created
           <br>{`:-)`}
         </span>
-        <div class="mostly">
+        <div class="relative text-[0.38em] leading-[0.6em] left-[24%] md:left-[30%]">
           . . . and mostly finished
         </div>
       </div>
     </div>
-  </header>
+  </Header>
   <main>
     <div class="logoseperator">
       <LogoSeperator />
@@ -206,7 +199,7 @@
 </div>
 
 <style lang="postcss">
-  header,main { /* local variable */
+  .page-context-vars {
     --offset: 80px;
     --split: calc((var(--vh, 100vh) - var(--bottom-h))/2
       + var(--offset));
@@ -215,50 +208,12 @@
     }
   }
 
-  header {
-    @apply fixed top-0 w-[100%];
-    height: var(--split);
-    @media screen(md) {
-      top: var(--email-height);
-      height: calc(100vh - var(--email-height) - var(--sep-height));
-    }
+  .header-content {
+    color: white;
+    font-family: 'PPNeueBit';
     
-    background-image: linear-gradient(90deg,
-    #E7E7E7 0%,#E7E7E7 3%, #8381F7 46%,
-    #9860FF 59%, #CEB0B0 86%, #EAB9FF 100%);
-
-    @apply flex justify-center items-center;
-    .content {
-      color: white;
-      font-family: 'PPNeueBit';
-      @apply inline-block;
-      div { @apply inline-block; }
-
-      @apply relative top-[30px];
-      .graph {
-        @apply absolute top-[-3.3em] right-[2em];
-        img { @apply h-[8em] }
-        @media screen(md) {
-          @apply top-[-5em] right-[3em];
-          img { @apply h-[11em] }
-        }
-      }
-      .projectstext { @apply text-5xl relative }
-      .shit {
-        @apply mt-[1rem] text-7xl relative;
-        line-height: 0.8em;
-      }
-      .mostly {
-        @apply text-[0.38em]; line-height: 0.6em;
-        @apply relative left-[24%];
-      }
-
-      @media screen(md) {
-        .projectstext { @apply text-6xl }
-        .shit { @apply text-8xl }
-        .mostly { @apply left-[30%] }
-      }
-    }
+    @apply inline-block;
+    div { @apply inline-block; }
   }
 
   main {
@@ -302,19 +257,6 @@
         @apply max-w-[30rem] ml-auto mr-[2rem];
         @apply hidden;
       }
-    }
-  }
-
-  /* parallax -------------------------- */
-  @media screen(md) {
-    .container-3d {
-      transform-style: preserve-3d;
-    }
-    header {
-      position: absolute;
-      top: 0;
-      transform: translateY(calc(var(--email-height) / 2))
-        translateZ(-10px) scale(2);
     }
   }
 

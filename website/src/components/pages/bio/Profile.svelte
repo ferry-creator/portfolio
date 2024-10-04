@@ -80,7 +80,7 @@
         <br class="hidden md:inline">
         <br>
         <span class="text-[1.45em] leading-[1.4em] md:leading-[inherit]">
-          goofy developer
+          creative developer
         </span>
       </div>
 

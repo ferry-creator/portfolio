@@ -5,9 +5,6 @@
   import Navigation from '$components/Navigation/index.svelte'
 </script>
 
-<div class="parallax-group">
-  <slot/>
-</div>
 <div class="navigation-layout">
   <div class="navigation">
     <Navigation />
@@ -16,10 +13,12 @@
     <EmailScroller />
   </div>
 </div>
+<slot/>
 
 <style lang="postcss">
   .navigation-layout {
-    @apply fixed w-[100%] bottom-0;
+    z-index: 999999999999999999999;
+    @apply fixed w-full bottom-0;
   }
 
   @media screen(md) {
@@ -36,13 +35,4 @@
     }
   }
 
-  @media screen(md) {
-    .parallax-group {
-      position: relative;
-      height: 100vh;
-      overflow-y: auto;
-      overflow-x: hidden;
-      perspective: 10px;
-    }
-  }
 </style>
