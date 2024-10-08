@@ -1,3 +1,7 @@
+<script context="module">
+	export let tagModals = {}
+</script>
+
 <script>
   export let title, year, img, link, techstack
 
@@ -9,6 +13,42 @@
   import ParagraphSplit from './ParagraphSplit.svelte'
 
   import info from '$gfx/skeuo-icons/Info-alt-shadowless.png'
+  import close from '$gfx/skeuo-icons/Delete-alt.png'
+
+  let titleElement
+  let summaryElement
+
+  let showStickySummary = false
+  const onOpen = (e) => {
+    showStickySummary = true
+  }
+
+  let accordion
+  const onClose = (e) => {
+    showStickySummary = false
+    accordion.onClick(e)
+    
+    // scroll page back by the deeper into reading details
+    const scrollbackStart = 120
+    const scrollbackEnd   = -50
+    const a = (0 - 1) / (scrollbackStart - scrollbackEnd)
+    const b = -(a * scrollbackStart)
+    const f = (x) => (a * x) + b // linear interpolation, 0 <-> 1
+    const lerp = (x) => Math.max(0, Math.min(f(x), 1))
+    const summaryPosition = summaryElement.getBoundingClientRect().top
+    console.log(Math.round(window.scrollY), Math.round(summaryPosition))
+    if(summaryPosition <= scrollbackStart) {
+      const titlePosition   = titleElement.getBoundingClientRect().top
+      const scrollback = (summaryPosition - 200) * lerp(summaryPosition)
+      window.scrollTo({
+        top: window.scrollY + scrollback,
+        behavior: "smooth",
+      })
+    }
+  }
+
+  // import Modal from '$components/Modal.svelte'
+  // let modals = {}
 </script>
 
 <!-- <div class="w-[100vw] absolute left-0">
@@ -25,7 +65,7 @@
         <PSplitTextW>
           <h4 class="md:hidden">{year}</h4>
           <div class="text-body md:relative">
-            <h3 id={title}>{title}</h3>
+            <h3 id={title} bind:this={titleElement}>{title}</h3>
             <span class="desktop-pin hidden md:block">
               <Pin --color="currentColor" />
             </span>
@@ -38,9 +78,11 @@
                 <div class="pin-line desktop-line hidden md:block"></div>
                 <ul class="tag-cloud mt-3">
                   {#each techstack as tag}
-                  <li>
-                    <a href="#">#{tag}</a>
-                  </li>
+                    <li>
+                      <button on:click={tagModals[tag].open}>
+                        <span>{tag}</span>
+                      </button>
+                    </li>
                   {/each}
                 </ul>
                 <p class="mt-5">
@@ -51,47 +93,45 @@
                   <Pin --color="currentColor" />
                 </span>
               </div>
-              <div slot="split" class="img-link">
+              <div slot="split" class="img-link relative">
                 <a href={link} target="_blank">
-                  <img src={img} alt="shelly.run project">
+                  <img src={img} alt={title}>
                 </a>
+                <slot name="img-extras" />
               </div>
             </ParagraphSplit>
-            <!-- <div class="paragraph-img">
-              <div class="paragraph">
-                <h4 class="hidden md:block">{year}</h4>
-                <div class="pin-line desktop-line hidden md:block"></div>
-                <ul class="tag-cloud mt-3">
-                  {#each techstack as tag}
-                  <li>
-                    <a href="#">#{tag}</a>
-                  </li>
-                  {/each}
-                </ul>
-                <p class="mt-5">
-                  <slot />
-                </p>
-                <div class="pin-line md:hidden"/>
-                <span class="phone-pin md:hidden">
-                  <Pin --color="currentColor" />
-                </span>
-              </div>
-              <a href={link} target="_blank" class="img-link">
-                <img src={img} alt="shelly.run project">
-              </a>
-            </div> -->
-
             <div class="mt-3 relative">
-              <Accordion>
-                <div slot="summary" class="summary sticky top-[100px] z-[10000000000000000]">
-                  <img src={info} alt="Info Icon" class="inline w-[26px] relative bottom-[2px]">
-                  DETAILS
-                </div>
-                <div slot="content" class="pt-[.4rem]">
-                  <slot name="details" />
-                </div>
-              </Accordion>
+              {#if showStickySummary}
+                <button class="sticky-summary" on:click={onClose}>
+                  <div class="summary">
+                    <img src={info} alt="Info Icon">
+                    <span>
+                      DETAILS
+                    </span>
+                    <img src={close} alt="Close Icon" class="ml-32">
+                    <span class="close-text">
+                      CLOSE
+                    </span>
+                  </div>
+                </button>
+              {/if}
+              <div class="details-accordion">
+                <Accordion on:open={onOpen} bind:this={accordion}>
+                  <div
+                    slot="summary" class="summary"
+                    class:opacity-0={showStickySummary}
+                    bind:this={summaryElement}
+                  >
+                    <img src={info} alt="Info Icon">
+                    DETAILS
+                  </div>
+                  <div slot="content" class="pt-[.4rem]">
+                    <slot name="details" />
+                  </div>
+                </Accordion>
+              </div>
             </div>
+
           </div>
         </PSplitTextW>
       </ContentBox>
@@ -99,16 +139,76 @@
   </Container>
 </div>
 
+<!-- <Modal bind:this={modals['Startup']}>
+  Startup
+</Modal>
+
+<Modal bind:this={modals['AI']}>
+  AI
+</Modal> -->
+
+<slot name="tag-modals" />
+
 <style lang="postcss">
+  .sticky-summary {
+    @apply block w-full text-left;
+    user-select: none;
+    display: block;
+    position: sticky;  
+    top: calc(var(--sep-height) - 0.8rem);
+    @media screen(md) {
+      top: calc(var(--email-height) + var(--sep-height) - 0.8rem);
+    }
+    z-index: 1;
+
+    & > div  {
+      @apply absolute;
+      /* @apply bg-void/100; */
+      @apply bg-gradient-to-b from-void/100 to-void/10;
+      backdrop-filter: blur(20px);
+
+      width: 100%;
+      top: -1px;
+      padding-top: 1px;
+      padding-bottom: 0.5rem;
+      border-bottom: 5px solid greenyellow;
+    }
+
+    span {
+      filter:
+        drop-shadow(0 0 5px theme(colors.void))
+        drop-shadow(0 0 8px #e7e7e7)
+        drop-shadow(30px 0 12px #e7e7e7)
+        drop-shadow(-30px 0 12px #e7e7e7)
+        drop-shadow(0 0 20px #e7e7e7)
+      ;
+    }
+
+    .close-text {
+      @apply text-base;
+    }
+  }
+
+  .details-accordion :global(summary) {
+    @media screen(md) {
+      display: inline;
+      padding-right: 4rem;
+    }
+  }
+
   .summary {
     font-family: "PPFraktionMono";
     @apply text-lg font-bold text-greyDark tracking-tighter;
-    /* @apply bg-[greenyellow]; */
+
+    img {
+      @apply inline w-[26px] relative bottom-[2px] z-[1];
+    }
   }
 
   .box, .line {
     background: theme(colors.purple);
     @apply absolute top-[0.25rem];
+    /* z-index: 20; */
   }
   .box {
     --box-s: 20px;
@@ -242,18 +342,18 @@
     justify-content: space-between; */
     li {
       @apply inline-block;
-      @apply mr-[0.5rem] mt-[0.5rem];
-    }
-    a {
-      background: theme(colors.purple);
-      color: white;
-      font-family: "PPFraktionMono";
-      /* @apply text-lg; */
-      @apply px-[0.2rem] pb-[0.3rem] pt-[0.1rem];
+      @apply m-0 mr-[0.5rem] mt-[0.5rem];
 
-      &:hover, &:active {
-        color: black;
-        background: greenyellow;
+      span {
+        background: theme(colors.purple);
+        color: white;
+        font-family: "PPFraktionMono";
+        @apply px-[0.2rem] pb-[0.3rem] pt-[0.1rem];
+
+        &:hover, &:active {
+          color: black;
+          background: greenyellow;
+        }
       }
     }
   }

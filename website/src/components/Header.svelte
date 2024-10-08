@@ -47,6 +47,7 @@
 
 <style lang="postcss">
   header {
+    will-change: transform;
     @apply fixed top-0 w-full;
     @media screen(md) {
       @apply absolute;

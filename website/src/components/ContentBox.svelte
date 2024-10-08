@@ -33,9 +33,16 @@
       color: black;
       background: greenyellow;
       border-bottom: dotted 2px black;
+      /* animation: 150ms link-blink infinite; */
       &:hover, &:active {
         background: theme(colors.purple);
         color: white;
+      }
+    }
+
+    @keyframes link-blink {
+      to {
+        border-bottom: none;
       }
     }
   }

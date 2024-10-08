@@ -1,27 +1,34 @@
 <script>
+  import { createEventDispatcher } from 'svelte'
+  const dispatch = createEventDispatcher()
+
   let details, summary, content
   let animation = null
   let isClosing = false, isExpanding = false
 
-  const onClick = (e) => {
+  export const onClick = (e) => {
     e.preventDefault();
     details.style.overflow = 'hidden'
 
     // Check if the element is being closed or is already closed
     if (isClosing || !details.open) {
-      open()
+      open(e)
     // Check if the element is being openned or is already open
     } else if (isExpanding || details.open) {
-      shrink()
+      shrink(e)
     }
   }
 
-  const open = () => {
+  const open = (e) => {
     details.style.height = `${details.offsetHeight}px`
     // Force the [open] attribute on the details element
     details.open = true;
     // Wait for the next frame to call the expand function
     window.requestAnimationFrame(() => expand())
+    // Emit Svelte event
+    dispatch('open', {
+			clickEvent: e
+		})
   }
 
   const expand = () => {
@@ -50,7 +57,7 @@
     animation.oncancel = () => isExpanding = false
   }
 
-  const shrink = () => {
+  const shrink = (e) => {
     isClosing = true
     const startHeight = `${details.offsetHeight}px`
     const endHeight = `${summary.offsetHeight}px`
@@ -70,6 +77,11 @@
 
     animation.onfinish = () => onAnimationFinish(false)
     animation.oncancel = () => isClosing = false
+
+    // Emit Svelte event
+    dispatch('close', {
+			clickEvent: e
+		})
   }
 
   const onAnimationFinish = (open) => {
@@ -95,8 +107,6 @@
   details summary::-webkit-details-marker { display:none; }
   details {
     summary {
-      display: inline;
-      padding-right: 3rem;
       list-style: none;
       cursor: pointer;
       user-select: none;

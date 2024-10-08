@@ -31,6 +31,9 @@
       @apply absolute top-0 left-0 right-0;
       bottom: 0.8rem;
       background: theme(colors.void);
+      /* @apply bg-void/95;
+      backdrop-filter: blur(10px); */
+      /* background: rgba(255,255,255,0.5); */
     }
   }
 </style>

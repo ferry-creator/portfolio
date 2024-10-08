@@ -6,6 +6,7 @@
   import LogoSeperator from '$components/LogoSeperator.svelte'
   import Hacker from '$assets/hackerpose.png'
   import Project from '$components/pages/projects/Project.svelte'
+  import TagModals from '$components/pages/projects/TagModals.svelte'
 
   import PSplitTextW from "$components/pages/projects/PSplitTextW.svelte"
   import ParagraphSplit from '$components/pages/projects/ParagraphSplit.svelte'
@@ -56,7 +57,7 @@
           year=2023
           img="/projects/symbolik-ai/thumbnail.png"
           link="https://symbolik.ai/"
-          techstack={["Startup", "AI", "C-Sharp"]}
+          techstack={["#Startup", "#AI", " C#"]}
         >
           Before I became a web developer, I worked an <strong>incredibly boring</strong> office job.
           I tried automating my tasks using Python, AutoIT scripting and other hacks,
@@ -134,7 +135,70 @@
             </PSplitTextW>
           </div>
         </Project>
+
         <Project
+          title="DTU (Uni)"
+          year=2020
+          img="/projects/DTU/thumbnail.png"
+          link="https://investindk.com/insights/technical-university-of-denmark-dtu-ranks-third-after-stanford-and-mit"
+          techstack={["Design", "Comp. Sci."]}
+        >
+          After 5 months of full-time work at
+          <a href="https://staging--mostlycode.netlify.app/" target="_blank">Mostly Code</a>
+          , I enrolled in University to study a BSc in <strong>Design & Innovation</strong>.
+          <br><br>
+          At DTU, 25% of your courses are free electives, so I picked
+          a lot of <strong>computer science</strong> classes to improve my SWE skills.
+          <br><br>
+          My grades and selected course projects are attached below :-)
+          <div slot="img-extras" class="pointer-events-none">
+            <img
+              width=55%
+              class="marker-bsc-design-innovation"
+              src="/marker/bsc-design-innovation/squiggle.png"
+              alt="Handwritten squiggle"
+            >
+            <img
+              width=55%
+              class="marker-bsc-design-innovation"
+              src="/marker/bsc-design-innovation/text-v2.png"
+              alt="Handwritten text: 'BSc in Design & Innovation'"
+            >
+          </div>
+          <div slot="details" class="project-details">
+            <PSplitTextW>
+              <ParagraphSplit>
+                <p slot="paragraph">
+                  What I'm building: 
+                  An AI co-worker, that office employees interact with and train in their tasks,
+                  simply by talking to the AI co-worker. The AI system builds a mental model (in a knowledge-like graph structure)
+                  which enables cheap automations once the system has correctly understood a task.
+                  <br><br>
+                  While I was studying webdev in 2018 and 19', I was working a part time job in
+                  a webshop warehouse. I was eventually promoted into their office space,
+                  but I was so bored that I began trying to automate my tasks.
+                  <br><br>
+                  Today, millions of humans are employed in office cubicles,
+                  doing very easy and boring manual labor on computers.
+                  It's expensive for businesses, and oftens comes with high employee turnover rates.
+                  <br><br>
+                  I worked directly together with two big Danish coorporations and their office workers
+                  to understand how it might be possible to finally solve this problem by utilizing AI.
+                  <br><br>
+                </p>
+                <div slot="split">
+                  <!-- svelte-ignore a11y-media-has-caption -->
+                  <video controls>
+                    <source src="/projects/symbolik-ai/ai-mode-compressed.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                  </video>
+                </div>
+              </ParagraphSplit>
+            </PSplitTextW>
+          </div>
+        </Project>
+        
+        <!-- <Project
           title="shelly.run"
           year=2022
           img="/projects/shelly-run.png"
@@ -144,9 +208,9 @@
           Initially created to teach my older sister how to code, <a href="https://github.com/nemzyx/shelly.run" target="_blank">shelly.run</a> evolved into a project with the potential to help many others.
           I designed Shelly the turtle as a relatable character to help beginners understand how state and variables eventually turn into useful systems.
           <br><br>
-          <!-- A big innovation in the project is the reactive browser console, which enables players to program Shelly using JavaScript in the browser's built-in REPL environment.
+          A big innovation in the project is the reactive browser console, which enables players to program Shelly using JavaScript in the browser's built-in REPL environment.
           That makes it an accesible zero-config programming environment for beginners, while advanced users still get the full power of JavaScript. Shelly is a completely hackable turtle, while also being beginner-friendly.
-          <br><br> -->
+          <br><br>
           Shelly is programmable in JavaScript via the browsers built in REPL console, thanks to my <a href="https://gist.github.com/nemzyx/625ef854a899653d5acf652b813f784f" target="_blank">reactive console</a> innovation.
           <br><br>
           Although still in early alpha, shelly.run is already <a href="https://shelly.run/" target="_blank">live</a> and you can find instructions for playing on the <a href="https://github.com/nemzyx/shelly.run" target="_blank">Github page</a>.
@@ -191,9 +255,10 @@
           However, we also had many other projects in Mostly Code, inlcuding <a href="https://danmarksopsamling.dk/" target="_blank">Like The Oceans We Rise</a>, and a political party quiz for a 2022 Danish election with the FHO organisation, <a href="https://kandidattest.fho.dk/" target="_blank">FHO Kandidattest</a>.
           <br><br>
           Unfortunately, our website <a href="https://web.archive.org/web/20220130101040/https://mostlycode.dk/" target="_blank">mostlycode.dk</a> have been lost to time.
-        </Project>
+        </Project> -->
       </div>
     </div>
+    <TagModals />
     <Footer />
   </main>
 </div>
@@ -275,5 +340,13 @@
         padding-top: .2rem;
       }
     }    
+  }
+
+  .marker-bsc-design-innovation {
+    @apply absolute transform -translate-y-1/2 ;
+    @apply w-[100%] top-[calc(50%-27%)] -right-4 rotate-[8deg];
+    @media screen(md) {
+      @apply w-[55%] top-[calc(50%-27%)] -right-6 rotate-0;
+    }
   }
 </style>
