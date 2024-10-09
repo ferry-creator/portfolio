@@ -159,7 +159,7 @@
     @media screen(md) {
       top: calc(var(--email-height) + var(--sep-height) - 0.8rem);
     }
-    z-index: 1;
+    z-index: 20;
 
     & > div  {
       @apply absolute;

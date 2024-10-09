@@ -1,4 +1,6 @@
 <script>
+  export let title = "Title"
+
   let modal
   export const open = () => modal.showModal()
 
@@ -23,7 +25,7 @@
 <svelte:window on:click|capture={backdropClick} />
 <dialog bind:this={modal}>
   <div class="header">
-    #Startup
+    {title}
     <span class="text-base relative top-[1px] ml-[.5rem]">ⓘ</span>
     <button on:click={() => modal.close()}>
       <span class="relative bottom-[3px]">X</span>
@@ -69,7 +71,25 @@
     border: 5px solid greenyellow;
     padding: 5px;
 
-    max-width: 30rem;
+    max-width: calc(100% - 1.5rem);
+    @media screen(md) {
+      max-width: 30rem;
+    }
+
+    &[open] {
+      animation: open 100ms ease forwards;   
+    }
+  }
+
+  @keyframes open{
+    0%{
+      /* transform: translateY(1rem); */
+      transform: scale(0.3);
+    }
+    100%{
+      /* transform: translateY(0rem); */
+      transform: scale(1);
+    }
   }
 
   .header {
@@ -98,6 +118,7 @@
   }
 
   .ok-button {
+    @apply mt-2;
     @apply px-10 py-1 font-bold;
     @apply bg-void text-greyDarker;
     border-bottom: 3px solid theme(colors.grey);

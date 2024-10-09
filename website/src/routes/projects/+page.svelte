@@ -103,7 +103,7 @@
           year=2022
           img="/projects/clevertrack-dark.png"
           link="https://www.clevertrack.dk/"
-          techstack={["React", "IoT", "SSG", "UX"]}
+          techstack={["#React", "#SSG", "#IoT", "#UX"]}
         >
           <!-- In 2022 I joined <a href="https://www.clevertrack.dk/" target="_blank">Clevertrack</a> as a part-time fullstack designer + developer. I build internal tools to help them scale up, and maintain the website. I also develop new features on the web app. -->
           <!-- <br><br> -->
@@ -141,7 +141,7 @@
           year=2020
           img="/projects/DTU/thumbnail.png"
           link="https://investindk.com/insights/technical-university-of-denmark-dtu-ranks-third-after-stanford-and-mit"
-          techstack={["Design", "Comp. Sci."]}
+          techstack={["#Design", "#Comp. Sci."]}
         >
           After 5 months of full-time work at
           <a href="https://staging--mostlycode.netlify.app/" target="_blank">Mostly Code</a>
@@ -169,22 +169,15 @@
             <PSplitTextW>
               <ParagraphSplit>
                 <p slot="paragraph">
-                  What I'm building: 
-                  An AI co-worker, that office employees interact with and train in their tasks,
-                  simply by talking to the AI co-worker. The AI system builds a mental model (in a knowledge-like graph structure)
-                  which enables cheap automations once the system has correctly understood a task.
+                  In 2022 I led the software team of a 3-week IoT project.
+                  We built a "sourdough hotel" that automatically nutured and
+                  measured a sourdough mixture, sending information to users phone.
+                  I was involved in all the software layers: embedded programming, devops,
+                  and server-side <strong>Node-RED</strong>.
                   <br><br>
-                  While I was studying webdev in 2018 and 19', I was working a part time job in
-                  a webshop warehouse. I was eventually promoted into their office space,
-                  but I was so bored that I began trying to automate my tasks.
-                  <br><br>
-                  Today, millions of humans are employed in office cubicles,
-                  doing very easy and boring manual labor on computers.
-                  It's expensive for businesses, and oftens comes with high employee turnover rates.
-                  <br><br>
-                  I worked directly together with two big Danish coorporations and their office workers
-                  to understand how it might be possible to finally solve this problem by utilizing AI.
-                  <br><br>
+                  I also spun up a quick
+                  <a href="https://kryptokongerne.vercel.app/" target="_blank">blog site</a>
+                  , to document our progress.
                 </p>
                 <div slot="split">
                   <!-- svelte-ignore a11y-media-has-caption -->
