@@ -26,7 +26,7 @@
     </div>
   </Header>
   <main>
-    <div class="logoseperator">
+    <div class="logoseperator pointer-events-none">
       <LogoSeperator />
     </div>
     <DesktopSplitter --top="7rem">

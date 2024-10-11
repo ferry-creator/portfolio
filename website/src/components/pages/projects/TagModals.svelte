@@ -105,11 +105,9 @@
     <br><br>
     At Clevertrack, the CEO said I completely transformed the app's UX,
     and clients had praised the overhaul
-    - most of which I wasn't even assigned to do.
-    I couldn't help myself.
-    <br><br>
-    <strong>Design feels like writing clean code:</strong> <br>
-    Orchestrating constraints into a meaningful symphony.
-    Highly recommend "Hackers & Painters" by Paul Graham :-)
+    <!-- - most of which I wasn't even assigned to do.
+    I couldn't help myself. -->
+    - I took the original initiative and went over a few areas,
+    and when he saw the results he asked me to overhaul the entire app.
   </p>
 </Modal>

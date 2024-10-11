@@ -38,6 +38,16 @@
         background: theme(colors.purple);
         color: white;
       }
+
+      /* @apply relative;
+      &:after {
+        content: '';
+        display: block;
+        @apply absolute w-full h-4 -bottom-2 -left-1.5;
+        background-image: url('$gfx/skeuo-icons/link-128x128.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+      } */
     }
 
     @keyframes link-blink {

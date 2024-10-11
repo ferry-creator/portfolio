@@ -8,6 +8,8 @@
   import Project from '$components/pages/projects/Project.svelte'
   import TagModals from '$components/pages/projects/TagModals.svelte'
 
+  import IndexItem from '$components/pages/projects/IndexItem.svelte'
+
   import PSplitTextW from "$components/pages/projects/PSplitTextW.svelte"
   import ParagraphSplit from '$components/pages/projects/ParagraphSplit.svelte'
 </script>
@@ -32,8 +34,8 @@
       </div>
     </div>
   </Header>
-  <main>
-    <div class="logoseperator">
+  <main class="overflow-x-clip">
+    <div class="logoseperator pointer-events-none">
       <LogoSeperator />
     </div>
     <div class="max-w-[60rem] mx-auto">
@@ -150,16 +152,15 @@
           At DTU, 25% of your courses are free electives, so I picked
           a lot of <strong>computer science</strong> classes to improve my SWE skills.
           <br><br>
-          My grades and selected course projects are attached below :-)
+          <!-- My grades and selected course projects are attached below :-) -->
+          Open the details to view my grades course projects :-)
           <div slot="img-extras" class="pointer-events-none">
             <img
-              width=55%
               class="marker-bsc-design-innovation"
               src="/marker/bsc-design-innovation/squiggle.png"
               alt="Handwritten squiggle"
             >
             <img
-              width=55%
               class="marker-bsc-design-innovation"
               src="/marker/bsc-design-innovation/text-v2.png"
               alt="Handwritten text: 'BSc in Design & Innovation'"
@@ -190,6 +191,247 @@
             </PSplitTextW>
           </div>
         </Project>
+
+
+
+        <IndexItem
+          title="anybots.gg"
+          year=2024
+          link="https://anybots.vercel.app/"
+          flairs={[
+            { text: "UI Concept", color: "pink" },
+            { text: "Discord", color: "blue" },
+            { text: "Svelte", color: "orange" },
+          ]}
+        >
+          <img
+            slot="thumbnail" alt="project icon" class="transform scale-[1.15]"
+            src="/projects/index/anybots/thumbnail.svg"
+          >
+          <div slot="details" class="project-details">
+            <PSplitTextW>
+              <ParagraphSplit>
+                <p slot="paragraph">
+                  In 2022 I led the software team of a 3-week IoT project.
+                  We built a "sourdough hotel" that automatically nutured and
+                  measured a sourdough mixture, sending information to users phone.
+                  I was involved in all the software layers: embedded programming, devops,
+                  and server-side <strong>Node-RED</strong>.
+                  <br><br>
+                  I also spun up a quick
+                  <a href="https://kryptokongerne.vercel.app/" target="_blank">blog site</a>
+                  , to document our progress.
+                </p>
+                <div slot="split">
+                  <!-- svelte-ignore a11y-media-has-caption -->
+                  <video controls>
+                    <source src="/projects/symbolik-ai/ai-mode-compressed.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                  </video>
+                </div>
+              </ParagraphSplit>
+            </PSplitTextW>
+          </div>
+        </IndexItem>
+
+        <IndexItem
+          title="Sphere"
+          year=2023
+          link="https://sphere.segefjord.space/ai"
+          flairs={[
+            { text: "Social Media", color: "blue" },
+            { text: "Svelte", color: "orange" },
+          ]}
+        >
+          <img
+            slot="thumbnail" alt="project icon"
+            src="/projects/index/sphere/favicon.png"
+          >
+          <div slot="details" class="project-details">
+            <PSplitTextW>
+              <ParagraphSplit>
+                <p slot="paragraph">
+                  In 2022 I led the software team of a 3-week IoT project.
+                  We built a "sourdough hotel" that automatically nutured and
+                  measured a sourdough mixture, sending information to users phone.
+                  I was involved in all the software layers: embedded programming, devops,
+                  and server-side <strong>Node-RED</strong>.
+                  <br><br>
+                  I also spun up a quick
+                  <a href="https://kryptokongerne.vercel.app/" target="_blank">blog site</a>
+                  , to document our progress.
+                </p>
+                <div slot="split">
+                  <!-- svelte-ignore a11y-media-has-caption -->
+                  <video controls>
+                    <source src="/projects/symbolik-ai/ai-mode-compressed.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                  </video>
+                </div>
+              </ParagraphSplit>
+            </PSplitTextW>
+          </div>
+        </IndexItem>
+
+        <IndexItem
+          title="Mind Mapper"
+          year=2023
+          link="https://dev.app.symbolik.ai/maps"
+          flairs={[
+            { text: "UX Experiment", color: "black" },
+            { text: "Svelte", color: "orange" },
+          ]}
+        >
+          <img
+            slot="thumbnail" alt="project icon"
+            src="/projects/index/mindmapper/logo-mark-aero.svg"
+          >
+          <div slot="details" class="project-details">
+            <PSplitTextW>
+              <ParagraphSplit>
+                <p slot="paragraph">
+                  In 2022 I led the software team of a 3-week IoT project.
+                  We built a "sourdough hotel" that automatically nutured and
+                  measured a sourdough mixture, sending information to users phone.
+                  I was involved in all the software layers: embedded programming, devops,
+                  and server-side <strong>Node-RED</strong>.
+                  <br><br>
+                  I also spun up a quick
+                  <a href="https://kryptokongerne.vercel.app/" target="_blank">blog site</a>
+                  , to document our progress.
+                </p>
+                <div slot="split">
+                  <!-- svelte-ignore a11y-media-has-caption -->
+                  <video controls>
+                    <source src="/projects/symbolik-ai/ai-mode-compressed.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                  </video>
+                </div>
+              </ParagraphSplit>
+            </PSplitTextW>
+          </div>
+        </IndexItem>
+
+        <IndexItem
+          title="Zprite"
+          year=2023
+          link="https://zprite.vercel.app/"
+          flairs={[
+            { text: "3D Web", color: "black" },
+            { text: "Three.js", color: "yellow" },
+            { text: "Art", color: "pink" },
+          ]}
+        >
+          <img
+            slot="thumbnail" alt="project icon"
+            src="/projects/index/zprite/thumbnail.png"
+          >
+          <div slot="details" class="project-details">
+            <PSplitTextW>
+              <ParagraphSplit>
+                <p slot="paragraph">
+                  In 2022 I led the software team of a 3-week IoT project.
+                  We built a "sourdough hotel" that automatically nutured and
+                  measured a sourdough mixture, sending information to users phone.
+                  I was involved in all the software layers: embedded programming, devops,
+                  and server-side <strong>Node-RED</strong>.
+                  <br><br>
+                  I also spun up a quick
+                  <a href="https://kryptokongerne.vercel.app/" target="_blank">blog site</a>
+                  , to document our progress.
+                </p>
+                <div slot="split">
+                  <!-- svelte-ignore a11y-media-has-caption -->
+                  <video controls>
+                    <source src="/projects/symbolik-ai/ai-mode-compressed.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                  </video>
+                </div>
+              </ParagraphSplit>
+            </PSplitTextW>
+          </div>
+        </IndexItem>
+
+        <IndexItem
+          title="Markless Tailwind"
+          year=2023
+          link="https://markless-tailwind.vercel.app/"
+          flairs={[
+            { text: "Svelte", color: "orange" },
+            { text: "Utility", color: "blue" },
+            { text: "Graphs", color: "black" },
+          ]}
+        >
+          <img
+            slot="thumbnail" alt="project icon"
+            src="/projects/index/markless/tw-logo.svg"
+          >
+          <div slot="details" class="project-details">
+            <PSplitTextW>
+              <ParagraphSplit>
+                <p slot="paragraph">
+                  In 2022 I led the software team of a 3-week IoT project.
+                  We built a "sourdough hotel" that automatically nutured and
+                  measured a sourdough mixture, sending information to users phone.
+                  I was involved in all the software layers: embedded programming, devops,
+                  and server-side <strong>Node-RED</strong>.
+                  <br><br>
+                  I also spun up a quick
+                  <a href="https://kryptokongerne.vercel.app/" target="_blank">blog site</a>
+                  , to document our progress.
+                </p>
+                <div slot="split">
+                  <!-- svelte-ignore a11y-media-has-caption -->
+                  <video controls>
+                    <source src="/projects/symbolik-ai/ai-mode-compressed.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                  </video>
+                </div>
+              </ParagraphSplit>
+            </PSplitTextW>
+          </div>
+        </IndexItem>
+
+        <IndexItem
+          title="shelly.run"
+          year=2022
+          link="https://github.com/nemzyx/shelly.run"
+          flairs={[
+            { text: "Game", color: "pink" },
+            { text: "EdTech", color: "black" },
+            { text: "Reactive Programming", color: "green" },
+          ]}
+        >
+          <img
+            slot="thumbnail" alt="project icon"
+            src="/projects/index/shelly-run/favicon.png"
+            class="pixelated"
+          >
+          <div slot="details" class="project-details">
+            <PSplitTextW>
+              <ParagraphSplit>
+                <p slot="paragraph">
+                  In 2022 I led the software team of a 3-week IoT project.
+                  We built a "sourdough hotel" that automatically nutured and
+                  measured a sourdough mixture, sending information to users phone.
+                  I was involved in all the software layers: embedded programming, devops,
+                  and server-side <strong>Node-RED</strong>.
+                  <br><br>
+                  I also spun up a quick
+                  <a href="https://kryptokongerne.vercel.app/" target="_blank">blog site</a>
+                  , to document our progress.
+                </p>
+                <div slot="split">
+                  <!-- svelte-ignore a11y-media-has-caption -->
+                  <video controls>
+                    <source src="/projects/symbolik-ai/ai-mode-compressed.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                  </video>
+                </div>
+              </ParagraphSplit>
+            </PSplitTextW>
+          </div>
+        </IndexItem>
         
         <!-- <Project
           title="shelly.run"
@@ -337,7 +579,7 @@
 
   .marker-bsc-design-innovation {
     @apply absolute transform -translate-y-1/2 ;
-    @apply w-[100%] top-[calc(50%-27%)] -right-4 rotate-[8deg];
+    @apply w-[100%] top-[calc(50%-10%)] -right-7 rotate-[25deg];
     @media screen(md) {
       @apply w-[55%] top-[calc(50%-27%)] -right-6 rotate-0;
     }

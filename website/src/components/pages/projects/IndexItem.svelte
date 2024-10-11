@@ -1,14 +1,7 @@
-<script context="module">
-	export let tagModals = {}
-
-  import { writable } from 'svelte/store'
-  export const activeId = writable(0)
-  export const id = writable(0)
-</script>
-
 <script>
+  import { id, activeId } from './Project.svelte'
   const componentId = $id++
-  
+
   let closeButton
   $: if($activeId != componentId) {
     if(showStickySummary) {
@@ -18,19 +11,16 @@
     }
   }
 
-  export let title, year, img, link, techstack
+
+  export let title, year, link, flairs
 
   import Container from '$components/Container.svelte'
   import ContentBox from '$components/ContentBox.svelte'
-  import Pin from '$components/Pin.svelte'
   import Accordion from '$components/Accordion.svelte'
   import PSplitTextW from "./PSplitTextW.svelte"
-  import ParagraphSplit from './ParagraphSplit.svelte'
 
-  import info from '$gfx/skeuo-icons/Info-alt-shadowless.png'
-  import close from '$gfx/skeuo-icons/Delete-alt.png'
+  import itemIcon from '$gfx/skeuo-icons/Next-alt2.png'
 
-  let titleElement
   let summaryElement
 
   let showStickySummary = false
@@ -53,7 +43,6 @@
     const lerp = (x) => Math.max(0, Math.min(f(x), 1))
     const summaryPosition = summaryElement.getBoundingClientRect().top
     if(summaryPosition <= scrollbackStart) {
-      const titlePosition   = titleElement.getBoundingClientRect().top
       const scrollback = (summaryPosition - 200) * lerp(summaryPosition)
       window.scrollTo({
         top: window.scrollY + scrollback,
@@ -61,16 +50,8 @@
       })
     }
   }
-
-  // import Modal from '$components/Modal.svelte'
-  // let modals = {}
 </script>
 
-<!-- <div class="w-[100vw] absolute left-0">
-  <span class="desktop-pin desktop-pin3 hidden md:block xl:hidden">
-    <Pin --color="currentColor" />
-  </span>
-</div> -->
 <div class="project relative h-full">
   <div class="box" />
   <div class="line"/>
@@ -78,56 +59,35 @@
     <div class="content">
       <ContentBox full>
         <PSplitTextW>
-          <h4 class="md:hidden">{year}</h4>
           <div class="text-body md:relative">
-            <h3 id={title} bind:this={titleElement}>{title}</h3>
-            <span class="desktop-pin hidden md:block">
-              <Pin --color="currentColor" />
-            </span>
-            <span class="desktop-pin desktop-pin2 hidden md:block">
-              <Pin --color="currentColor" />
-            </span>
-            <ParagraphSplit>
-              <div slot="paragraph" class="paragraph">
-                <h4 class="hidden md:block">{year}</h4>
-                <div class="pin-line desktop-line hidden md:block"></div>
-                <ul class="tag-cloud mt-3">
-                  {#each techstack as tag}
-                    <li>
-                      <button on:click={tagModals[tag].open}>
-                        <span>{tag}</span>
-                      </button>
-                    </li>
-                  {/each}
-                </ul>
-                <p class="mt-5">
-                  <slot />
-                </p>
-                <div class="pin-line md:hidden"/>
-                <span class="phone-pin md:hidden">
-                  <Pin --color="currentColor" />
-                </span>
-              </div>
-              <div slot="split" class="img-link relative">
-                <a href={link} target="_blank">
-                  <img src={img} alt={title}>
-                </a>
-                <slot name="img-extras" />
-              </div>
-            </ParagraphSplit>
-            <div class="mt-3 relative">
+            <div class="relative">
               {#if showStickySummary}
                 <button class="sticky-summary" on:click={onClose} bind:this={closeButton}>
                   <div class="summary">
-                    <!-- <img src={info} alt="Open Icon"> -->
-                    <img src={close} alt="Close Icon">
-                    <span>
-                      DETAILS
-                      <span class="ml-1 text-grey">
+                    <img src={itemIcon} alt="Close Icon" class="transform rotate-[95deg]">
+                    <div class="md:ml-0 ml-1.5">
+                      <span class="year md:mr-3 mr-2.5">
+                        {year}
+                      </span>
+                      <a
+                        class="mr-3 hidden md:block"
+                        href={link} target="_blank"
+                        on:click|stopPropagation
+                      >
+                        Link
+                      </a>
+                      <slot name="thumbnail" />
+                      <span class="title ml-1 md:ml-1.5">
                         {title}
                       </span>
-                    </span>
-                    <!-- <img src={close} alt="Close Icon" class=""> -->
+                      <ul class="md:ml-4 ml-2.5 flairs">
+                        {#each flairs as { text, color }}
+                          <li class={color}>
+                            <span>{text}</span>
+                          </li>
+                        {/each}
+                      </ul>
+                    </div>
                   </div>
                 </button>
               {/if}
@@ -138,10 +98,30 @@
                     class:opacity-0={showStickySummary}
                     bind:this={summaryElement}
                   >
-                    <img src={info} alt="Open Icon">
-                    <span>
-                      DETAILS
-                    </span>
+                    <img src={itemIcon} alt="Open Icon">
+                    <div class="md:ml-0 ml-1.5">
+                      <span class="year md:mr-3 mr-2.5">
+                        {year}
+                      </span>
+                      <a
+                        class="mr-3 hidden md:block"
+                        href={link} target="_blank"
+                        on:click|stopPropagation
+                      >
+                        Link
+                      </a>
+                      <slot name="thumbnail" />
+                      <span class="title ml-1 md:ml-1.5">
+                        {title}
+                      </span>
+                      <ul class="md:ml-4 ml-2.5 flairs">
+                        {#each flairs as { text, color }}
+                          <li class={color}>
+                            <span>{text}</span>
+                          </li>
+                        {/each}
+                      </ul>
+                    </div>
                   </div>
                   <div slot="content" class="pt-[.4rem]">
                     <slot name="details" />
@@ -156,16 +136,6 @@
     </div>
   </Container>
 </div>
-
-<!-- <Modal bind:this={modals['Startup']}>
-  Startup
-</Modal>
-
-<Modal bind:this={modals['AI']}>
-  AI
-</Modal> -->
-
-<slot name="tag-modals" />
 
 <style lang="postcss">
   .sticky-summary {
@@ -207,10 +177,6 @@
         drop-shadow(-30px 0 12px #e7e7e7)
         drop-shadow(0 0 20px #e7e7e7)
       ;
-
-      & > span {
-        @apply font-sans tracking-normal font-normal text-sm relative bottom-[0.12rem];
-      }
     }
 
     .close-text {
@@ -220,31 +186,111 @@
 
   .details-accordion :global(summary) {
     @media screen(md) {
-      display: inline;
-      padding-right: 4rem;
+      /* display: inline;
+      padding-right: 4rem; */
     }
   }
 
   .summary {
-    font-family: "PPFraktionMono";
-    @apply text-lg font-bold text-greyDark tracking-tighter;
-
-    img {
-      @apply inline w-[26px] relative bottom-[2px] z-[1];
+    @apply flex;
+    & > * {
+      flex-shrink: 0;
     }
 
-    &:active img {
-      @apply transform scale-[1.15];
+    @media screen(md) {
+      @apply block;
+    }
+    & > img {
+      @apply inline w-[26px] relative bottom-[2px] z-[1] shrink-0;
+    }
+
+    & > div {
+      @apply inline-flex items-center;
+      .year {
+        font-family: "PPFraktionMono";
+        @apply text-lg font-bold text-greyDark tracking-tighter;
+        @apply relative bottom-[-1px] z-[1];
+      }
+      & > :global(img) {
+        @apply w-[27px];
+      }
+      .title {
+        @apply text-grey;
+        text-wrap: nowrap;
+      }
+      a {
+        @apply text-sm font-medium text-greyDarker;
+        background: greenyellow;
+        border-bottom: dotted 2px black;
+        @apply px-2;
+        &:hover, &:active {
+          background: theme(colors.purple);
+          color: white;
+        }
+
+        @apply relative z-[1];
+        &:after {
+          content: '';
+          display: block;
+          @apply absolute w-full h-4 -bottom-1.5 -left-1.5;
+          background-image: url('$gfx/skeuo-icons/link-128x128.png');
+          background-size: contain;
+          background-repeat: no-repeat;
+        }
+      }
+      ul.flairs {
+        @apply flex;
+        li:not(:last-child) {
+          @apply mr-0.5 md:mr-1;
+        }
+
+        li {
+          text-wrap: nowrap;
+          @apply px-[0.35rem] py-[0.07rem] rounded-full;
+          @apply text-[white] text-xs font-medium tracking-tighter;
+          @media screen(md) {
+            @apply px-[0.55rem];
+            @apply text-sm tracking-normal;
+            span {
+              @apply relative bottom-[0.05rem];
+            }
+          }
+
+          @apply bg-purple;
+          &.orange { background: #f75600 }
+          &.pink   { background: #ff00ff }
+          &.black  { background: #232323 }
+          &.blue   { background: #00aeff }
+          &.yellow { background: #eac300 }
+          &.green { background: #00ba54 }
+
+          @apply relative;
+          &::before {
+            content: '';
+            @apply block absolute inset-0;
+            @apply rounded-full;
+            @apply bg-gradient-to-b from-[white]/100 via-[white]/30 to-[white]/0;
+            opacity: 50%;
+          }
+          &::after {
+            content: '';
+            @apply block absolute inset-0;
+            @apply rounded-full;
+            @apply h-[55%] top-[0.1rem] left-[0.2rem] right-[0.22rem];
+            @apply bg-gradient-to-b from-[white]/80 to-[white]/30;
+            opacity: 25%;
+          }
+        }
+      }
     }
   }
 
   .box, .line {
     background: theme(colors.purple);
     @apply absolute top-[0.25rem];
-    /* z-index: 20; */
   }
   .box {
-    --box-s: 20px;
+    --box-s: 12px;
     --halfbox: calc(var(--box-s)/2);
     @apply w-[var(--box-s)] h-[var(--box-s)];
     left: calc(var(--pin-margin) - var(--halfbox));
@@ -306,10 +352,7 @@
       top: -4px;
 
       padding-left: 2.5rem;
-      padding-bottom: 3rem;
-      .img-link img {
-        margin-top: 2rem;
-      }
+      padding-bottom: 0.5rem;
     }
   }
 
@@ -340,13 +383,6 @@
       }
       .text-body {
         padding-left: 3rem;
-        /* padding-bottom: 96px; */
-        .img-link {
-          padding-left: 4rem;
-          img {
-            margin-top: 4.5rem;
-          }
-        }
       }
 
       .desktop-line {
@@ -366,28 +402,6 @@
   @media screen(lg) {
     .content .desktop-pin {
       right: -1.3rem;
-    }
-  }
-
-  .tag-cloud {
-    /* display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between; */
-    li {
-      @apply inline-block;
-      @apply m-0 mr-[0.5rem] mt-[0.5rem];
-
-      span {
-        background: theme(colors.purple);
-        color: white;
-        font-family: "PPFraktionMono";
-        @apply px-[0.2rem] pb-[0.3rem] pt-[0.1rem];
-
-        &:hover, &:active {
-          color: black;
-          background: greenyellow;
-        }
-      }
     }
   }
 </style>
