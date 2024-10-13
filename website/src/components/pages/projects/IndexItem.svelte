@@ -205,16 +205,6 @@
       border-bottom: 5px solid greenyellow;
     }
 
-    & > * > span {
-      filter:
-        drop-shadow(0 0 5px theme(colors.void))
-        drop-shadow(0 0 8px #e7e7e7)
-        drop-shadow(30px 0 12px #e7e7e7)
-        drop-shadow(-30px 0 12px #e7e7e7)
-        drop-shadow(0 0 20px #e7e7e7)
-      ;
-    }
-
     .close-text {
       @apply text-base;
     }
@@ -343,21 +333,6 @@
   }
   .content {
     @apply relative;
-    h4 {
-      @apply text-5xl;
-      @apply absolute top-0 right-0;
-      transform-origin: top right;
-      transform: rotate(-90deg) translate(-0.8rem, -75%);
-      color: theme(colors.grey);
-      font-family: "PPMondwest";
-    }
-    h3 {
-      text-align: left;
-      word-spacing: 0.2em;
-      @apply text-5xl leading-[0.7em];
-      font-family: "PPNeueBit";
-      margin-right: 3rem;
-    }
     :global(p) {
       @apply leading-tight;
       padding-right: 5rem;
@@ -366,83 +341,12 @@
         @apply max-w-none pr-0;
       }
     }
-    .paragraph {
-      min-height: 10rem;
-      @media screen(md) {
-        min-height: auto;
-      }
-      @apply relative;
-      .phone-pin {
-        color: theme(colors.grey);
-        position: absolute;
-        right: calc(var(--pin-margin) - var(--page-margin));
-        bottom: 1rem;
-      }
-      .pin-line {
-        --bottom: calc(1rem + 25px);
-        background: theme(colors.grey);
-        height: calc(100% - var(--bottom) - 4.7rem);
-        width: 3px;
-        position: absolute;
-        bottom: var(--bottom);
-        right: calc(var(--pin-margin) - var(--page-margin) - 1.5px);
-      }
-    }
     .text-body {
       position: relative;
       top: -4px;
 
       padding-left: 2.5rem;
       padding-bottom: 0.5rem;
-    }
-  }
-
-  .project:last-child .content {
-    .text-body {
-      /* padding-bottom: 16px; */
-    }
-  }
-
-  @media screen(md) {
-    .desktop-pin {
-      color: theme(colors.grey);
-      @apply absolute top-[1rem] right-0;
-    }
-    .desktop-pin2 {
-      left: calc(var(--text-w) + 5.5rem);
-      /* display: none; */
-    }
-    .desktop-pin3 {
-      top: 12px;
-      right: calc(-0.5px + var(--pin-margin) + var(--page-margin)/2);
-    }
-    .content {
-      padding-right: 14px;
-
-      h3 {
-        width: var(--text-w);
-      }
-      .text-body {
-        padding-left: 3rem;
-      }
-
-      .desktop-line {
-        top: 0.5rem;
-        left: 1rem;
-        height: 3rem !important;
-      }
-
-      .paragraph h4 {
-        transform: none;
-        text-align: right;
-        @apply relative top-[-0.25rem];
-      }
-    }
-  }
-
-  @media screen(lg) {
-    .content .desktop-pin {
-      right: -1.3rem;
     }
   }
 </style>
