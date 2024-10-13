@@ -50,6 +50,21 @@
       })
     }
   }
+
+  let flairsMobileVisibility = flairs.map(x => false)
+  let flairsElement
+  import { onMount } from 'svelte'
+  onMount(() => {
+    let index = 0
+    for(const child of flairsElement.children) {
+      const viewportWidth = document.documentElement.clientWidth
+      const elementPosition = child.getBoundingClientRect().right
+      const offset = 5
+      const threshold = viewportWidth - elementPosition - offset
+      flairsMobileVisibility[index] = 0 < threshold
+      index++
+    }
+  })
 </script>
 
 <div class="project relative h-full">
@@ -64,7 +79,7 @@
               {#if showStickySummary}
                 <button class="sticky-summary" on:click={onClose} bind:this={closeButton}>
                   <div class="summary">
-                    <img src={itemIcon} alt="Close Icon" class="transform rotate-[95deg]">
+                    <img src={itemIcon} alt="Close Icon">
                     <div class="md:ml-0 ml-1.5">
                       <span class="year md:mr-3 mr-2.5">
                         {year}
@@ -81,8 +96,8 @@
                         {title}
                       </span>
                       <ul class="md:ml-4 ml-2.5 flairs">
-                        {#each flairs as { text, color }}
-                          <li class={color}>
+                        {#each flairs as { text, color }, i}
+                          <li class={color} class:showMobile={flairsMobileVisibility[i]}>
                             <span>{text}</span>
                           </li>
                         {/each}
@@ -114,9 +129,9 @@
                       <span class="title ml-1 md:ml-1.5">
                         {title}
                       </span>
-                      <ul class="md:ml-4 ml-2.5 flairs">
-                        {#each flairs as { text, color }}
-                          <li class={color}>
+                      <ul class="md:ml-4 ml-2.5 flairs" bind:this={flairsElement}>
+                        {#each flairs as { text, color }, i}
+                          <li class={color} class:showMobile={flairsMobileVisibility[i]}>
                             <span>{text}</span>
                           </li>
                         {/each}
@@ -138,6 +153,27 @@
 </div>
 
 <style lang="postcss">
+  @keyframes open{
+    from {
+      transform: scale(1.3) rotate(0deg);
+    }
+    to {
+      transform: scale(1) rotate(95deg);
+    }
+  }
+
+  .sticky-summary .summary > img {
+    animation: open 50ms ease forwards;
+  }
+
+  .summary:active > img {
+    transform: scale(0.8) rotate(0deg);
+  }
+
+  .sticky-summary:active .summary > img {
+    transform: scale(0.8) rotate(95deg) !important;
+  }
+
   .sticky-summary {
     @apply block w-full text-left;
     user-select: none;
@@ -241,7 +277,7 @@
       ul.flairs {
         @apply flex;
         li:not(:last-child) {
-          @apply mr-0.5 md:mr-1;
+          @apply mr-1;
         }
 
         li {
@@ -279,6 +315,11 @@
             @apply h-[55%] top-[0.1rem] left-[0.2rem] right-[0.22rem];
             @apply bg-gradient-to-b from-[white]/80 to-[white]/30;
             opacity: 25%;
+          }
+
+          @apply opacity-0 sm:opacity-100;
+          &.showMobile {
+            @apply opacity-100;
           }
         }
       }

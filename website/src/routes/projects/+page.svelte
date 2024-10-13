@@ -153,7 +153,7 @@
           a lot of <strong>computer science</strong> classes to improve my SWE skills.
           <br><br>
           <!-- My grades and selected course projects are attached below :-) -->
-          Open the details to view my grades course projects :-)
+          Open the details to view my grades & course projects :-)
           <div slot="img-extras" class="pointer-events-none">
             <img
               class="marker-bsc-design-innovation"
