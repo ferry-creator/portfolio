@@ -10,6 +10,7 @@
   import Seperator from '$components/Seperator.svelte'
   import Powerpose from '$assets/powerpose.png'
   import Xp from '$components/pages/bio/Xp.svelte'
+  import Reflections from '$components/pages/bio/Reflections.svelte'
 </script>
 
 <div class="page-context-vars">
@@ -60,7 +61,7 @@
         </div>
       </div>
       <div class="xp order-first">
-        <Xp />
+        <Reflections />
       </div>
     </DesktopSplitter>
     <Footer />
