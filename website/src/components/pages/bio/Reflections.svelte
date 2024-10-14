@@ -46,7 +46,7 @@
     </div>
     <div class="md:hidden">
       <p class="mt-5">
-        <s>Don't hate the player, hate the game</s> <br>
+        <s>Don't hate the player, <br> hate the game</s> <br>
         Hating is for losers. <br>
         Learn to play the game.
       </p>
