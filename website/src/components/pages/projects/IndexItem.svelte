@@ -84,13 +84,15 @@
                       <span class="year md:mr-3 mr-2.5">
                         {year}
                       </span>
-                      <a
-                        class="mr-3 hidden md:block"
-                        href={link} target="_blank"
-                        on:click|stopPropagation
-                      >
-                        Link
-                      </a>
+                      {#if link}
+                        <a
+                          class="mr-3 hidden md:block"
+                          href={link} target="_blank"
+                          on:click|stopPropagation
+                        >
+                          Link
+                        </a>
+                      {/if}
                       <slot name="thumbnail" />
                       <span class="title ml-1 md:ml-1.5">
                         {title}
@@ -118,13 +120,15 @@
                       <span class="year md:mr-3 mr-2.5">
                         {year}
                       </span>
-                      <a
-                        class="mr-3 hidden md:block"
-                        href={link} target="_blank"
-                        on:click|stopPropagation
-                      >
-                        Link
-                      </a>
+                      {#if link}
+                        <a
+                          class="mr-3 hidden md:block"
+                          href={link} target="_blank"
+                          on:click|stopPropagation
+                        >
+                          Link
+                        </a>
+                      {/if}
                       <slot name="thumbnail" />
                       <span class="title ml-1 md:ml-1.5">
                         {title}
@@ -318,7 +322,7 @@
 
   .box, .line {
     background: theme(colors.purple);
-    @apply absolute top-[0.25rem];
+    @apply absolute top-[0.4rem];
   }
   .box {
     --box-s: 12px;

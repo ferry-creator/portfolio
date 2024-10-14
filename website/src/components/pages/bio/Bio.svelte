@@ -4,6 +4,8 @@
   import Pin from '$components/Pin.svelte'
   import Sphere from '$assets/sphere.svg'
   import Sparkles from '$assets/sparkles.png'
+
+  import profileIcon from '$gfx/skeuo-icons/Profile.png'
 </script>
 
 <div class="pins">
@@ -18,6 +20,10 @@
   <ContentBox>
     <h2 class="text-7xl">
       Bio
+      <!-- <img
+        src={profileIcon} alt="profile icon"
+        class='hidden md:inline pixelated transform translate-y-[-6px]'
+      > -->
     </h2>
     <p class="leading-tight">
       As a kid, I quickly discovered the creative potential of computers and started creating my own games at age 12.

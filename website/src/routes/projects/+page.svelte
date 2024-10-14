@@ -10,8 +10,13 @@
 
   import IndexItem from '$components/pages/projects/IndexItem.svelte'
 
+  import TimelineItem from '$components/pages/projects/TimelineItem.svelte'
+  import TimelineEnd from '$components/pages/projects/TimelineEnd.svelte'
+
   import PSplitTextW from "$components/pages/projects/PSplitTextW.svelte"
   import ParagraphSplit from '$components/pages/projects/ParagraphSplit.svelte'
+
+  import ContentBox from '$components/ContentBox.svelte'
 </script>
 
 <div class="page-context-vars">
@@ -87,7 +92,6 @@
                   <br><br>
                   I worked directly together with two big Danish coorporations and their office workers
                   to understand how it might be possible to finally solve this problem by utilizing AI.
-                  <br><br>
                 </p>
                 <div slot="split">
                   <!-- svelte-ignore a11y-media-has-caption -->
@@ -191,6 +195,45 @@
             </PSplitTextW>
           </div>
         </Project>
+
+
+
+        <TimelineItem>
+          <!-- <div class="pb-[18rem]"></div> -->
+          <div class="pt-[2rem] pb-[3rem]">
+            <!-- <img
+              width=85%
+              class="absolute top-[-2rem] opacity-30"
+              src="/marker/src/spotlight-full-index/composite-2.png"
+              alt="Handwritten text: 'BSc in Design & Innovation'"
+            > -->
+
+            <img
+              width=27%
+              class="absolute top-[-1.8rem] left-[2.9rem]"
+              src="/marker/spotlight-full-index/spotlight-squiggle.png"
+              alt="Handwritten text: 'BSc in Design & Innovation'"
+            >
+            <img
+              width=24.5%
+              class="inline-block mb-[5rem] relative top-[-3.2rem] left-[1rem]"
+              src="/marker/spotlight-full-index/spotlight-grey.png"
+              alt="Handwritten text: 'BSc in Design & Innovation'"
+            >
+            <img
+              width=27%
+              class="inline-block ml-[1.5rem] mt-[4.2rem]"
+              src="/marker/spotlight-full-index/arrow-grey.png"
+              alt="Handwritten text: 'BSc in Design & Innovation'"
+            >
+            <img
+              width=35%
+              class="inline-block mb-[2rem] ml-[-0.2rem] transform rotate-[30deg]"
+              src="/marker/spotlight-full-index/my-full-index-grey-purple-index.png"
+              alt="Handwritten text: 'BSc in Design & Innovation'"
+            >
+          </div>
+        </TimelineItem>
 
 
 
@@ -432,6 +475,167 @@
             </PSplitTextW>
           </div>
         </IndexItem>
+
+        <TimelineItem>
+          <div class="pb-8"/>
+        </TimelineItem>
+
+        <IndexItem
+          title="Mostly Code"
+          year=2020
+          link="https://staging--mostlycode.netlify.app/"
+          flairs={[
+            { text: "React", color: "blue" },
+            { text: "Gatsby.js", color: "yellow" },
+            { text: "Prismic CMS", color: "black" },
+          ]}
+        >
+          <img
+            slot="thumbnail" alt="project icon"
+            src="/projects/index/mostly-code/favicon.png"
+          >
+          <div slot="details" class="project-details">
+            <ContentBox clear>
+              <p>
+                In early 2020, I finally landed my first real developer job.
+                I got hired by Mads Sastakauskas Østergaard, who would
+                take on the role as my mentor, which made me grow
+                exponentially as a developer.
+                <br><br>
+                He hired me because of my passion for building highly
+                efficient websites and apps with Static Site Generation (SSG).
+                I had been using Svelte for a while, but since he preffered
+                React, i quickly got up to speed on that.
+                <br><br>
+                We did many different projects together, and even attempted
+                to create a SaaS business after I had matured more as a developer.
+                Neither of us wanted to pursue the business after a while,
+                since we couldn't find a good product-market-fit.
+                <br><br>
+                List of technologies I worked with at Mostly Code:
+              </p>
+              <ul class='list-disc pl-8 pt-2'>
+                <li>React</li>
+                <li>Gatsby.js</li>
+                <li>GraphQL</li>
+                <li>Prismic CMS</li>
+                <li>Sanity CMS</li>
+                <li>SvelteKit</li>
+                <li>Firebase</li>
+              </ul>
+            </ContentBox> 
+          </div>
+        </IndexItem>
+
+        <IndexItem
+          title="Danguitar"
+          year=2019
+          link="https://www.danguitar.dk/"
+          flairs={[
+            { text: "Office Job", color: "black" },
+            { text: "Python", color: "green" },
+            { text: "Content", color: "pink" },
+          ]}
+        >
+          <img
+            slot="thumbnail" alt="project icon"
+            src="/projects/index/danguitar/favicon.png"
+          >
+          <div slot="details" class="project-details">
+            <ContentBox clear>
+              <p>
+                In 2019, I got my first developer-related job at Danguitar.
+                The company was still a startup, so I wore many hats, such as preparing parcels,
+                creating content for advertisement, and managing the product catalog in their CMS.
+                <br><br>
+                I started <strong>automating repetetive tasks with Python</strong>,
+                which led to my first professional development job:
+                creating a performance monitor for the customer service department,
+                that would display important KPIs.
+                <br><br>
+                I ended up building a solution from scratch. This was early
+                in my career, and I had no guidance from more experienced developers.
+                I was more motivated by finally getting to write code, than solving the
+                problem. The mindset of a junior developer!
+              </p>
+            </ContentBox>           
+          </div>
+        </IndexItem>
+
+        <TimelineItem>
+          <div class="pb-8"/>
+        </TimelineItem>
+
+        <IndexItem
+          title="Game Development"
+          year=2016
+          flairs={[
+            { text: "Unity", color: "black" },
+            { text: "Blender 3D", color: "orange" },
+            { text: "C#", color: "blue" },
+          ]}
+        >
+          <img
+            slot="thumbnail" alt="project icon"
+            src="/projects/index/gamedev/unity.webp"
+          >
+          <div slot="details" class="project-details">
+            <PSplitTextW>
+              <ParagraphSplit>
+                <p slot="paragraph">
+                  In 2022 I led the software team of a 3-week IoT project.
+                  We built a "sourdough hotel" that automatically nutured and
+                  measured a sourdough mixture, sending information to users phone.
+                  I was involved in all the software layers: embedded programming, devops,
+                  and server-side <strong>Node-RED</strong>.
+                  <br><br>
+                  I also spun up a quick
+                  <a href="https://kryptokongerne.vercel.app/" target="_blank">blog site</a>
+                  , to document our progress.
+                </p>
+                <div slot="split">
+                  <!-- svelte-ignore a11y-media-has-caption -->
+                  <video controls>
+                    <source src="/projects/symbolik-ai/ai-mode-compressed.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                  </video>
+                </div>
+              </ParagraphSplit>
+            </PSplitTextW>
+          </div>
+        </IndexItem>
+
+        <IndexItem
+          title="Other Jobs"
+          year="----"
+          flairs={[
+            { text: "Cold Canvas", color: "blue" },
+            { text: "Service", color: "green" },
+            { text: "SEO", color: "pink" },
+          ]}
+        >
+          <img
+            slot="thumbnail" alt="project icon"
+            class="transform scale-[1.1] translate-x-[0.03rem]"
+            src="/projects/index/other/mariokart.webp"
+          >
+          <div slot="details" class="project-details">
+            <ContentBox clear>
+              <p>
+                In 2018, I worked part-time as a cold canvas phoner for an insurance company
+                while studying web development.
+                <br><br>
+                At age 16, I worked in an SMMA doing simple data entry like sorting SEO keywords.
+                At 17, I worked for two years in a local animal park before quitting in
+                2017 to focus on my last year of high school.
+              </p>
+            </ContentBox>
+          </div>
+        </IndexItem>
+
+        <TimelineEnd />
+
+        <div class="pb-24"/>
         
         <!-- <Project
           title="shelly.run"
@@ -562,7 +766,8 @@
 
   .project-details {
     border: 5px solid greenyellow;
-    padding-top: .3rem;
+    padding-top: 0.3rem;
+    padding-bottom: 1.25rem;
     @apply px-[.5rem];
 
     & p:first-child {

@@ -1,8 +1,8 @@
 <script>
-  export let full = false
+  export let full = false, clear = false
 </script>
 
-<div class:full>
+<div class:full class:clear>
   <slot/>
 </div>
 
@@ -16,6 +16,11 @@
     @media screen(md) {
       max-width: 32rem;
       @apply px-[5rem];
+    }
+
+    &.clear {
+      @apply mx-0 p-0;
+      max-width: 27rem;
     }
 
     &.full {

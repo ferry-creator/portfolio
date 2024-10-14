@@ -77,7 +77,7 @@
     }
 
     &[open] {
-      animation: open 100ms ease forwards;   
+      animation: open 100ms ease forwards;
     }
   }
 
