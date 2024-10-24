@@ -21,6 +21,7 @@
   export let title, year, img, link, techstack
 
   import Container from '$components/Container.svelte'
+  import Image from '$components/Image.svelte'
   import ContentBox from '$components/ContentBox.svelte'
   import Pin from '$components/Pin.svelte'
   import Accordion from '$components/Accordion.svelte'
@@ -110,7 +111,10 @@
               </div>
               <div slot="split" class="img-link relative">
                 <a href={link} target="_blank">
-                  <img src={img} alt={title}>
+                  <!-- <img src={img} alt={title}> -->
+                   <div class="mt-[2rem] md:mt-[4.5rem]">
+                    <Image src={img} alt={title} loadstack={['lossless', 'lossless']} />
+                   </div>
                 </a>
                 <slot name="img-extras" />
               </div>
@@ -132,7 +136,7 @@
                 </button>
               {/if}
               <div class="details-accordion">
-                <Accordion on:open={onOpen} bind:this={accordion}>
+                <Accordion on:open={onOpen} on:open on:close bind:this={accordion}>
                   <div
                     slot="summary" class="summary"
                     class:opacity-0={showStickySummary}

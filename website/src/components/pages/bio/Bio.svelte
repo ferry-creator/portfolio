@@ -3,7 +3,7 @@
   import ContentBox from '$components/ContentBox.svelte'
   import Pin from '$components/Pin.svelte'
   import Sphere from '$assets/sphere.svg'
-  import Sparkles from '$assets/sparkles.png'
+  import Sparkles from '$assets/sparkles.webp'
 
   import profileIcon from '$gfx/skeuo-icons/Profile.png'
 </script>

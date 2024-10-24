@@ -1,0 +1,81 @@
+{
+  "images": {
+    "./static/projects/symbolik-ai/thumbnail.png": {
+      "q": 30
+    },
+    "./static/projects/symbolik-ai/dolphin-login.png": {
+      "q": 30
+    },
+    "./static/projects/symbolik-ai/dolphin-spotlight-request.png": {
+      "q": 30
+    },
+    "./static/projects/DTU/thumbnail.png": {
+      "q": 30
+    },
+    "./static/projects/clevertrack/thumbnail.png": {
+      "q": 30
+    },
+    "./static/projects/index/gamedev/flipit-microtransactions.png": {
+      "q": 30
+    },
+    "./static/projects/index/gamedev/flipit-sketch.png": {
+      "q": 15
+    },
+    "./static/projects/index/gamedev/flipit.png": {
+      "q": 30
+    },
+    "./static/projects/index/gamedev/incubator.png": {
+      "q": 30
+    },
+    "./static/images/hackerpose.png": {
+      "q": 30
+    },
+    "./static/images/powerpose.png": {
+      "q": 30
+    }
+  },
+  "assets": {
+    "./static/marker/bsc-design-innovation/combined.png": {
+      "q": 1,
+      "s": 58,
+      "k": "nearest",
+      "alphaQuality": 0,
+      "nearLossless": true
+    },
+    "./static/marker/bsc-design-innovation/squiggle-cropped.png": {
+      "q": 1,
+      "s": 35,
+      "alphaQuality": 0
+    },
+    "./static/marker/bsc-design-innovation/text-v2-cropped.png": {
+      "q": 1,
+      "s": 80,
+      "alphaQuality": 0
+    },
+    "./static/marker/spotlight-full-index/spotlight-grey.png": {
+      "q": 1,
+      "s": 76,
+      "alphaQuality": 0
+    },
+    "./static/marker/spotlight-full-index/arrow-grey.png": {
+      "q": 1,
+      "s": 39,
+      "alphaQuality": 0
+    },
+    "./static/marker/spotlight-full-index/my-full-index-grey-purple-index.png": {
+      "q": 1,
+      "s": 62,
+      "alphaQuality": 0
+    },
+    "./static/marker/spotlight-full-index/spotlight-squiggle.png": {
+      "q": 1,
+      "s": 22,
+      "alphaQuality": 0
+    },
+    "./static/assets/goofy-ahh-me.png": {
+      "q": 1,
+      "s": 35,
+      "alphaQuality": 0
+    }
+  }
+}

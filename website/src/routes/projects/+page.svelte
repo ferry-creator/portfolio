@@ -4,7 +4,6 @@
   import Graph from '$gfx/Graph.svg'
   import Pin from '$components/Pin.svelte'
   import LogoSeperator from '$components/LogoSeperator.svelte'
-  import Hacker from '$assets/hackerpose.png'
   import Project from '$components/pages/projects/Project.svelte'
   import TagModals from '$components/pages/projects/TagModals.svelte'
 
@@ -15,8 +14,25 @@
 
   import PSplitTextW from "$components/pages/projects/PSplitTextW.svelte"
   import ParagraphSplit from '$components/pages/projects/ParagraphSplit.svelte'
-
   import ContentBox from '$components/ContentBox.svelte'
+
+  import { tick } from 'svelte'
+
+  import Video from '$components/Video.svelte'
+  const vids = {}
+
+  const playVideos = async (list) => {
+    await tick()
+    for(const vid of list) {
+      vids[vid].video.play()
+    }
+  }
+  const pauseVideos = async (list) => {
+    await tick()
+    for(const vid of list) {
+      vids[vid].video.pause()
+    }
+  }
 </script>
 
 <div class="page-context-vars">
@@ -52,7 +68,7 @@
           <span class="right-[var(--pin-margin)]">
             <Pin --color="white" />
           </span>
-          <img src={Hacker} alt="Jonathan pretending to use his computer">
+          <img src="/images/hackerpose.png" alt="Jonathan pretending to use his computer">
           <p class="sidetext">
             playing counter-strike rn
           </p>
@@ -72,7 +88,9 @@
           <br><br>
           Seeing the LLM space emerge rapidly in 2023, I knew everything was about to change!
           <br><br>
-          So — I tried to create a startup.
+          So — I started
+          <a href="https://symbolik.ai/" target="_blank">Symbolik.ai</a>
+          .
           <div slot="details" class="project-details">
             <PSplitTextW>
               <ParagraphSplit>
@@ -93,21 +111,28 @@
                   I worked directly together with two big Danish coorporations and their office workers
                   to understand how it might be possible to finally solve this problem by utilizing AI.
                 </p>
-                <div slot="split">
-                  <!-- svelte-ignore a11y-media-has-caption -->
-                  <video controls>
+                <div slot="split" class="split">
+                  <Video controls bind:this={vids['ai-mode']}
+                    thumbnail="/projects/symbolik-ai/video-thumbnail.png"
+                  >
                     <source src="/projects/symbolik-ai/ai-mode-compressed.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                  </video>
+                  </Video>
+                  <div class="md:w-2/3 md:ml-[10%] py-6 md:py-8">
+                    <img src="/projects/symbolik-ai/dolphin-login.png" alt="Dolphin Login Screenshot" />
+                  </div>
                 </div>
               </ParagraphSplit>
+              <img
+                src="/projects/symbolik-ai/dolphin-spotlight-request.png"
+                alt="Dolphin Mockup Screenshot"
+              />
             </PSplitTextW>
           </div>
         </Project>
         <Project
           title="Clevertrack"
           year=2022
-          img="/projects/clevertrack-dark.png"
+          img="/projects/clevertrack/thumbnail.png"
           link="https://www.clevertrack.dk/"
           techstack={["#React", "#SSG", "#IoT", "#UX"]}
         >
@@ -129,15 +154,92 @@
             <PSplitTextW>
               <ParagraphSplit>
                 <p slot="paragraph">
-                  While I was studying webdev in 2018 and 19', I was working a part time job in
-                  a webshop warehouse. Eventually I made my way into the office, but I was so bored
-                  with the mundane and repetiive office work, that I began automating tasks with
-                  Python, AutoIT scripting and other hacks.
+                  Clevertrack is a Danish IoT startup that helps construction sites
+                  reduce emisions and costs by tracking their vehicles.
+                  <br><br>
+                  My main role at Clevertrack was building the website and app using
+                  React and Gatsby. We used SSG for everything. The app fetched data
+                  from Clevertrack's custom REST API just using client-side JavaScript.
+                  <br><br>
+                  Due to the proprietary nature, I can't share any code or
+                  login credentials.
+                  But I built the <strong>history</strong> and <strong>service</strong>
+                  modules, and contributed to most other parts of the app.
+                  <br><br>
+                  Many parts of the app suffered from poor UX and design decisions
+                  when I joined, so I was able to use my design experience to improve
+                  the readability of the UI greatly by applying simple contrast
+                  and composition principles. The app needs to display a ton of
+                  info and data, so making it easier to navigate and understand
+                  all that was an interesting challenge!
+                  <br><br>
+                  <br class="hidden md:inline">
+                  <br class="hidden md:inline">
                 </p>
-                <div slot="split">
-                  <img src="/projects/clevertrack/app.png" alt="wow" />
+                <div slot="split" class="split">
+                  <img
+                    src="/projects/clevertrack/app.png"
+                    alt="Clevertrack App Screenshots"
+                  />
                 </div>
               </ParagraphSplit>
+              <ContentBox clear full>
+                <p class="md:!pr-36 pb-4">
+                  I designed and implemented a new frontpage for the Clevertrack landingpage.
+                  Originally the stock image had a big truck - however, that is not
+                  representative of the customers that Clevertrack has. So I made a 3D render
+                  of a car that many of their customers know and even use to replace the truck with.
+                  Then I added all the graphical elements etc. to tell a story of what Clevertrack does
+                  - track vehicles and and provide insights based on data.
+                </p>
+              </ContentBox>
+              <img
+                src="/projects/clevertrack/truck-frontpage.webp"
+                alt="Clevertrack Website landingpage first frame design"
+              />
+              <div class="flex items-center">
+                <div class="w-1/3">
+                  <img
+                    src="/projects/clevertrack/hubble-drawing.png"
+                    alt="Clevertrack Hubble logo sketch"
+                  />
+                </div>
+                <div class="w-2/3 px-20 pt-4">
+                  <img
+                    src="/projects/clevertrack/hubble.svg"
+                    alt="Clevertrack Hubble logo file"
+                  />
+                </div>
+              </div>
+              <ContentBox clear>
+                <p class="pt-2">
+                  Hubble was an internal automations project that I designed a logo for.
+                  Hubble was supposed to be a custom CRM to streamline customer onboarding
+                  and registering with the physical tracker devices.
+                </p>
+              </ContentBox>
+              <div class="pt-16">
+                <ParagraphSplit itemsCenter>
+                  <p slot="paragraph">
+                    While I was only working on their website and app, a major part of their business
+                    is their custom vehicle trackers. However, the real-life devices
+                    don't look very sexy, so they asked me if I could do some pretty
+                    illustrations based on the real-life apperance, but add my
+                    artistic interpretation.
+                    <br><br>
+                    The illustrations are now used to help customers understand the product
+                    that Clevertrack offers.
+                    <br><br>
+                    This was the result :-)
+                  </p>
+                  <div slot="split" class="split">
+                    <img
+                      src="/projects/clevertrack/illustrations.png"
+                      alt="Clevetrack vehicle trackers illustrations"
+                    />
+                  </div>
+                </ParagraphSplit>
+              </div>
             </PSplitTextW>
           </div>
         </Project>
@@ -148,6 +250,12 @@
           img="/projects/DTU/thumbnail.png"
           link="https://investindk.com/insights/technical-university-of-denmark-dtu-ranks-third-after-stanford-and-mit"
           techstack={["#Design", "#Comp. Sci."]}
+          on:open={() => {playVideos([
+            'CAD', 'party', 'prototyping'
+          ])}}
+          on:close={() => {pauseVideos([
+            'CAD', 'party', 'prototyping'
+          ])}}
         >
           After 5 months of full-time work at
           <a href="https://staging--mostlycode.netlify.app/" target="_blank">Mostly Code</a>
@@ -160,12 +268,12 @@
           Open the details to view my grades & course projects :-)
           <div slot="img-extras" class="pointer-events-none">
             <img
-              class="marker-bsc-design-innovation"
+              class="marker marker-bsc-design-innovation"
               src="/marker/bsc-design-innovation/squiggle.png"
               alt="Handwritten squiggle"
             >
             <img
-              class="marker-bsc-design-innovation"
+              class="marker marker-bsc-design-innovation"
               src="/marker/bsc-design-innovation/text-v2.png"
               alt="Handwritten text: 'BSc in Design & Innovation'"
             >
@@ -174,24 +282,100 @@
             <PSplitTextW>
               <ParagraphSplit>
                 <p slot="paragraph">
-                  In 2022 I led the software team of a 3-week IoT project.
-                  We built a "sourdough hotel" that automatically nutured and
-                  measured a sourdough mixture, sending information to users phone.
-                  I was involved in all the software layers: embedded programming, devops,
-                  and server-side <strong>Node-RED</strong>.
+                  I have almost finished my BSc degree, but are currently
+                  taking a break from uni. I already finished and passed
+                  my thesis project, which was about my startup.
                   <br><br>
-                  I also spun up a quick
-                  <a href="https://kryptokongerne.vercel.app/" target="_blank">blog site</a>
-                  , to document our progress.
+                  At my time at DTU I learned a wide variety of skills, in- and outside
+                  of tech. Most courses from Design & Innovation are about project work,
+                  management and processes. However, I also got to study some cool math,
+                  algorithms & data structures, and even did a little bit of chip design
+                  on an FPGA board!
+                  <br><br>
                 </p>
-                <div slot="split">
-                  <!-- svelte-ignore a11y-media-has-caption -->
-                  <video controls>
-                    <source src="/projects/symbolik-ai/ai-mode-compressed.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                  </video>
+                <div slot="split" class="split">
+                  <a href="https://www.youtube.com/watch?v=oZGwaHUg-Vk&t=170s" target="_blank">
+                    <img
+                      src="/projects/DTU/FPGA-pong.webp"
+                      alt="FPGA board"
+                    />
+                  </a>
                 </div>
               </ParagraphSplit>
+              <div class="pt-8 md:pt-2">
+                <ParagraphSplit itemsCenter>
+                  <p slot="paragraph">
+                    In 2022 I led the software team of a 3-week IoT project.
+                    We built a <strong>"sourdough hotel"</strong> machine that automatically nuture and
+                    measure a sourdough mixture, sending information to users phone.
+                    I was involved in all the software layers: embedded programming, devops,
+                    and server-side <strong>Node-RED</strong>.
+                    <br><br>
+                    I also spun up a quick
+                    <a href="https://kryptokongerne.vercel.app/" target="_blank">blog site</a>
+                    , to document our progress.
+                  </p>
+                  <div slot="split" class="split">
+                    <a href="https://www.youtube.com/watch?v=Z9Q-h7dPK7k" target="_blank">
+                      <img
+                        src="/projects/DTU/sourdough.webp"
+                        alt="Sourdough Hotel Video Thumbnail"
+                      />
+                    </a>
+                  </div>
+                </ParagraphSplit>
+              </div>
+              <!-- <div class="flex items-center gap-4 pt-4">
+                <div class="w-1/3">
+                  <img
+                    src="/projects/DTU/iphone-picture.webp"
+                    alt="DTU Campus"
+                  />
+                </div>
+                <div class="w-2/3">
+                  <img
+                    src="/projects/DTU/jabra-transparent.webp"
+                    alt="Jabra covid speakerphone mockup"
+                  />
+                </div>
+              </div> -->
+              <div class="flex items-center gap-4 pt-4">
+                <div class="w-1/4">
+                  <Video loop playsinline bind:this={vids['prototyping']}>
+                    <source src="/projects/DTU/prototyping.webm" type="video/webm">
+                  </Video>
+                </div>
+                <div class="w-1/4">
+                  <img
+                    src="/projects/DTU/prototyping-sketch.jpg"
+                    alt="Sketching knife blade"
+                  />
+                </div>
+                <div class="w-1/4">
+                  <Video loop playsinline bind:this={vids['party']}>
+                    <source src="/projects/DTU/party.webm" type="video/webm">
+                  </Video>
+                </div>
+                <div class="w-1/4">
+                  <img
+                    src="/projects/DTU/sketch.jpg"
+                    alt="Sketching vending machine"
+                  />
+                </div>
+              </div>
+              <div class="flex items-center gap-4 pt-4">
+                <div class="w-2/3">
+                  <img
+                    src="/projects/DTU/gluegun.webp"
+                    alt="CAD model of glue gun"
+                  />
+                </div>
+                <div class="w-1/3">
+                  <Video loop playsinline bind:this={vids['CAD']}>
+                    <source src="/projects/DTU/CAD.webm" type="video/webm">
+                  </Video>
+                </div>
+              </div>
             </PSplitTextW>
           </div>
         </Project>
@@ -200,7 +384,7 @@
 
         <TimelineItem>
           <!-- <div class="pb-[18rem]"></div> -->
-          <div class="pt-[2rem] pb-[3rem]">
+          <div class="pt-[1rem] md:pt-[2rem] md:pb-[3rem]">
             <!-- <img
               width=85%
               class="absolute top-[-2rem] opacity-30"
@@ -210,25 +394,25 @@
 
             <img
               width=27%
-              class="absolute top-[-1.8rem] left-[2.9rem]"
+              class="marker absolute top-[-1.8rem] left-[2.9rem]"
               src="/marker/spotlight-full-index/spotlight-squiggle.png"
               alt="Handwritten text: 'BSc in Design & Innovation'"
             >
             <img
               width=24.5%
-              class="inline-block mb-[5rem] relative top-[-3.2rem] left-[1rem]"
+              class="marker inline-block mb-[5rem] relative top-[-3.2rem] left-[1rem]"
               src="/marker/spotlight-full-index/spotlight-grey.png"
               alt="Handwritten text: 'BSc in Design & Innovation'"
             >
             <img
               width=27%
-              class="inline-block ml-[1.5rem] mt-[4.2rem]"
+              class="marker inline-block ml-[1.5rem] mt-[4.2rem]"
               src="/marker/spotlight-full-index/arrow-grey.png"
               alt="Handwritten text: 'BSc in Design & Innovation'"
             >
             <img
               width=35%
-              class="inline-block mb-[2rem] ml-[-0.2rem] transform rotate-[30deg]"
+              class="marker inline-block mb-[2rem] ml-[-0.2rem] transform rotate-[30deg]"
               src="/marker/spotlight-full-index/my-full-index-grey-purple-index.png"
               alt="Handwritten text: 'BSc in Design & Innovation'"
             >
@@ -252,28 +436,25 @@
             src="/projects/index/anybots/thumbnail.svg"
           >
           <div slot="details" class="project-details">
-            <PSplitTextW>
-              <ParagraphSplit>
-                <p slot="paragraph">
-                  In 2022 I led the software team of a 3-week IoT project.
-                  We built a "sourdough hotel" that automatically nutured and
-                  measured a sourdough mixture, sending information to users phone.
-                  I was involved in all the software layers: embedded programming, devops,
-                  and server-side <strong>Node-RED</strong>.
-                  <br><br>
-                  I also spun up a quick
-                  <a href="https://kryptokongerne.vercel.app/" target="_blank">blog site</a>
-                  , to document our progress.
-                </p>
-                <div slot="split">
-                  <!-- svelte-ignore a11y-media-has-caption -->
-                  <video controls>
-                    <source src="/projects/symbolik-ai/ai-mode-compressed.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                  </video>
-                </div>
-              </ParagraphSplit>
-            </PSplitTextW>
+            <ContentBox clear>
+              <p>
+                "Anybots.gg" was a concept for a Discord AI bot platform, allowing users to customize
+                the personality of social bots powered by LLMs.
+                <br><br>
+                I stopped working on it because I couldn't figure out a good business model.
+                Maybe you have ideas?
+                <br><br>
+                Despite this, I still coded up this UI concept, because I had the cool idea of
+                bringing over existing designs from Discord but then mixing them with the
+                needs of this app. Specifically, the server browser is almost identical to
+                the one in Discord. This is because I wanted users to be able to make server
+                specific settings for their bots.
+                <br><br>
+                I took inspiration from many places on this concept: <br>
+                <strong>Disney+</strong>, skeumorphic designs
+                from the 00's... etc.
+              </p>
+            </ContentBox>
           </div>
         </IndexItem>
 
@@ -291,28 +472,23 @@
             src="/projects/index/sphere/favicon.png"
           >
           <div slot="details" class="project-details">
-            <PSplitTextW>
-              <ParagraphSplit>
-                <p slot="paragraph">
-                  In 2022 I led the software team of a 3-week IoT project.
-                  We built a "sourdough hotel" that automatically nutured and
-                  measured a sourdough mixture, sending information to users phone.
-                  I was involved in all the software layers: embedded programming, devops,
-                  and server-side <strong>Node-RED</strong>.
-                  <br><br>
-                  I also spun up a quick
-                  <a href="https://kryptokongerne.vercel.app/" target="_blank">blog site</a>
-                  , to document our progress.
-                </p>
-                <div slot="split">
-                  <!-- svelte-ignore a11y-media-has-caption -->
-                  <video controls>
-                    <source src="/projects/symbolik-ai/ai-mode-compressed.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                  </video>
-                </div>
-              </ParagraphSplit>
-            </PSplitTextW>
+            <ContentBox clear>
+              <p>
+                This is like a personal blog. <strong>But it has no blog posts!</strong>
+                <br><br>
+                I realized that content on the internet is completely abundant.
+                It almost seems there would be no point in me putting out
+                even more content. So instead, I created a prototype for a new
+                type of social media: <strong><i>content curation!</i></strong>
+                <br><br>
+                My Sphere is a curation of high quality YouTube videos about
+                design, technology and AI.
+                <br><br>
+                The idea is, that humans are better at curating content feeds
+                than algorithms. At least if we're optimizing for quality and
+                not watch-time.
+              </p>
+            </ContentBox>
           </div>
         </IndexItem>
 
@@ -330,28 +506,25 @@
             src="/projects/index/mindmapper/logo-mark-aero.svg"
           >
           <div slot="details" class="project-details">
-            <PSplitTextW>
-              <ParagraphSplit>
-                <p slot="paragraph">
-                  In 2022 I led the software team of a 3-week IoT project.
-                  We built a "sourdough hotel" that automatically nutured and
-                  measured a sourdough mixture, sending information to users phone.
-                  I was involved in all the software layers: embedded programming, devops,
-                  and server-side <strong>Node-RED</strong>.
-                  <br><br>
-                  I also spun up a quick
-                  <a href="https://kryptokongerne.vercel.app/" target="_blank">blog site</a>
-                  , to document our progress.
-                </p>
-                <div slot="split">
-                  <!-- svelte-ignore a11y-media-has-caption -->
-                  <video controls>
-                    <source src="/projects/symbolik-ai/ai-mode-compressed.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                  </video>
-                </div>
-              </ParagraphSplit>
-            </PSplitTextW>
+            <ContentBox clear>
+              <p>
+                This is an old prototype for the first product I thought
+                Symbolik.ai needed to build: Mind Mapper.
+                <br><br>
+                Panning and zooming only works on MacOS! I built it in 1 week on my macbook haha.
+                <br><br>
+                Even though this is very half-baked, I decided to include it, because I had to
+                build it from scratch. I spent a long time looking for visual-programming-like
+                libraries, but they were all far too rigid for what I envisioned. I wanted an
+                experience that didn't make users <strong>think</strong> like programmers,
+                which is the problem with most visual-programming tools. But I realized,
+                since LLM's would be interpreting the logic network, it didn't need to be
+                as rigid as all the existing tools.
+                <br><br>
+                I stopped building this after realizing I needed to do more research if
+                this was really the right product to build in the first place.
+              </p>
+            </ContentBox>
           </div>
         </IndexItem>
 
@@ -370,28 +543,18 @@
             src="/projects/index/zprite/thumbnail.png"
           >
           <div slot="details" class="project-details">
-            <PSplitTextW>
-              <ParagraphSplit>
-                <p slot="paragraph">
-                  In 2022 I led the software team of a 3-week IoT project.
-                  We built a "sourdough hotel" that automatically nutured and
-                  measured a sourdough mixture, sending information to users phone.
-                  I was involved in all the software layers: embedded programming, devops,
-                  and server-side <strong>Node-RED</strong>.
-                  <br><br>
-                  I also spun up a quick
-                  <a href="https://kryptokongerne.vercel.app/" target="_blank">blog site</a>
-                  , to document our progress.
-                </p>
-                <div slot="split">
-                  <!-- svelte-ignore a11y-media-has-caption -->
-                  <video controls>
-                    <source src="/projects/symbolik-ai/ai-mode-compressed.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                  </video>
-                </div>
-              </ParagraphSplit>
-            </PSplitTextW>
+            <ContentBox clear>
+              <p>
+                Built this 3D experiment in 1 week with Threlte - a Svelte plugin for Three.js.
+                <br>
+                While I was at it I also
+                <a href="github.com/threlte/threlte/pull/456" target="_blank">contributed to its documentation</a>
+                .
+                <br><br>
+                I made all the assets with Blender 3D, except for the humanoid,
+                which is <strong>X Bot</strong> from Adobe Mixamo.
+              </p>
+            </ContentBox>
           </div>
         </IndexItem>
 
@@ -410,28 +573,19 @@
             src="/projects/index/markless/tw-logo.svg"
           >
           <div slot="details" class="project-details">
-            <PSplitTextW>
-              <ParagraphSplit>
-                <p slot="paragraph">
-                  In 2022 I led the software team of a 3-week IoT project.
-                  We built a "sourdough hotel" that automatically nutured and
-                  measured a sourdough mixture, sending information to users phone.
-                  I was involved in all the software layers: embedded programming, devops,
-                  and server-side <strong>Node-RED</strong>.
-                  <br><br>
-                  I also spun up a quick
-                  <a href="https://kryptokongerne.vercel.app/" target="_blank">blog site</a>
-                  , to document our progress.
-                </p>
-                <div slot="split">
-                  <!-- svelte-ignore a11y-media-has-caption -->
-                  <video controls>
-                    <source src="/projects/symbolik-ai/ai-mode-compressed.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                  </video>
-                </div>
-              </ParagraphSplit>
-            </PSplitTextW>
+            <ContentBox clear>
+              <p>
+                I made a graph defining how different tailwind classes are related to each other.
+                That allowed me to take any list of tailwind classes, and categorize them into groups.
+                <br><br>
+                This utility uses that to generate beautiful tailwind
+                <span>@use</span> directive style definitions, instead of the classic
+                ugly markup inline styling.
+                <br><br>
+                This is purely for code readability and aesthetics. <br>
+                Well, and maintainability!
+              </p>
+            </ContentBox>
           </div>
         </IndexItem>
 
@@ -454,22 +608,21 @@
             <PSplitTextW>
               <ParagraphSplit>
                 <p slot="paragraph">
-                  In 2022 I led the software team of a 3-week IoT project.
-                  We built a "sourdough hotel" that automatically nutured and
-                  measured a sourdough mixture, sending information to users phone.
-                  I was involved in all the software layers: embedded programming, devops,
-                  and server-side <strong>Node-RED</strong>.
+                  I designed Shelly the turtle as a cute character to help beginners learn to program.
+                  Of course - with turtle programming.
                   <br><br>
-                  I also spun up a quick
-                  <a href="https://kryptokongerne.vercel.app/" target="_blank">blog site</a>
-                  , to document our progress.
+                  Shelly is directly programmable in JavaScript via the browsers built in REPL console,
+                  thanks to my
+                  <a href="https://gist.github.com/nemzyx/625ef854a899653d5acf652b813f784f" target="_blank">
+                    reactive console
+                  </a>
+                  innovation.
+                  <br><br>
+                  Visit the Link to get to the GitHub page which includes instructions
+                  on how to play the online alpha version right in the browser!
                 </p>
-                <div slot="split">
-                  <!-- svelte-ignore a11y-media-has-caption -->
-                  <video controls>
-                    <source src="/projects/symbolik-ai/ai-mode-compressed.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                  </video>
+                <div slot="split" class="split">
+                  <img src="/projects/index/shelly-run/shelly-run.png" alt="shelly.run thumbnail">
                 </div>
               </ParagraphSplit>
             </PSplitTextW>
@@ -489,41 +642,81 @@
             { text: "Gatsby.js", color: "yellow" },
             { text: "Prismic CMS", color: "black" },
           ]}
+          on:open={() => {playVideos([
+            'LTOWR-coral', 'LTOWR', 'den-bedste-tid',
+          ])}}
         >
           <img
             slot="thumbnail" alt="project icon"
             src="/projects/index/mostly-code/favicon.png"
           >
           <div slot="details" class="project-details">
-            <ContentBox clear>
-              <p>
-                In early 2020, I finally landed my first real developer job.
-                I got hired by Mads Sastakauskas Østergaard, who would
-                take on the role as my mentor, which made me grow
-                exponentially as a developer.
-                <br><br>
-                He hired me because of my passion for building highly
-                efficient websites and apps with Static Site Generation (SSG).
-                I had been using Svelte for a while, but since he preffered
-                React, i quickly got up to speed on that.
-                <br><br>
-                We did many different projects together, and even attempted
-                to create a SaaS business after I had matured more as a developer.
-                Neither of us wanted to pursue the business after a while,
-                since we couldn't find a good product-market-fit.
-                <br><br>
-                List of technologies I worked with at Mostly Code:
-              </p>
-              <ul class='list-disc pl-8 pt-2'>
-                <li>React</li>
-                <li>Gatsby.js</li>
-                <li>GraphQL</li>
-                <li>Prismic CMS</li>
-                <li>Sanity CMS</li>
-                <li>SvelteKit</li>
-                <li>Firebase</li>
-              </ul>
-            </ContentBox> 
+            <!-- <ContentBox clear>
+              
+            </ContentBox>  -->
+            <PSplitTextW>
+              <ParagraphSplit>
+                <div slot="paragraph">
+                  <p>
+                    In early 2020, I finally landed my first real developer job.
+                    I got hired by Mads Sastakauskas Østergaard, who would
+                    take on the role as my mentor, which made me grow
+                    exponentially as a developer.
+                    <br><br>
+                    He hired me because of my passion for building highly
+                    efficient websites and apps with Static Site Generation (SSG).
+                    I had been using Svelte for a while, but since he preffered
+                    React, i quickly got up to speed on that.
+                    <br><br>
+                    We did many different projects together, and even attempted
+                    to create a SaaS business after I had matured more as a developer.
+                    Neither of us wanted to pursue the business after a while,
+                    since we couldn't find a good product-market-fit.
+                    <br><br>
+                    List of technologies I worked with at Mostly Code:
+                  </p>
+                  <ul class='list-disc pl-8 pt-2'>
+                    <li>React</li>
+                    <li>Gatsby.js</li>
+                    <li>GraphQL</li>
+                    <li>Prismic CMS</li>
+                    <li>Sanity CMS</li>
+                    <li>SvelteKit</li>
+                    <li>Firebase</li>
+                  </ul>
+                </div>
+                <div slot="split" class="split">
+                  <div class="md:flex">
+                    <div class="w-1/4 relative left-[-0.5rem] top-[-0.5rem] hidden md:block">
+                      <Video loop playsinline bind:this={vids['LTOWR-coral']}>
+                        <source src="/projects/index/mostly-code/LTOWR-coral.webm" type="video/webm">
+                      </Video>
+                      <!-- <Video loop playsinline bind:this={vids['LTOWR-coral']}>
+                        <source src="/projects/DTU/CAD.webm" type="video/webm">
+                      </Video> -->
+                    </div>
+                    <div class="md:w-3/4 md:pl-4 md:pt-0 pt-8">
+                      <Video loop playsinline bind:this={vids['LTOWR']}>
+                        <source src="/projects/index/mostly-code/LTOWR.webm" type="video/webm">
+                      </Video>
+                    </div>
+                  </div>
+                  <div class="md:flex md:gap-4 pt-4">
+                    <div class="md:w-1/2">
+                      <Video loop playsinline bind:this={vids['den-bedste-tid']}>
+                        <source src="/projects/index/mostly-code/den-bedste-tid.webm" type="video/webm">
+                      </Video>
+                    </div>
+                    <div class="hidden md:block w-1/2">
+                      <img
+                        src="/projects/index/mostly-code/standpoint.webp"
+                        alt="Standpoint SaaS platform screenshot"
+                      >
+                    </div>
+                  </div>
+                </div>
+              </ParagraphSplit>
+            </PSplitTextW>
           </div>
         </IndexItem>
 
@@ -544,11 +737,11 @@
           <div slot="details" class="project-details">
             <ContentBox clear>
               <p>
-                In 2019, I got my first developer-related job at Danguitar.
+                In 2019, I got an office job at Danguitar.
                 The company was still a startup, so I wore many hats, such as preparing parcels,
                 creating content for advertisement, and managing the product catalog in their CMS.
                 <br><br>
-                I started <strong>automating repetetive tasks with Python</strong>,
+                I started <strong>automating repetetive tasks with <span>Python</span></strong>,
                 which led to my first professional development job:
                 creating a performance monitor for the customer service department,
                 that would display important KPIs.
@@ -593,7 +786,7 @@
                   <a href="https://kryptokongerne.vercel.app/" target="_blank">blog site</a>
                   , to document our progress.
                 </p>
-                <div slot="split">
+                <div slot="split" class="split">
                   <!-- svelte-ignore a11y-media-has-caption -->
                   <video controls>
                     <source src="/projects/symbolik-ai/ai-mode-compressed.mp4" type="video/mp4">
@@ -772,20 +965,29 @@
 
     & p:first-child {
       width: calc(100% - 5px - .5rem);
+      @apply leading-[1.1] tracking-tight;
     }
 
     @media screen(md) {
-      & div:nth-child(1) {
+      .split {
         padding-left: calc(4rem - 5px - .5rem);
         padding-top: .2rem;
       }
     }    
   }
 
-  .marker-bsc-design-innovation {
-    @apply absolute transform -translate-y-1/2 ;
-    @apply w-[100%] top-[calc(50%-10%)] -right-7 rotate-[25deg];
+  .marker {
+    @apply hidden;
     @media screen(md) {
+      @apply inline-block;
+    }
+  }
+
+  .marker-bsc-design-innovation {
+    /* @apply absolute transform -translate-y-1/2 ;
+    @apply w-[100%] top-[calc(50%-10%)] -right-7 rotate-[25deg]; */
+    @media screen(md) {
+      @apply absolute transform -translate-y-1/2;
       @apply w-[55%] top-[calc(50%-27%)] -right-6 rotate-0;
     }
   }

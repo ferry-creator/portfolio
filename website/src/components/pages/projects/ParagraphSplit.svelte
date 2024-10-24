@@ -1,4 +1,8 @@
-<div class="paragraph-split">
+<script>
+  export let itemsCenter
+</script>
+
+<div class="paragraph-split" class:itemsCenter>
   <div class="paragraph">
     <slot name="paragraph" />
   </div>
@@ -11,6 +15,10 @@
   @media screen(md) {
     .paragraph-split {
       @apply flex items-start;
+
+      &.itemsCenter {
+        @apply items-center;
+      }
     }
 
     .paragraph {

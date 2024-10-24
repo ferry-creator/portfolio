@@ -12,7 +12,7 @@
   }
 
 
-  export let title, year, link, flairs
+  export let title, year, link = null, flairs
 
   import Container from '$components/Container.svelte'
   import ContentBox from '$components/ContentBox.svelte'
@@ -109,7 +109,7 @@
                 </button>
               {/if}
               <div class="details-accordion">
-                <Accordion on:open={onOpen} bind:this={accordion}>
+                <Accordion on:open={onOpen} on:open on:close bind:this={accordion}>
                   <div
                     slot="summary" class="summary"
                     class:opacity-0={showStickySummary}
@@ -143,7 +143,9 @@
                     </div>
                   </div>
                   <div slot="content" class="pt-[.4rem]">
-                    <slot name="details" />
+                    {#if showStickySummary}
+                      <slot name="details" />
+                    {/if}
                   </div>
                 </Accordion>
               </div>

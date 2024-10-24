@@ -1,6 +1,8 @@
 <script>
   import Header from '$components/Header.svelte'
   import Footer from '$components/Footer.svelte'
+  import Image from '$components/Image.svelte'
+
   import DesktopSplitter from '$components/DesktopSplitter.svelte'
   import Smiley from '$gfx/Smiley.svelte'
   import Pin from '$components/Pin.svelte'
@@ -8,7 +10,6 @@
   import Profile from '$components/pages/bio/Profile.svelte'
   import Bio from '$components/pages/bio/Bio.svelte'
   import Seperator from '$components/Seperator.svelte'
-  import Powerpose from '$assets/powerpose.png'
   import Xp from '$components/pages/bio/Xp.svelte'
   import Reflections from '$components/pages/bio/Reflections.svelte'
 </script>
@@ -42,7 +43,7 @@
       <Seperator />
     </div>
     <DesktopSplitter --top="2rem">
-      <div class="contents md:block order-last">
+      <div class="md:block order-last">
         <div class="hackerimg">
           <span class="left-[var(--pin-margin)]">
             <Pin --color="white" />
@@ -50,13 +51,25 @@
           <span class="right-[var(--pin-margin)]">
             <Pin --color="white" />
           </span>
-          <img src={Powerpose}
-            alt="Jonathan posing as a hacker">
+          <div class="min-w-[20rem]">
+            <Image
+              src="/images/powerpose.png"
+              alt="Jonathan posing in his dorm room"
+              loadstack={['base64', 'compressed', 'HQ']}
+            />
+          </div>
+          
+          <!-- <img src="/images/powerpose.png"
+            alt="Jonathan posing in his dorm room"
+            class="min-w-[20rem]"
+          > -->
           <p>
             <!-- chilling in my dorm room -->
             <!-- turned your head? lmao -->
             <!-- 100% unstaged pic -->
-            chaotic in my dorm room
+            <!-- chaotic in my dorm room -->
+            <!-- artsy pic in my dorm room -->
+            posing in my dorm room
           </p>
         </div>
       </div>
@@ -131,7 +144,7 @@
     .hackerimg {
       @apply relative;
       span {
-        @apply absolute top-[40px];
+        @apply absolute top-[40px] z-[1];
       }
       p {
         @apply absolute text-3xl;

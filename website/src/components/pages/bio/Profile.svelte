@@ -1,9 +1,10 @@
 <script>
   import Container from '$components/Container.svelte'
-  import GoofyAhhMe from '$assets/goofy-ahh-me.png'
-  import Placeholder from '$assets/chirp-placeholder.png'
+  import Placeholder from '$assets/chirp-placeholder.webp'
   import ChirpBox from '$components/demos/ChirpBox.svelte'
   import Pin from '$components/Pin.svelte'
+
+  import Image from '$components/Image.svelte'
   
   let active_canvas1=false, active_canvas2=false
   let canvas2
@@ -85,7 +86,15 @@
       </div>
 
     </div>
-    <img class="goofy" src={GoofyAhhMe} alt="Goofy Jonathan Segefjord">
+    <div class="goofy pixelated">
+      <Image
+        src="/assets/goofy-ahh-me.png"
+        alt="Goofy closeup of Jonathan"
+        loadstack={['base64', 'lossless']}
+        pixelate
+      />
+    </div>
+    <!-- <img class="goofy" src="/assets/goofy-ahh-me.png" alt="Goofy closeup of Jonathan"> -->
   </div>
 </Container>
 
@@ -123,11 +132,13 @@
       image-rendering: pixelated;
       /* @apply absolute top-[10px]; */
     }
-    
-    .goofy {
+
+    .goofy :global(img) {
+      width: auto;
       @apply absolute top-0 h-[70%] left-[3rem];
       animation: wacka 200ms alternate infinite linear;
     }
+    
     @keyframes wacka {
       from{transform: rotate(-2deg)}
       to  {transform: rotate(2deg)}
@@ -162,7 +173,7 @@
           }
         }
       }
-      .goofy {
+      .goofy :global(img) {
         @apply absolute bottom-[8rem] h-[32%] right-[5%];
         top: auto;
         left: auto;

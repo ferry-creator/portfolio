@@ -12,7 +12,7 @@
   </span>
 </div>
 
-<style>
+<style lang="postcss">
   div {
     color: theme(colors.grey);
     height: 23px;
@@ -22,6 +22,7 @@
   .line {
     height: 3px;
     width: calc(100vw - var(--pin-margin)*6);
+    max-width: 60rem;
     background: currentColor;
   }
 </style>
