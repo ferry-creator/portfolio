@@ -1,6 +1,7 @@
 <script>
   import Container from '$components/Container.svelte'
-  import Placeholder from '$assets/chirp-placeholder.webp'
+  import PlaceholderMobile from '$assets/chirp-placeholder.webp'
+  import Placeholder from '$assets/chirp-placeholder-desktop.webp'
   import ChirpBox from '$components/demos/ChirpBox.svelte'
   import Pin from '$components/Pin.svelte'
 
@@ -41,8 +42,11 @@
       <div class="gradient md:inline-block" />
       <div class="flex-1 h-full mx-[10px] md:hidden">
         {#if !js}
-          <img class="placeholder" src={Placeholder}
-            alt="chirp signal generative artwork">
+          <img
+            class="placeholder block md:hidden"
+            src={PlaceholderMobile}
+            alt="chirp signal generative artwork"
+            >
         {/if}
         {#if active_canvas1}
           <ChirpBox
@@ -55,6 +59,15 @@
         bind:this={canvas2}
       >
         <span>
+          {#if !js}
+          <img
+            class="placeholder max-w-none w-auto !h-[95%] hidden md:block"
+            src={Placeholder}
+            alt="chirp signal generative artwork"
+            height=24
+            width=16
+          >
+          {/if}
           {#if active_canvas2}
             <ChirpBox
               w=16 h=24
@@ -86,15 +99,15 @@
       </div>
 
     </div>
+    <!-- <img class="goofy2" src="/assets/goofy-ahh-me.png" alt="Goofy closeup of Jonathan"> -->
     <div class="goofy pixelated">
       <Image
         src="/assets/goofy-ahh-me.png"
         alt="Goofy closeup of Jonathan"
-        loadstack={['base64', 'lossless']}
+        loadstack={['lossless']}
         pixelate
       />
     </div>
-    <!-- <img class="goofy" src="/assets/goofy-ahh-me.png" alt="Goofy closeup of Jonathan"> -->
   </div>
 </Container>
 
@@ -133,7 +146,16 @@
       /* @apply absolute top-[10px]; */
     }
 
-    .goofy :global(img) {
+    .goofy {
+      @apply absolute top-0 left-[3rem] w-[34%];
+      & :global(img) {
+        /* @apply w-full h-full; */
+        /* width: auto; */
+        animation: wacka 200ms alternate infinite linear;
+      }
+    }
+
+    .goofy2 {
       width: auto;
       @apply absolute top-0 h-[70%] left-[3rem];
       animation: wacka 200ms alternate infinite linear;
@@ -157,7 +179,7 @@
           padding-top: 125%;
         }
         .desktop-demo {
-          background: white;
+          @apply bg-[white]/20;
           @apply relative left-[calc(var(--page-margin)/2)];
           span {
             @apply absolute top-0 h-[95%];
@@ -173,7 +195,12 @@
           }
         }
       }
-      .goofy :global(img) {
+      .goofy {
+        @apply bottom-[8rem] top-[calc(68%-8rem)] right-[5%] left-[55%];
+        width: auto;
+      }
+
+      .goofy2 {
         @apply absolute bottom-[8rem] h-[32%] right-[5%];
         top: auto;
         left: auto;

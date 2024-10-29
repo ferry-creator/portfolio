@@ -22,7 +22,7 @@
   .line {
     height: 3px;
     width: calc(100vw - var(--pin-margin)*6);
-    max-width: 60rem;
+    max-width: 85rem;
     background: currentColor;
   }
 </style>

@@ -6,12 +6,15 @@
 		<meta name="viewport" content="width=device-width" />
 		%sveltekit.head%
 		<script>
+			const doc = document.documentElement;
 			function appHeight() {
-				const doc = document.documentElement;
 				doc.style.setProperty('--vh', (window.innerHeight) + 'px');
 			}
 			// window.addEventListener('resize', appHeight);
 			appHeight();
+
+			const dpr = window.devicePixelRatio || 1
+			doc.style.setProperty('--dpr', dpr)
 		</script>
 		<!-- SCROLL-TIMELINE POLYFILL FOR FIREFOX / SAFARI:::: -->
 		<script src="scroll-timeline-polyfill.js"></script> <!-- local copy -->

@@ -113,7 +113,7 @@
                 <a href={link} target="_blank">
                   <!-- <img src={img} alt={title}> -->
                    <div class="mt-[2rem] md:mt-[4.5rem]">
-                    <Image src={img} alt={title} loadstack={['lossless', 'lossless']} />
+                    <Image src={img} alt={title} thumbhash />
                    </div>
                 </a>
                 <slot name="img-extras" />

@@ -24,5 +24,6 @@
   canvas {
     image-rendering: pixelated;
     height: inherit;
+    /* max-width: 100%; */
   }
 </style>

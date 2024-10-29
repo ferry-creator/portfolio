@@ -1,9 +1,13 @@
 <script>
   import '../app.postcss';
   import '$theme/fonts/index.scss'
+  import ImageLoader from '$components/ImageLoader.svelte'
+
   import EmailScroller from '$components/EmailScroller.svelte'
   import Navigation from '$components/Navigation/index.svelte'
 </script>
+
+<ImageLoader />
 
 <div class="navigation-layout">
   <div class="navigation">

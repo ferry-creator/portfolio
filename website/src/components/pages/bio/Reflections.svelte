@@ -33,7 +33,7 @@
       <br><br>
       Users truly matter, and they <i><strong>will</strong></i>
       feel when someone cared enough to be perfect for them.
-      Apple's success is a testimony to this.
+      Apple's success is testimony to this.
     </p>
 
     <p class="leading-tight mt-12">

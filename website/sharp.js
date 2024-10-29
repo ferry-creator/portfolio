@@ -4,6 +4,8 @@ import sharp from 'sharp'
 import fs from 'fs'
 import path from 'path'
 
+import { thumbhashEncode } from './thumbhash-node.js'
+
 const objectString = (obj) => Object.entries(obj)
   .map(([key, value]) => `${key}:${value}`)
   .join(' ')
@@ -72,7 +74,7 @@ const optimize = (img, name, config) => {
   const destination = path.join(OUTPUT, subpath, name)
   fs.mkdirSync(path.dirname(destination), { recursive: true })
 
-  Object.assign(config, { effort: 6 })
+  Object.assign(config, { effort })
   return sharp(img)
     .toFormat(path.parse(name).ext.slice(1), config)
     .toFile(destination)
@@ -144,12 +146,23 @@ for(const [img, options] of Object.entries(images)) {
   previews[previewKey]['color'] = await getDominantColor(img)
   previews[previewKey]['base64'] = await sharp(img)
     .resize(20)
-    .blur()
+    // .blur()
     .webp({ quality: 1 })
     .toBuffer()
     .then((data) => `data:image/webp;base64,${data.toString('base64')}`)
     .catch((err) => {
       console.error(`Error generating base64 preview for ${img}:`, err)
+    })
+  
+  const thumbhash = (await thumbhashEncode(img)).dataurl.replace("data:image/png;base64,", "")
+  previews[previewKey]['thumbhash'] = await sharp(Buffer.from(thumbhash, 'base64'))
+    .resize(20)
+    // .blur()
+    .webp({ quality: 20 })
+    .toBuffer()
+    .then((data) => `data:image/webp;base64,${data.toString('base64')}`)
+    .catch((err) => {
+      console.error(`Error generating thumbhash preview for ${img}:`, err)
     })
 }
 
@@ -185,10 +198,17 @@ for(const [img, options] of Object.entries(assets)) {
     })
 }
 
+let id = 0
+for(const img of Object.keys({...images, ...assets})) {
+  const previewKey = img.replaceAll('./static', '')
+  previews[previewKey]['id'] = id
+  id++
+}
+
 // Save! -------------------------------------------------------------
 
 fs.writeFileSync(
-  './src/assets/image-sharp-previews.json',
+  './src/assets/image-data.json',
   JSON.stringify(previews, null, 2),
   'utf8'
 )

@@ -1,6 +1,8 @@
 <script>
   import Header from '$components/Header.svelte'
   import Footer from '$components/Footer.svelte'
+  import Image from '$components/Image.svelte'
+
   import Graph from '$gfx/Graph.svg'
   import Pin from '$components/Pin.svelte'
   import LogoSeperator from '$components/LogoSeperator.svelte'
@@ -113,19 +115,27 @@
                 </p>
                 <div slot="split" class="split">
                   <Video controls bind:this={vids['ai-mode']}
-                    thumbnail="/projects/symbolik-ai/video-thumbnail.png"
+                    thumbnail="/projects/symbolik-ai/video-thumbnail.webp"
                   >
                     <source src="/projects/symbolik-ai/ai-mode-compressed.mp4" type="video/mp4">
                   </Video>
                   <div class="md:w-2/3 md:ml-[10%] py-6 md:py-8">
-                    <img src="/projects/symbolik-ai/dolphin-login.png" alt="Dolphin Login Screenshot" />
+                    <Image
+                      src="/projects/symbolik-ai/dolphin-login.png"
+                      alt="Dolphin Login Screenshot"
+                    />
+                    <!-- <img src="/projects/symbolik-ai/dolphin-login.png" alt="Dolphin Login Screenshot" /> -->
                   </div>
                 </div>
               </ParagraphSplit>
-              <img
+              <Image
                 src="/projects/symbolik-ai/dolphin-spotlight-request.png"
                 alt="Dolphin Mockup Screenshot"
               />
+              <!-- <img
+                src="/projects/symbolik-ai/dolphin-spotlight-request.png"
+                alt="Dolphin Mockup Screenshot"
+              /> -->
             </PSplitTextW>
           </div>
         </Project>

@@ -2,7 +2,7 @@
   import Container from '$components/Container.svelte'
   import ContentBox from '$components/ContentBox.svelte'
   import Pin from '$components/Pin.svelte'
-  import Sphere from '$assets/sphere.svg'
+  import Sphere from '$assets/sphere-compressed.svg'
   import Sparkles from '$assets/sparkles.webp'
 
   import profileIcon from '$gfx/skeuo-icons/Profile.png'
