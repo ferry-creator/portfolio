@@ -20,11 +20,20 @@ const effort = 6 // 1 <> 6, more CPU = better compression
 
 const images = {
   "./static/projects/symbolik-ai/thumbnail.png": { q: 30 },
-  "./static/projects/symbolik-ai/dolphin-login.png": { q: 30 },
+  "./static/projects/symbolik-ai/dolphin-login.png": { q: 20 },
   "./static/projects/symbolik-ai/dolphin-spotlight-request.png": { q: 30 },
-  "./static/projects/DTU/thumbnail.png": { q: 30 },
   "./static/projects/clevertrack/thumbnail.png": { q: 30 },
+  "./static/projects/clevertrack/app.png": { q: 20 },
+  // "./static/projects/clevertrack/truck-frontpage.jpg": { q: 20 },
+  "./static/projects/clevertrack/hubble-drawing.png": { q: 15 },
+  "./static/projects/clevertrack/illustrations.png": { q: 25 },
+  "./static/projects/DTU/thumbnail.png": { q: 30 },
+  "./static/projects/DTU/FPGA-pong.png": { q: 10 },
+  "./static/projects/DTU/sourdough.png": { q: 10 },
+  "./static/projects/DTU/gluegun.png": { q: 25 },
 
+  "./static/projects/index/shelly-run/shelly-run.png": { q: 30 },
+  "./static/projects/index/mostly-code/standpoint.png": { q: 30 },
   "./static/projects/index/gamedev/flipit-microtransactions.png": { q: 30 },
   "./static/projects/index/gamedev/flipit-sketch.png": { q: 15 },
   "./static/projects/index/gamedev/flipit.png": { q: 30 },

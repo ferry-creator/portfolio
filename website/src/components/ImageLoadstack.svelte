@@ -19,18 +19,20 @@
     noscriptSelector == 'last' ? loadstack[loadstack.length-1]
       : loadstack[noscriptSelector]
 
+  let previewElement
   let img
   let imageSource = null
   import { onMount } from "svelte"
   onMount(async () => {
-    console.log("mounted", imagesLoadedBeforeMount, window.imageLoaderSources[id])
+    // console.log("mounted", id, imagesLoadedBeforeMount, window.imageLoaderSources[id])
     img.onload = function(event) {
       imageLoader(id, 'image', true) // set onmount flag
     }
+    imageSource = window.imageLoaderSources[id] || null
     if(imagesLoadedBeforeMount.has(id)) {
-      imageSource = window.imageLoaderSources[id] || null
       img.style.visibility = 'visible'
       img.fetchPriority = 'low'
+      if(transparency) previewElement.style.visibility = 'hidden'
     }
   })
 </script>
@@ -41,14 +43,17 @@
   class:clip-blur-up={!transparency}
 >
   <img
-    id={`p${id}`}
+    id={`p${id}`} bind:this={previewElement}
+    class="preview" class:pixelate
     src={preview} alt="" aria-hidden="true"
     width={metadata.width}
     height={metadata.height}
     style={`aspect-ratio: ${metadata.width} / ${metadata.height};`}
     onload={`imageLoader('${id}', 'preview')`}
   >
-  <div class={`blurtop absolute inset-0`} class:hidden={transparency} />
+  {#if !transparency}
+    <div class={`blurtop absolute inset-0`} />
+  {/if}
   <picture>
     <img
       id={`i${id}`}
@@ -61,6 +66,7 @@
       style={`aspect-ratio: ${metadata.width} / ${metadata.height};`}
       onload={`imageLoader(${id}, 'image')`}
       data-loadstack={loadstack}
+      data-meta={JSON.stringify({transparency})}
     >
   </picture>
 
@@ -72,7 +78,7 @@
         height={metadata.height}
         style={`aspect-ratio: ${metadata.width} / ${metadata.height};`}
       >
-      <div class={`blurtop absolute inset-0`} class:hidden={transparency} />
+      <div class={`blurtop absolute inset-0`}/>
     {/if}
     <picture>
       <img
@@ -88,6 +94,10 @@
 </div>
 
 <style lang="postcss">
+  .preview.pixelate {
+    image-rendering: pixelated;
+  }
+
   .clip-blur-up {
     @apply overflow-hidden rounded-[inherit]; /* clipping the blur! */
   }

@@ -1,4 +1,6 @@
 <script>
+    import { id } from "./pages/projects/Project.svelte";
+
   export let clientSideThumbhash = false
 </script>
 
@@ -17,9 +19,11 @@
     // (any? still annoying...)
     window.imageLoaderSources = {}
 
-    const getLoadstack = (img) => {
-      const { loadstack } = img.dataset
-      return loadstack.split(',')
+    const getData = (img) => {
+      const { loadstack: loadstackData, meta } = img.dataset
+      const loadstack = loadstackData.split(',')
+      const metadata = JSON.parse(meta)
+      return { loadstack, metadata }
     }
 
     const imageLoaderQueue = [] // promises!
@@ -32,7 +36,7 @@
         if(entry.isIntersecting) {
           const id = +target.id.slice(1)
           const img = document.querySelector(`img#i${id}`)
-          const loadstack = getLoadstack(img)
+          const { loadstack } = getData(img)
 
           img.src = loadstack[0]
           window.imageLoaderSources[id] = loadstack[0]
@@ -59,14 +63,15 @@
       }
 
       if(caller === 'image') {
-        const loadstack = getLoadstack(img)
+        const { loadstack, metadata } = getData(img)
         if(imageLoaderState[id].index >= loadstack.length) return
         const src = loadstack[imageLoaderState[id].index]
         if(imageSourcesLoaded[id].has(src)) return
         imageSourcesLoaded[id].add(src)
-        console.log(id, "image loaded!", src)
+        // console.log(id, "image loaded!", src)
         img.style.visibility = 'visible'
         img.fetchPriority = 'low'
+        if(metadata.transparency) preview.style.visibility = 'hidden'
         imageLoaderState[id].resolve()
         // await all initial src promises
         // dynamic sequential version of Promise.all:
@@ -79,7 +84,7 @@
           const nextSrc = loadstack[imageLoaderState[id].index]
           img.src = nextSrc
           window.imageLoaderSources[id] = nextSrc
-          console.log(id, "loading next: ", nextSrc)
+          // console.log(id, "loading next: ", nextSrc)
         }
       }
     }

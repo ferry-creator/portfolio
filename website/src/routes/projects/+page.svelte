@@ -187,10 +187,14 @@
                   <br class="hidden md:inline">
                 </p>
                 <div slot="split" class="split">
-                  <img
+                  <Image
                     src="/projects/clevertrack/app.png"
                     alt="Clevertrack App Screenshots"
                   />
+                  <!-- <img
+                    src="/projects/clevertrack/app.png"
+                    alt="Clevertrack App Screenshots"
+                  /> -->
                 </div>
               </ParagraphSplit>
               <ContentBox clear full>
@@ -203,20 +207,28 @@
                   - track vehicles and and provide insights based on data.
                 </p>
               </ContentBox>
+              <!-- <Image
+                src="/projects/clevertrack/truck-frontpage.webp"
+                alt="Clevertrack Website landingpage first frame design"
+              /> -->
               <img
                 src="/projects/clevertrack/truck-frontpage.webp"
                 alt="Clevertrack Website landingpage first frame design"
               />
               <div class="flex items-center">
                 <div class="w-1/3">
-                  <img
+                  <Image
                     src="/projects/clevertrack/hubble-drawing.png"
                     alt="Clevertrack Hubble logo sketch"
                   />
+                  <!-- <img
+                    src="/projects/clevertrack/hubble-drawing.png"
+                    alt="Clevertrack Hubble logo sketch"
+                  /> -->
                 </div>
                 <div class="w-2/3 px-20 pt-4">
                   <img
-                    src="/projects/clevertrack/hubble.svg"
+                    src="/projects/clevertrack/hubble-compressed.svg"
                     alt="Clevertrack Hubble logo file"
                   />
                 </div>
@@ -243,10 +255,14 @@
                     This was the result :-)
                   </p>
                   <div slot="split" class="split">
-                    <img
+                    <Image
                       src="/projects/clevertrack/illustrations.png"
                       alt="Clevetrack vehicle trackers illustrations"
                     />
+                    <!-- <img
+                      src="/projects/clevertrack/illustrations.png"
+                      alt="Clevetrack vehicle trackers illustrations"
+                    /> -->
                   </div>
                 </ParagraphSplit>
               </div>
@@ -277,7 +293,42 @@
           <!-- My grades and selected course projects are attached below :-) -->
           Open the details to view my grades & course projects :-)
           <div slot="img-extras" class="pointer-events-none">
-            <img
+            <!-- <div class="marker marker-bsc-design-innovation">
+              <Image
+                src="/marker/bsc-design-innovation/squiggle.png"
+                alt="Handwritten squiggle"
+                loadstack={['lossless']}
+              />
+            </div> -->
+            <div class="marker marker-bsc-design-innovation">
+              <div class="relative top-[-1.45rem] left-[0.7rem] w-[93%]">
+                <Image
+                  src="/marker/bsc-design-innovation/squiggle-cropped.png"
+                  alt="Handwritten squiggle"
+                  loadstack={['lossless']}
+                  pixelate
+                />
+                <!-- <img
+                  src="/marker/bsc-design-innovation/squiggle-cropped.png"
+                  alt="Handwritten squiggle"
+                > -->
+              </div>
+            </div>
+            <div class="marker marker-bsc-design-innovation">
+              <div class="relative top-[0.9rem]">
+                <Image
+                  src="/marker/bsc-design-innovation/text-v2-cropped.png"
+                  alt="Handwritten text: 'BSc in Design & Innovation'"
+                  loadstack={['lossless']}
+                  pixelate
+                />
+                <!-- <img
+                  src="/marker/bsc-design-innovation/text-v2-cropped.png"
+                  alt="Handwritten text: 'BSc in Design & Innovation'"
+                > -->
+              </div>
+            </div>
+            <!-- <img
               class="marker marker-bsc-design-innovation"
               src="/marker/bsc-design-innovation/squiggle.png"
               alt="Handwritten squiggle"
@@ -286,7 +337,7 @@
               class="marker marker-bsc-design-innovation"
               src="/marker/bsc-design-innovation/text-v2.png"
               alt="Handwritten text: 'BSc in Design & Innovation'"
-            >
+            > -->
           </div>
           <div slot="details" class="project-details">
             <PSplitTextW>
@@ -305,10 +356,15 @@
                 </p>
                 <div slot="split" class="split">
                   <a href="https://www.youtube.com/watch?v=oZGwaHUg-Vk&t=170s" target="_blank">
-                    <img
+                    <Image
+                      src="/projects/DTU/FPGA-pong.png"
+                      alt="FPGA board"
+                      loadstack={['compressed', 'HQ']}
+                    />
+                    <!-- <img
                       src="/projects/DTU/FPGA-pong.webp"
                       alt="FPGA board"
-                    />
+                    /> -->
                   </a>
                 </div>
               </ParagraphSplit>
@@ -327,10 +383,15 @@
                   </p>
                   <div slot="split" class="split">
                     <a href="https://www.youtube.com/watch?v=Z9Q-h7dPK7k" target="_blank">
-                      <img
+                      <Image
+                        src="/projects/DTU/sourdough.png"
+                        alt="Sourdough Hotel Video Thumbnail"
+                        loadstack={['compressed', 'HQ']}
+                      />
+                      <!-- <img
                         src="/projects/DTU/sourdough.webp"
                         alt="Sourdough Hotel Video Thumbnail"
-                      />
+                      /> -->
                     </a>
                   </div>
                 </ParagraphSplit>
@@ -375,10 +436,14 @@
               </div>
               <div class="flex items-center gap-4 pt-4">
                 <div class="w-2/3">
-                  <img
-                    src="/projects/DTU/gluegun.webp"
+                  <Image
+                    src="/projects/DTU/gluegun.png"
                     alt="CAD model of glue gun"
                   />
+                  <!-- <img
+                    src="/projects/DTU/gluegun.webp"
+                    alt="CAD model of glue gun"
+                  /> -->
                 </div>
                 <div class="w-1/3">
                   <Video loop playsinline bind:this={vids['CAD']}>
@@ -402,30 +467,63 @@
               alt="Handwritten text: 'BSc in Design & Innovation'"
             > -->
 
-            <img
+            <div class="w-[27%] marker absolute top-[-1.8rem] left-[2.9rem]">
+              <Image
+                src="/marker/spotlight-full-index/spotlight-squiggle.png"
+                alt="Handwritten squiggle"
+                loadstack={['lossless']}
+                pixelate
+              />
+            </div>
+            <div class="w-[24.5%] marker inline-block mb-[5rem] relative top-[-3.2rem] left-[1rem]">
+              <Image
+                src="/marker/spotlight-full-index/spotlight-grey.png"
+                alt="Handwritten text: 'Spotlight'"
+                loadstack={['lossless']}
+                pixelate
+              />
+            </div>
+            <div class="w-[27%] marker inline-block ml-[1.5rem] mt-[4.2rem]">
+              <Image
+                src="/marker/spotlight-full-index/arrow-grey.png"
+                alt="Handwritten arrow"
+                loadstack={['lossless']}
+                pixelate
+              />
+            </div>
+            <div class="w-[35%] marker inline-block mb-[2rem] ml-[-0.2rem] transform rotate-[30deg]">
+              <Image
+                src="/marker/spotlight-full-index/my-full-index-grey-purple-index.png"
+                alt="Handwritten text: 'My Full Index'"
+                loadstack={['lossless']}
+                pixelate
+              />
+            </div>
+
+            <!-- <img
               width=27%
               class="marker absolute top-[-1.8rem] left-[2.9rem]"
               src="/marker/spotlight-full-index/spotlight-squiggle.png"
-              alt="Handwritten text: 'BSc in Design & Innovation'"
+              alt="Handwritten squiggle"
             >
             <img
               width=24.5%
               class="marker inline-block mb-[5rem] relative top-[-3.2rem] left-[1rem]"
               src="/marker/spotlight-full-index/spotlight-grey.png"
-              alt="Handwritten text: 'BSc in Design & Innovation'"
+              alt="Handwritten text: 'Spotlight'"
             >
             <img
               width=27%
               class="marker inline-block ml-[1.5rem] mt-[4.2rem]"
               src="/marker/spotlight-full-index/arrow-grey.png"
-              alt="Handwritten text: 'BSc in Design & Innovation'"
+              alt="Handwritten arrow"
             >
             <img
               width=35%
               class="marker inline-block mb-[2rem] ml-[-0.2rem] transform rotate-[30deg]"
               src="/marker/spotlight-full-index/my-full-index-grey-purple-index.png"
-              alt="Handwritten text: 'BSc in Design & Innovation'"
-            >
+              alt="Handwritten text: 'My Full Index'"
+            > -->
           </div>
         </TimelineItem>
 
@@ -479,7 +577,7 @@
         >
           <img
             slot="thumbnail" alt="project icon"
-            src="/projects/index/sphere/favicon.png"
+            src="/projects/index/sphere/favicon.webp"
           >
           <div slot="details" class="project-details">
             <ContentBox clear>
@@ -550,7 +648,7 @@
         >
           <img
             slot="thumbnail" alt="project icon"
-            src="/projects/index/zprite/thumbnail.png"
+            src="/projects/index/zprite/thumbnail.webp"
           >
           <div slot="details" class="project-details">
             <ContentBox clear>
@@ -611,7 +709,7 @@
         >
           <img
             slot="thumbnail" alt="project icon"
-            src="/projects/index/shelly-run/favicon.png"
+            src="/projects/index/shelly-run/favicon.webp"
             class="pixelated"
           >
           <div slot="details" class="project-details">
@@ -632,7 +730,11 @@
                   on how to play the online alpha version right in the browser!
                 </p>
                 <div slot="split" class="split">
-                  <img src="/projects/index/shelly-run/shelly-run.png" alt="shelly.run thumbnail">
+                  <Image
+                    src="/projects/index/shelly-run/shelly-run.png"
+                    alt="shelly.run thumbnail"
+                  />
+                  <!-- <img src="/projects/index/shelly-run/shelly-run.png" alt="shelly.run thumbnail"> -->
                 </div>
               </ParagraphSplit>
             </PSplitTextW>
@@ -658,7 +760,7 @@
         >
           <img
             slot="thumbnail" alt="project icon"
-            src="/projects/index/mostly-code/favicon.png"
+            src="/projects/index/mostly-code/favicon.webp"
           >
           <div slot="details" class="project-details">
             <!-- <ContentBox clear>
@@ -718,10 +820,14 @@
                       </Video>
                     </div>
                     <div class="hidden md:block w-1/2">
-                      <img
+                      <Image
+                        src="/projects/index/mostly-code/standpoint.png"
+                        alt="Standpoint SaaS platform screenshot"
+                      />
+                      <!-- <img
                         src="/projects/index/mostly-code/standpoint.webp"
                         alt="Standpoint SaaS platform screenshot"
-                      >
+                      > -->
                     </div>
                   </div>
                 </div>
@@ -742,7 +848,7 @@
         >
           <img
             slot="thumbnail" alt="project icon"
-            src="/projects/index/danguitar/favicon.png"
+            src="/projects/index/danguitar/favicon.webp"
           >
           <div slot="details" class="project-details">
             <ContentBox clear>

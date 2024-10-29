@@ -8,7 +8,7 @@
 
 
 <script>
-  import smiley from './smiley.png'
+  import smiley from './smiley.webp'
 </script>
 
 <img src={smiley} alt="smiley">
