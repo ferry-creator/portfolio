@@ -111,3 +111,31 @@
     and when he saw the results he asked me to overhaul the entire app.
   </p>
 </Modal>
+
+<Modal bind:this={tagModals[DESIGN]} title={DESIGN}>
+  <p>
+    Even though I put "Senior Software Engineer" on my
+    resume, I really think I'm more of a designer.
+    <br><br>
+    <strong>Design Thinking</strong> to me means - figuring
+    out the constraints of some system, and trying to
+    adjust everything until everything falls into place.
+    <br><br>
+    And this is really powerful and applicable in anything
+    you'd wanna do. Brian Chesky founded AirBnB as a designer!
+  </p>
+</Modal>
+
+<Modal bind:this={tagModals[COMPSCI]} title={COMPSCI}>
+  <p>
+    Besides taking Algorithms & Datastructures 1 at uni,
+    I had a really good time on the "Digital Electronics"
+    course where I learned chip design. Getting down to
+    the bare metal and composing with logic gates
+    was a completely new way of thinking about 'programming'
+    to me.
+    <br><br>
+    It was mind blowing to me in the same way functional
+    programming was when I first learned about that!
+  </p>
+</Modal>

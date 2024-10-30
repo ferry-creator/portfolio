@@ -726,7 +726,7 @@
         <IndexItem
           title="shelly.run"
           year=2022
-          link="https://github.com/nemzyx/shelly.run"
+          link="https://github.com/segefjord/shelly.run"
           flairs={[
             { text: "Game", color: "pink" },
             { text: "EdTech", color: "black" },
@@ -747,7 +747,7 @@
                   <br><br>
                   Shelly is directly programmable in JavaScript via the browsers built in REPL console,
                   thanks to my
-                  <a href="https://gist.github.com/nemzyx/625ef854a899653d5acf652b813f784f" target="_blank">
+                  <a href="https://gist.github.com/segefjord/625ef854a899653d5acf652b813f784f" target="_blank">
                     reactive console
                   </a>
                   innovation.
@@ -1078,18 +1078,18 @@
           title="shelly.run"
           year=2022
           img="/projects/shelly-run.png"
-          link="https://github.com/nemzyx/shelly.run"
+          link="https://github.com/segefjord/shelly.run"
           techstack={["React", "IoT", "SSG", "UX"]}
         >
-          Initially created to teach my older sister how to code, <a href="https://github.com/nemzyx/shelly.run" target="_blank">shelly.run</a> evolved into a project with the potential to help many others.
+          Initially created to teach my older sister how to code, <a href="https://github.com/segefjord/shelly.run" target="_blank">shelly.run</a> evolved into a project with the potential to help many others.
           I designed Shelly the turtle as a relatable character to help beginners understand how state and variables eventually turn into useful systems.
           <br><br>
           A big innovation in the project is the reactive browser console, which enables players to program Shelly using JavaScript in the browser's built-in REPL environment.
           That makes it an accesible zero-config programming environment for beginners, while advanced users still get the full power of JavaScript. Shelly is a completely hackable turtle, while also being beginner-friendly.
           <br><br>
-          Shelly is programmable in JavaScript via the browsers built in REPL console, thanks to my <a href="https://gist.github.com/nemzyx/625ef854a899653d5acf652b813f784f" target="_blank">reactive console</a> innovation.
+          Shelly is programmable in JavaScript via the browsers built in REPL console, thanks to my <a href="https://gist.github.com/segefjord/625ef854a899653d5acf652b813f784f" target="_blank">reactive console</a> innovation.
           <br><br>
-          Although still in early alpha, shelly.run is already <a href="https://shelly.run/" target="_blank">live</a> and you can find instructions for playing on the <a href="https://github.com/nemzyx/shelly.run" target="_blank">Github page</a>.
+          Although still in early alpha, shelly.run is already <a href="https://shelly.run/" target="_blank">live</a> and you can find instructions for playing on the <a href="https://github.com/segefjord/shelly.run" target="_blank">Github page</a>.
         </Project>
         <Project
           title="FPGA pong game"
@@ -1105,7 +1105,7 @@
           <a href="https://www.youtube.com/watch?v=oZGwaHUg-Vk&t=170s" target="_blank">YouTube</a>
           <br><br>
           Source is available on
-          <a href="https://github.com/nemzyx/FPGA-pong" target="_blank">Github</a>.
+          <a href="https://github.com/segefjord/FPGA-pong" target="_blank">Github</a>.
         </Project>
         <Project
           title="Sourdough Hotel"
@@ -1116,7 +1116,7 @@
         >
           We had 3 weeks at DTU to build a fully automated IoT enabled sourdough machine. I lead the software team from hardware programming, to code and deployment of all the IoT layers using Azure and Node-red. I also maintained and created the <a href="https://kryptokongerne.vercel.app/" target="_blank">blog</a>.
           <br><br>
-          I produced this <a href="https://www.youtube.com/watch?v=Z9Q-h7dPK7k" target="_blank">YouTube video</a> at the end of the project . Code is available on <a href="https://github.com/nemzyx/kryptokongerne" target="_blank">Github</a>.
+          I produced this <a href="https://www.youtube.com/watch?v=Z9Q-h7dPK7k" target="_blank">YouTube video</a> at the end of the project . Code is available on <a href="https://github.com/segefjord/kryptokongerne" target="_blank">Github</a>.
         </Project>
         <Project
           title="Mostly Code"
