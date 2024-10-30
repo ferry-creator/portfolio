@@ -341,7 +341,7 @@
     @apply relative;
     :global(p) {
       @apply leading-tight;
-      padding-right: 5rem;
+      /* padding-right: 5rem; */
       max-width: 35rem;
       @media screen(md) {
         @apply max-w-none pr-0;

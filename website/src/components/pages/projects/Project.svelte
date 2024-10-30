@@ -147,7 +147,7 @@
                       DETAILS
                     </span>
                   </div>
-                  <div slot="content" class="pt-[.4rem]">
+                  <div slot="content" class="pt-[.4rem] content-mobile">
                     <slot name="details" />
                   </div>
                 </Accordion>
@@ -258,6 +258,7 @@
     bottom: -15px;
     left: calc(var(--pin-margin) - 2px);
   }
+  
   .content {
     @apply relative;
     h4 {
@@ -315,6 +316,9 @@
         margin-top: 2rem;
       }
     }
+  }
+  .content .content-mobile :global(p) {
+    padding-right: 0;
   }
 
   .project:last-child .content {

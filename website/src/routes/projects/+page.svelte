@@ -225,8 +225,8 @@
                 src="/projects/clevertrack/truck-frontpage.webp"
                 alt="Clevertrack Website landingpage first frame design"
               /> -->
-              <div class="flex items-center">
-                <div class="w-1/3">
+              <div class="md:flex items-center">
+                <div class="md:w-1/3">
                   <Image
                     src="/projects/clevertrack/hubble-drawing.png"
                     alt="Clevertrack Hubble logo sketch"
@@ -236,7 +236,7 @@
                     alt="Clevertrack Hubble logo sketch"
                   /> -->
                 </div>
-                <div class="w-2/3 px-20 pt-4">
+                <div class="md:w-2/3 md:px-20 pt-4">
                   <img
                     src="/projects/clevertrack/hubble-compressed.svg"
                     alt="Clevertrack Hubble logo file"
@@ -264,7 +264,7 @@
                     <br><br>
                     This was the result :-)
                   </p>
-                  <div slot="split" class="split">
+                  <div slot="split" class="split pt-8 md:pt-0">
                     <Image
                       src="/projects/clevertrack/illustrations.png"
                       alt="Clevetrack vehicle trackers illustrations"
@@ -350,7 +350,7 @@
             > -->
           </div>
           <div slot="details" class="project-details">
-            <div class="grades">
+            <div class="grades hidden md:block">
               <GradesBar>
                 <img
                   slot="thumbnail" alt="project icon"
@@ -396,7 +396,7 @@
               </ParagraphSplit>
               <div class="pt-8 md:pt-2">
                 <ParagraphSplit itemsCenter>
-                  <p slot="paragraph">
+                  <p slot="paragraph" class="pb-4 md:pb-0">
                     In 2022 I led the software team of a 3-week IoT project.
                     We built a <strong>"sourdough hotel"</strong> machine that automatically nuture and
                     measure a sourdough mixture, sending information to users phone.
@@ -436,32 +436,32 @@
                   />
                 </div>
               </div> -->
-              <div class="flex items-center gap-4 pt-4">
-                <div class="w-1/4">
+              <div class="md:flex items-center gap-4 pt-4">
+                <div class="md:w-1/4 md:pb-0 pb-4">
                   <Video loop playsinline bind:this={vids['prototyping']}>
                     <source src="/projects/DTU/prototyping.webm" type="video/webm">
                   </Video>
                 </div>
-                <div class="w-1/4">
+                <div class="md:w-1/4 md:pb-0 pb-4">
                   <img
                     src="/projects/DTU/prototyping-sketch.jpg"
                     alt="Sketching knife blade"
                   />
                 </div>
-                <div class="w-1/4">
+                <div class="md:w-1/4 md:pb-0 pb-4">
                   <Video loop playsinline bind:this={vids['party']}>
                     <source src="/projects/DTU/party.webm" type="video/webm">
                   </Video>
                 </div>
-                <div class="w-1/4">
+                <div class="md:w-1/4">
                   <img
                     src="/projects/DTU/sketch.jpg"
                     alt="Sketching vending machine"
                   />
                 </div>
               </div>
-              <div class="flex items-center gap-4 pt-4">
-                <div class="w-2/3">
+              <div class="md:flex items-center gap-4 pt-4">
+                <div class="md:w-2/3 md:pb-0 pb-4">
                   <Image
                     src="/projects/DTU/gluegun.png"
                     alt="CAD model of glue gun"
@@ -471,7 +471,7 @@
                     alt="CAD model of glue gun"
                   /> -->
                 </div>
-                <div class="w-1/3">
+                <div class="md:w-1/3">
                   <Video loop playsinline bind:this={vids['CAD']}>
                     <source src="/projects/DTU/CAD.webm" type="video/webm">
                   </Video>
@@ -944,7 +944,7 @@
                     alt="Dolphin Login Screenshot"
                   /> -->
 
-                  <div class="flex gap-4">
+                  <div class="flex gap-4 md:pt-0 pt-4">
                     <div class="w-1/2">
                       <Video loop playsinline wfull bind:this={vids['flipit']}>
                         <source src="/projects/index/gamedev/flipit.webm" type="video/webm">
@@ -959,20 +959,28 @@
                   </div>
                 </div>
               </ParagraphSplit>
-              <div class="pt-4 flex gap-4">
-                <div>
-                  <img
+              <div class="pt-4 md:flex gap-4">
+                <div class="imgFullHeight">
+                  <Image
+                    src="/projects/index/gamedev/flipit-microtransactions.png"
+                    alt="Flipit mobile game business model"
+                  />
+                  <!-- <img
                     class="h-full"
                     src="/projects/index/gamedev/flipit-microtransactions.png"
                     alt="Flipit mobile game paper sketch"
-                  />
+                  /> -->
                 </div>
-                <div>
-                  <img
-                    class="h-full"
+                <div class="imgFullHeight md:pt-0 pt-4">
+                  <Image
                     src="/projects/index/gamedev/flipit-sketch.png"
                     alt="Flipit mobile game paper sketch"
                   />
+                  <!-- <img
+                    class="h-full"
+                    src="/projects/index/gamedev/flipit-sketch.png"
+                    alt="Flipit mobile game paper sketch"
+                  /> -->
                 </div>
               </div>
               <div class="pt-4">
@@ -988,13 +996,13 @@
                   from the school. <strong>Good memories!</strong>
                 </p>
               </ContentBox>
-              <div class="pt-6 flex gap-4">
+              <div class="pt-6 md:flex gap-4">
                 <div class="flex-1">
                   <Video loop playsinline bind:this={vids['rainbow-fps']}>
                     <source src="/projects/index/gamedev/rainbow-fps.webm" type="video/webm">
                   </Video>
                 </div>
-                <div class="flex-[1.1422]">
+                <div class="flex-[1.1422] md:pt-0 pt-4">
                   <Video loop playsinline bind:this={vids['physics']}>
                     <source src="/projects/index/gamedev/physics.webm" type="video/webm">
                   </Video>
@@ -1231,5 +1239,9 @@
   .grades {
     border: 5px solid greenyellow;
     @apply p-5 mt-1 mb-2 rounded-2xl;
+  }
+
+  .imgFullHeight :global(> *) {
+    height: 100%;
   }
 </style>
