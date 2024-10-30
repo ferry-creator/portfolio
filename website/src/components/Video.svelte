@@ -1,6 +1,7 @@
 <script>
   export let thumbnail = null
   export let controls = null, autoplay = null, loop = null, playsinline = null
+  export let wfull, hfull
 
   export let video
   // import { onMount } from "svelte"
@@ -39,6 +40,7 @@
   {controls} {loop} {playsinline}
   disablepictureinpicture
   preload="metadata"
+  class:w-full={wfull} class:h-full={hfull}
   on:fullscreenchange={() => {
     if (document.webkitFullscreenElement) {
       lockOrientation();

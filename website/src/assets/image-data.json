@@ -49,10 +49,21 @@
       "width": 1675,
       "height": 2175
     },
-    "color": "rgb(215,228,236)",
-    "base64": "data:image/webp;base64,UklGRtwBAABXRUJQVlA4WAoAAAAQAAAAEwAAGQAAQUxQSEQBAAANkFvbtqpla5+Hu7u7xt4DgwaogogeSKECMnJaIPvdXXF33nfvCT5rISImAOSlW937H9//vCVbTtbEMnOT49X/Pnx4/+nwmRyzpKbS1vHJyan+u7U3lsvMnegk5aP3PwTOOCAwEZP0G44yjc2I/H+qsryltgDXTywgnyRjIJH9FYtAKSVO/hcAsWJvc3p0uKO9CTDWv+4m8MiPS7f23hJAmfH5HRQ3Vp4C+Y3egycvXyUSQcoS/VeXejzsD4mRV3SEkyT86xaFuka+yn/3FRZt5Kvzq98Kco1+ifwsQvT/wg6TZleeCDZw4snldY+DO5IMUfeEXV13hxIkIJwd/P38Crf7gyHzm4PDg7//DkuqSkoQmYrtfzc/H2trGnp6eurqWuqfUyLfdhuaW2pqK0MI7kmJCVIvf0pjdDeTmQQ4IUWSUyBWUDggcgAAAFAEAJ0BKhQAGgA/zdjgZj+1LScwCAPwOYloALsAIdFRY14jCkdTRxz/RAAA/lLDkgGAOv/h1EL4EdXbk0djmqjTdwQB1xbmgtK4CZwJTOvJk1rwmOQDaSJEXIlpHRBoC2svrZJNmg+htRoMaO2AzAAAAA==",
-    "thumbhash": "data:image/webp;base64,UklGRnABAABXRUJQVlA4WAoAAAAQAAAAEwAAGAAAQUxQSOcAAAANkFvbtqpla59neEQDZHRA/xkRLfC7u8t7ZwWf1BAREwDc3N1eT5vj2Xl9f3y4fxNghoBgsLYVGM5L2RXo4ecaL5cGRCJQv/7A1dzBCCLAN8fLLokKQqCZFtmvkXRBDVgoGAOR3SAghBBAOTohgZ2IBIokkAIUsEjtOTFpIkTmVJLxFI0MRJjOeoDLRBvHid3zieKKJhL2TwvJgsiRVSGb6Fjw3ynw73+Fz4Pd8+n2618P5/P2rQf49LPsplfSlBQFHz4UbdsKobDg5Te6xQYsBFifrFEbmkL2/voAdgRo4o7fI4jgiAAAVlA4IGIAAAAwBACdASoUABkAPzmCvFOvP6aisBgMA/AnCWUAxNgPH17vLm//HOdYu+AA/rWrqfGPp36HdcD4ALm3mCsZcEIt5oALQQlgI0AlLLjMfz7BSEJDkMBoDM+fNKT//1ZkvQAAAA==",
+    "color": "rgb(210,228,234)",
+    "base64": "data:image/webp;base64,UklGRuIBAABXRUJQVlA4WAoAAAAQAAAAEwAAGQAAQUxQSEQBAAANkFvbtqpla5+Hu7u7xt4DgwaogogeSKECMnJaIPvdXXF33nfvCT5rISImAOSlW937H9//vCVbTtbEMnOT49X/Pnx4/+nwmRyzpKbS1vHJyan+u7U3lsvMnegk5aP3PwTOOCAwEZP0G44yjc2I/H+qsryltgDXTywgnyRjIJH9FYtAKSVO/hcAsWJvc3p0uKO9CTDWv+4m8MiPS7f23hJAmfH5HRQ3Vp4C+Y3egycvXyUSQcoS/VeXejzsD4mRV3SEkyT86xaFuka+yn/3FRZt5Kvzq98Kco1+ifwsQvT/wg6TZleeCDZw4snldY+DO5IMUfeEXV13hxIkIJwd/P38Crf7gyHzm4PDg7//DkuqSkoQmYrtfzc/H2trGnp6eurqWuqfUyLfdhuaW2pqK0MI7kmJCVIvf0pjdDeTmQQ4IUWSUyBWUDggeAAAAHAEAJ0BKhQAGgA/zdjlaj+zrqiwGAgD8DmJbACw7BDiI5VTrXAJpORg40BAAP5Sw5IBdA1CACNVakUynPTmBw06g0lJA5zYgkwl3R8WXDf4ZbvrNdKQYSAfmEUnpdZ84qlFu3BeXNI/7KE7xD7nxNFK0z/58MAAAA==",
+    "thumbhash": "data:image/webp;base64,UklGRnABAABXRUJQVlA4WAoAAAAQAAAAEwAAGAAAQUxQSOcAAAANkFvbtqpla59neEQDZHRA/xkRLfC7u8t7ZwWf1BAREwDc3N1eT5vj2Xl9f3y4fxNghoBgsLYVGM5L2RXo4ecaL5cGRCJQv/7A1dzBCCLAN8fLLokKQqCZFtmvkXRBDVgoGAOR3SAghBBAOTohgZ2IBIokkAIUsEjtOTFpIkTmVJLxFI0MRJjOeoDLRBvHid3zieKKJhL2TwvJgsiRVSGb6Fjw3ynw73+Fz4Pd8+n2618P5/P2rQf49LPsplfSlBQFHz4UbdsKobDg5Te6xQYsBFifrFEbmkL2/voAdgRo4o7fI4jgiAAAVlA4IGIAAACQBACdASoUABkAPzmGtlQvP6SjMBgMA/AnCWMAv2uOwXwz9lTKVBN+qrKC7AAA/peZAv3KogRQIQ3ACkr2lhoiqA5xInl53xAdqihZ0kDIKXaWnyfZT/hiSml37DgmP0AAAA==",
     "id": 4
+  },
+  "/projects/clevertrack/truck-frontpage.png": {
+    "metadata": {
+      "channels": 3,
+      "width": 1920,
+      "height": 1001
+    },
+    "color": "rgb(106,152,139)",
+    "base64": "data:image/webp;base64,UklGRkYAAABXRUJQVlA4IDoAAACwAwCdASoUAAoAP83W4mY/tK6nMAgD8DmJZgDCgCHmvZoCRwJkAAD3ZlVyAIzCrajbcwSUs4+OAAAA",
+    "thumbhash": "data:image/webp;base64,UklGRlAAAABXRUJQVlA4IEQAAACQAwCdASoUAAsAPzmIvlSvKSajMAgB4CcJZgCdIHACZtNVU7DEAP6wn/kVmjmutBqjPpXFyz8SDQaHrVKXYFtMPQAAAA==",
+    "id": 5
   },
   "/projects/clevertrack/hubble-drawing.png": {
     "metadata": {
@@ -63,7 +74,7 @@
     "color": "rgb(142,137,129)",
     "base64": "data:image/webp;base64,UklGRjQAAABXRUJQVlA4ICgAAADwAgCdASoUAA0AP83Y52g/tTCnsAgD8DmJZwDE2DBsAADNfFHX2AAA",
     "thumbhash": "data:image/webp;base64,UklGRjQAAABXRUJQVlA4ICgAAADwAgCdASoUAAsAPzmIulOvKSWisAgB4CcJZwC7AEXaAADYJiHX4AAA",
-    "id": 5
+    "id": 6
   },
   "/projects/clevertrack/illustrations.png": {
     "metadata": {
@@ -74,7 +85,7 @@
     "color": "rgb(113,141,152)",
     "base64": "data:image/webp;base64,UklGRjgBAABXRUJQVlA4WAoAAAAQAAAAEwAAGwAAQUxQSKEAAAANgFvbtmplnfu+u0QuQBmU4BRAEaTUQAdkRJTwu8Dd3d3lHvyEpBExAUVARgczh8MrMY883QGbAegblMZbz+4tPTHiPAkAVTQaAYi8APrNgagCogDy7bvwXZR/rGjIexWD5w2ro3tot71g6uq53W8bwN/HurImCSeDNxMuWkfFFLw8YhWiF3MmJTYX8qJ/k4ApHPK3u8jBMseif3nPT46VAQBWUDggcAAAALAEAJ0BKhQAHAA/zdjlaD+1LyeoDVPwOYlmAMwcDeQ7c+KoTjwPTbC5hx/uvnAA/ozauUuzc9Gii79iR0VS3+QgXtflZLtVrj+phe7gjORjNbnZar+wHE9r2yM9OJB6VCku7ISScIcT/qlU3WgooAA=",
     "thumbhash": "data:image/webp;base64,UklGRkYBAABXRUJQVlA4WAoAAAAQAAAAEwAAGAAAQUxQSMMAAAANgFvbtmplrf0Nh/67oBLIyMkt+h+e7eBbCxExAa9ZrROy2m4z/H5+vL99uYWCtRWojH0AoQClFv/mF04vyGKtw9+LPQEzKaXunyosFmAbwLLj4g3Hehlg7SBrPDMgwl/tCkh0WE64BypgWBSEP0CggOIKnEAKYlUxVYoAjcTjHccFAhqUO/BIyiohwQdYihznNglyx/EpVrc2mhOn65aVXC/iZTIYZEyknUlkGlYgfxA6A1kxAqn/sIgtgGBlgrRcKgUAVlA4IFwAAACwBACdASoUABkAPy1+uFOuqCWisAwB0CWJYwC06BuzyPS23aTk4x45lDlLAy0AAP7VX+R4WWIKbQZinE3K+HkjKpIImVZ1NwHBZiXflO9E3DUQB7We9GnHHRTAAA==",
-    "id": 6
+    "id": 7
   },
   "/projects/DTU/thumbnail.png": {
     "metadata": {
@@ -85,7 +96,7 @@
     "color": "rgb(110,99,132)",
     "base64": "data:image/webp;base64,UklGRk4AAABXRUJQVlA4IEIAAABQAwCdASoUAAwAP83W4mY/tK6nMAgD8DmJQAADhbSh/EunAAD42M6lFQSaMLri5bg6u7O1SqtEChoW6sAWpgoAAAA=",
     "thumbhash": "data:image/webp;base64,UklGRk4AAABXRUJQVlA4IEIAAABwAwCdASoUAAsAPzmIuVOvKSWisAgB4CcJYwAAJ1vbYI75owAA/MHK0uj2MqI84ZHZjb6EiIzm/rUM/AU0AVgAAAA=",
-    "id": 7
+    "id": 8
   },
   "/projects/DTU/FPGA-pong.png": {
     "metadata": {
@@ -96,7 +107,7 @@
     "color": "rgb(115,83,110)",
     "base64": "data:image/webp;base64,UklGRkwAAABXRUJQVlA4IEAAAABQAwCdASoUAAsAP83W4mY/tK4nMAgD8DmJZgC/OBp39t7UAADpiEXqUPKXLQhDcCkgs+JVFYHPQTbnmh5hoAAA",
     "thumbhash": "data:image/webp;base64,UklGRk4AAABXRUJQVlA4IEIAAADQAwCdASoUAAsAPzmIuVQvKSWjMAgB4CcJZACdABuD9G814hMvTKgA7Z1znpbjm+FfyXidKVxhf9PhjMo6Wo98CAA=",
-    "id": 8
+    "id": 9
   },
   "/projects/DTU/sourdough.png": {
     "metadata": {
@@ -107,7 +118,7 @@
     "color": "rgb(111,98,77)",
     "base64": "data:image/webp;base64,UklGRkwAAABXRUJQVlA4IEAAAADwAgCdASoUAAsAP83W4mY/tK4nMAgD8DmJYwAAP6Az2AC+l9g4jfxsEo0F+ydBrl3ZDfdc86MNFiV+rxEdAAAA",
     "thumbhash": "data:image/webp;base64,UklGRk4AAABXRUJQVlA4IEIAAACwAwCdASoUAAsAPzmGu1QvKSYjMAgB4CcJQBOgBDswuEKjKtAUIAD0JIJrzpOCzZLulww8LRV7ZMsB9FbUURXgAAA=",
-    "id": 9
+    "id": 10
   },
   "/projects/DTU/gluegun.png": {
     "metadata": {
@@ -118,7 +129,7 @@
     "color": "rgb(226,233,244)",
     "base64": "data:image/webp;base64,UklGRkYAAABXRUJQVlA4IDoAAADwAwCdASoUABIAP83g6G4/ta8tqAgD8DmJZQDM0A9nQTiSyNnLQG6AAP6M6OtukSpV5omXO+LqAAAA",
     "thumbhash": "data:image/webp;base64,UklGRlQAAABXRUJQVlA4IEgAAADQAwCdASoUABEAPzmOv1evKaakqAqp4CcJZQDH5A9omqgJMybZfSgA/udAoX8ItcDARA7tfFTkgsAXn+wnJvKOWt1Gc6MAAAA=",
-    "id": 10
+    "id": 11
   },
   "/projects/index/shelly-run/shelly-run.png": {
     "metadata": {
@@ -129,7 +140,7 @@
     "color": "rgb(229,247,231)",
     "base64": "data:image/webp;base64,UklGRkIAAABXRUJQVlA4IDYAAADQAgCdASoUAAsAL53m83mxP7+/n4GcSxAABboYRE8AAP6N8nuOunKwxjMo7vc3Jb3u8qT+QAA=",
     "thumbhash": "data:image/webp;base64,UklGRkoAAABXRUJQVlA4ID4AAAAQAwCdASoUAAsAPzmYvlYvLCajsAgB4CcJY2fkUWMxiwAA/vNh86Dcwis20xLmcu420tGfefNpt8ZwvYAAAA==",
-    "id": 11
+    "id": 12
   },
   "/projects/index/mostly-code/standpoint.png": {
     "metadata": {
@@ -140,7 +151,7 @@
     "color": "rgb(189,191,192)",
     "base64": "data:image/webp;base64,UklGRkYAAABXRUJQVlA4IDoAAABQAwCdASoUABcAP8nQ4GY/sq2nN/VYA/A5CWUAACULm19XQAD7dLi2I2nbHT0j2gwwR7IAWqgXFAAA",
     "thumbhash": "data:image/webp;base64,UklGRloAAABXRUJQVlA4IE4AAACwAwCdASoUABgAPzmKuVOvKaWisAgB4CcJZwDO7BW0WhmlMY09LAD+OqX+WSzzQC5iYCrIzIY2AaHB8BXiSI7K1Wxy/nBi3Uk5o4hDAAA=",
-    "id": 12
+    "id": 13
   },
   "/projects/index/gamedev/flipit-microtransactions.png": {
     "metadata": {
@@ -151,7 +162,7 @@
     "color": "rgb(67,58,58)",
     "base64": "data:image/webp;base64,UklGRjYAAABXRUJQVlA4ICoAAADQAgCdASoUAAkAP83W4ma/tK60MAgD8DmJZwAAijeAAP7eG3JZj+FLAAA=",
     "thumbhash": "data:image/webp;base64,UklGRjIAAABXRUJQVlA4ICYAAACwAgCdASoUAAkAPzmEuVOvKKWisAgB4CcJZwAAeyAA/ulnveqoAA==",
-    "id": 13
+    "id": 14
   },
   "/projects/index/gamedev/flipit-sketch.png": {
     "metadata": {
@@ -162,18 +173,18 @@
     "color": "rgb(125,115,103)",
     "base64": "data:image/webp;base64,UklGRkQAAABXRUJQVlA4IDgAAABwAwCdASoUAAwAP83i52m/ujAosAgD8DmJZwABF33uk14yc8gA3Ve71JnOzgKPd6sn4aP4WAAAAA==",
     "thumbhash": "data:image/webp;base64,UklGRkoAAABXRUJQVlA4ID4AAADQAwCdASoUAAsAPzmEuVOvKKWisAgB4CcJZwABF5o7GYhC0wJ7GgAA+NHsejf1S7zK1b/6D4uWxGpAAAAAAA==",
-    "id": 14
+    "id": 15
   },
-  "/projects/index/gamedev/flipit.png": {
+  "/projects/index/gamedev/flipit-cropped.png": {
     "metadata": {
       "channels": 3,
-      "width": 437,
+      "width": 421,
       "height": 775
     },
-    "color": "rgb(181,164,159)",
-    "base64": "data:image/webp;base64,UklGRmQAAABXRUJQVlA4IFgAAACwBACdASoUACMAP83a5Gq/tK4oqrgMA/A5iUAaN4RR5YCqVBJpk2jXsnhtbp6wAP4Qzh2zKY1+//+08J9CwwOTOLuhnPNVXiAZcc34OEl5Ojmdd+D0xwAA",
-    "thumbhash": "data:image/webp;base64,UklGRmYAAABXRUJQVlA4IFoAAAAQBQCdASoUACQAPyV+tFOuNaUiurZoArAkiWUAzJQSP6XvSweAI9MlvSmDAWg9jFvwAP7L1DN5VwLb1tPcuP8D8ZbE7SlSjQpHm3s7uyLGUt++VQ2wWC7AAAA=",
-    "id": 15
+    "color": "rgb(182,165,158)",
+    "base64": "data:image/webp;base64,UklGRmYAAABXRUJQVlA4IFoAAADwBACdASoUACUAP83i520/uC8pqrgIA/A5iUAZ9ARQuA2sCwgJUKYwqNtmwgG/MCAA/hDaj1hQpuzawvqbi2Y5OhOZiebh1CHWvVw+VMRxeIcxgnVeH2kAAAA=",
+    "thumbhash": "data:image/webp;base64,UklGRmgAAABXRUJQVlA4IFwAAAAQBQCdASoUACQAPzWCulOvKKYitVQMAeAmiWUAy6QJHuOWuVz/xAknS9bfe2F/3TuwAP65rTM6tOZKc38dkMaSwLbwu/Q5NX54Hs9hbE15DZngTRuTqZZrfzAAAA==",
+    "id": 16
   },
   "/projects/index/gamedev/incubator.png": {
     "metadata": {
@@ -184,7 +195,7 @@
     "color": "rgb(104,98,83)",
     "base64": "data:image/webp;base64,UklGRk4AAABXRUJQVlA4IEIAAACQAwCdASoUAAsAP83W4mY/tK6nMAgD8DmJZQAAKuhQifHglDtgAKewP0bHhlOtyuh1hK3AdBPruFA3nKwXTeNCgAA=",
     "thumbhash": "data:image/webp;base64,UklGRkYAAABXRUJQVlA4IDoAAABwAwCdASoUAAsAPzleyV8vI6qmGAHgJwlnAAA8NZBF059T4AAAdXm/rQUnyZZWLz2RombX52D8AAAA",
-    "id": 16
+    "id": 17
   },
   "/images/hackerpose.png": {
     "metadata": {
@@ -195,7 +206,7 @@
     "color": "rgb(104,117,171)",
     "base64": "data:image/webp;base64,UklGRoIAAABXRUJQVlA4IHYAAADQBACdASoUACIAP83g4my/ty0pqrgKA/A5iWwAwcwYHSS3bdBK2TwJLqYBbK8agADmrGgbpPXln5h5Wispet7L1313OJ1zOGAfXwm/sFxN0rJusEp02xkJ7Lzt1gRmRWUs/qS/K/OgmshqH6mmn9+VHzdQN/AA",
     "thumbhash": "data:image/webp;base64,UklGRnoAAABXRUJQVlA4IG4AAADwBACdASoUACQAPy2Gt1OuqaWoNVQMAdAliWIAnTLaRAsN06OpBOEU0BN2Wzwf1UAA51TWp0kGT4vfQcrL82sdkDPRsGnze3a/WZ0hf1I7OjIB/trq/PPdiQXIcArjbAkIzB2JYms874c0cIYAAA==",
-    "id": 17
+    "id": 18
   },
   "/images/powerpose.png": {
     "metadata": {
@@ -206,7 +217,7 @@
     "color": "rgb(103,121,175)",
     "base64": "data:image/webp;base64,UklGRogAAABXRUJQVlA4IHwAAADwBACdASoUACIAP83g5m2/tq6qKrgIA/A5iWwAuzM+AmrraK95y5naLHXKgubnrYAA+bC6DQF9JGyZP6WyVNGU5RCTe1fT5FrrmWFrbQAGyTLb/nX9l4a8Zpx3NZarNkXbT0LWwfDH0migqYPtA5kyn5RMECLPadp9UyAA",
     "thumbhash": "data:image/webp;base64,UklGRoYAAABXRUJQVlA4IHoAAACQBQCdASoUACQAPymCtFOuKSUitVgMAcAlCWQAnTKEd3AKGgQp34gyfjKryyX4sPwzqVh5gAC67FgSD0UX5bLHV7obJnqLU3qTByjHgrvvIDCk1GMvaiy6OLOKsfmYgWs9UBIPYJeFGfYsx+OOlPyvIkZ6l2zg8BgAAA==",
-    "id": 18
+    "id": 19
   },
   "/marker/bsc-design-innovation/combined.png": {
     "metadata": {
@@ -216,7 +227,7 @@
     },
     "color": "rgb(153,206,118)",
     "base64": "data:image/webp;base64,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",
-    "id": 19
+    "id": 20
   },
   "/marker/bsc-design-innovation/squiggle-cropped.png": {
     "metadata": {
@@ -226,7 +237,7 @@
     },
     "color": "rgb(131,127,247)",
     "base64": "data:image/webp;base64,UklGRg4BAABXRUJQVlA4WAoAAAAQAAAAIgAAFAAAQUxQSF0AAAARDzD/ERHCTW3bjrKH2EGbwcLQJzlYyFkAkpgOGxMEQJn5NiL6H7SggcO5zPMV8Z8jLEiaM55ZfWb8LWKHy7DnkR3rpnFK2aaMUCYJSMO9Lr2GSHqb8HzWGfxxGAEAVlA4IIoAAACwBACdASojABUAP83e5mu/ti8pKqgD8DmJbADDrBK82LI430oYR6056dfSOlDAAIJwACpRLdAL8Kc69DAOpqDYZLRscAu6lhYj0fmJ0K29oCZ7RuPEkTQ5HuhSwwZwxgyABUT+d70F9ANI4aDK26Yp4DRzMHHStRoBzYCcr7WzOjKfAJoABTeQAAA=",
-    "id": 20
+    "id": 21
   },
   "/marker/bsc-design-innovation/text-v2-cropped.png": {
     "metadata": {
@@ -236,7 +247,7 @@
     },
     "color": "rgb(168,255,30)",
     "base64": "data:image/webp;base64,UklGRjYCAABXRUJQVlA4WAoAAAAQAAAATwAAMAAAQUxQSE8BAAARDzD/ERFCjrb/aSN9eoaZ2VBO6y6clHMNnpaZ7IFlugAeYbdi0HKXbYfHWmZm3pV8h4j+TwDUAlQDeFpWm9Yea/PaHQEsanu1wYivKwVvgcOC9Ir/FVgTXC2QrcBb+OzKNiCEzylpQ2koeJCQW6J0p9uhrzX8SeXv4TS91vA01b+8NN2VCXj4x8vTfdSF02/i+0R3SUk6uDB0pqBWFgRj8qv/diklRajkL58gJcVbtfXHJcgFxB848x2cjoH1wLZawwYfeFBplZ6vMHQ5lU6ldq5nY69baPDW1fF9f4BTZ8V9y3Bsl8f23RrgaOfw47ahaqCEt49zOQzhYA4gKHBfPjFI5f5542i8TfzwLUOY+OangZAn7y4MxTV1792FIQ+Q3/IqMYT2dku1lWi83VIuxg9rqsYQPFm7WWDgydpNIs7LiNcJouqi8iJqi+jKCABWUDggwAAAADAGAJ0BKlAAMQA/xdLfZj+/v6cxl04z8DiJbADJiD52bjX16P+2fTswRanKcjDtE5hOAd29woVrZwAA/uJxr80NGLjrq4BDMhQ+hLyqZnh5R3M//2lu777R+ALL01s+qiPx3kKtCG4cMQJPsBEJvQf/8QMrXEBYTPCyR2o4nA4QgFYawga3q7/+h+H9uIHPRrQKiR3pegiGDoMiV4+TifF0hpAhuBL8yRbLCBqsZftjfPURvT2EEp/7gHebgAAAAA==",
-    "id": 21
+    "id": 22
   },
   "/marker/spotlight-full-index/spotlight-grey.png": {
     "metadata": {
@@ -246,7 +257,7 @@
     },
     "color": "rgb(72,72,72)",
     "base64": "data:image/webp;base64,UklGRigCAABXRUJQVlA4WAoAAAAQAAAASwAANAAAQUxQSEoBAAARDzD/ERFCjrXtaVy9inIUcux2QIElMIOzlOnCzKw5abGkjTAzt6mSy8zMZOuuIaL/E4A1gf3Nf3yxOPywaH6IsAi/LPPitQxxviQfh+kvd96nhURq3nSFVfiJAg+op6CIisBjOouocIHD1DsD6BQkl9l3OtCgmMp+PYYbkrxqJQ2Txovk1Shp3EljffL8i5F0KvTSzfW2pMIlb+02ui2IBN5H70DEMXnFb0RnYDswCBEe6/I3ogYipkGrAjRE7vh1qgAXCu6MlqkC0uDO9mixihgJZu9ncaqzLYHzvATqThcw7+Ub+eYHMCcLtsXgL2BZFrxhfQKIyEgNNz6g5bzH7xzASfsizIQLuAq2/TQgTcGdWQlGuvDmSMKhcODLfQH9OPDjDuADjHcCeQG/ghRCPY0II/cNVm/QlpZrMZOe7X6a7auwMIE9FwBWUDgguAAAAJAFAJ0BKkwANQA/zdznbT+0v6mrMksT8DmJaWytAJY+8qCvf51LdhuQF6mp0mecydUoOroAAP7sPn9B6QyycAT10J8WpGMv7HvPsxwVW8aKrOIUstKvP6tLCQzCMBy4NFRvrXZWSBIYQy0Lj+UWALwCZzEv8CiXrfjRfl9AYGAU6CmHAV/J3kbyPGjPThy7UAfKjO84nO9/+QdzdryZ1kCCqvYqL6kzYVuQYEgEUFLaz7emTR5AQAA=",
-    "id": 22
+    "id": 23
   },
   "/marker/spotlight-full-index/arrow-grey.png": {
     "metadata": {
@@ -256,7 +267,7 @@
     },
     "color": "rgb(76,76,76)",
     "base64": "data:image/webp;base64,UklGRrwAAABXRUJQVlA4WAoAAAAQAAAAJgAAGAAAQUxQSEYAAAARDzD/ERHCTWzbqrM+VtQGTFAfLWQgEkhALJGhOKBjIqL/AcdscKrwhklanApsYZIuFU4F7rDIJF0qXAu84JB15rmN+GQAVlA4IFAAAABwAwCdASonABkAP83W5Gs/sq4pKrgMA/A5iWls0ABbTE4rlAAA/uhhH8F7ipRWT1RTcHA/zbCbfEjbYAM/oBl7CL/eqJpfr8GoFgnwxAAAAA==",
-    "id": 23
+    "id": 24
   },
   "/marker/spotlight-full-index/my-full-index-grey-purple-index.png": {
     "metadata": {
@@ -266,7 +277,7 @@
     },
     "color": "rgb(104,104,170)",
     "base64": "data:image/webp;base64,UklGRsQBAABXRUJQVlA4WAoAAAAQAAAAPQAAKQAAQUxQSMEAAAARDzD/ERECbrZtx57red/jN0vFSWnbHsI2FvAYmSJZwEmZBeyUrMznywwR/Z8AgEL0HIdcZckzpbkcZExBOrXMPwfw1gXcwX03sClc9SpLu2dAfHurhT8vYpRnTZ6tNmjcinEr1v0PFAwsLWOjFpZ2MecCHGL4+477z+o8kA67V3DuQa6ehS3ZsnfrFmyjqah0g5naqUgPgqm/vIvHwNRseGJRcMfX6igEd+woBcDtfUMJljiIFtI+Q6gLqFsRB1EAAFZQOCDcAAAAsAUAnQEqPgAqAD/N2ORrP7OuKS1TPJPwOYloa1VK84QDmYb9JSVzy2PDRi2jhLftz54EpWXAAP7pnZ4lqtJayK3Q9671vLKbYkp+Gyvi0F+Taqu194hHsaUHn/UcyeOVakgkmID4EdptBYzX2THpGPqeXwBqx6HBs2iX630h6jPR0RKDmooSVs1m6zdwuhPnwfwx8N5hSu2xydRuE88C4uvzax//Wf/MaRm5P0zO821JeTDICCiKq5HnoF8Zy37+UXh+fLhaJwvaeD1kl1VFm0rhK5mhNroQLwAAAA==",
-    "id": 24
+    "id": 25
   },
   "/marker/spotlight-full-index/spotlight-squiggle.png": {
     "metadata": {
@@ -276,7 +287,7 @@
     },
     "color": "rgb(174,255,47)",
     "base64": "data:image/webp;base64,UklGRqAAAABXRUJQVlA4WAoAAAAQAAAAFQAADQAAQUxQSDcAAAARDzD/ERGCVWTbTU5C76AgRijSkIKVDnbySX82IvofkIJhLLABr4NUo9RWuvMvWlFDz2GYA0YFAFZQOCBCAAAAEAMAnQEqFgAOAD/N1uJmP7SuJzAIA/A5iWwAuy8AAm6AAP7gJXI9ALeljb1FzgK11lPn5w24rolIqK5Jm3RRwAAA",
-    "id": 25
+    "id": 26
   },
   "/assets/goofy-ahh-me.png": {
     "metadata": {
@@ -286,6 +297,6 @@
     },
     "color": "rgb(86,92,101)",
     "base64": "data:image/webp;base64,UklGRlABAABXRUJQVlA4WAoAAAAQAAAAIgAALgAAQUxQSFwAAAARDzD/ERHCUWzbbXOdujSDGIqgWdAERRC0TL8LNUOI6H8QA1A8w9c76ErSjayBonuVp7o038F/5uTc/Pv799BTPc+WUal5kGqsqPCv3/qsxb2GukF2heQZogAPAFZQOCDOAAAAUAcAnQEqIwAvAD/N2ONov7QuKCq6rVPwOYljANH4B2a9n8DVbjXHxd29EIXwmX+ADGrs1eOm9aErJndUf/NTn700wADpxCoLMhqO6wRoUqZuz/0aBelXCrFlOv4Cd6qBiSglsneX/pdwxw8i4NFTagiNUg2yliUBkw9atB0+Jhzbcoi9+kpZfHM4xPuAka1buavm4+x//RRtWPWLNyxcI9E4KNOMpph8xphQgBJekXZBg5B4SViWcBg6pJtSInkaWGnZaRDhKQPaXs3wAAA=",
-    "id": 26
+    "id": 27
   }
 }

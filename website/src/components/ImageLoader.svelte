@@ -1,6 +1,4 @@
 <script>
-    import { id } from "./pages/projects/Project.svelte";
-
   export let clientSideThumbhash = false
 </script>
 

@@ -6,6 +6,7 @@
   export let lazy = true
   export let pixelate = false
   export let thumbhash = false
+  export let full
   export let noscriptSelector = 'last' // 'last' | i: number
 
   const id = data[src]['id']
@@ -45,6 +46,7 @@
   <img
     id={`p${id}`} bind:this={previewElement}
     class="preview" class:pixelate
+    class:w-full={full} class:h-full={full}
     src={preview} alt="" aria-hidden="true"
     width={metadata.width}
     height={metadata.height}
@@ -58,7 +60,8 @@
     <img
       id={`i${id}`}
       class="image"
-      class:lazy
+      class:w-full={full} class:h-full={full}
+      class:lazy      
       loading={lazy ? 'lazy' : null}
       {alt} src={imageSource} bind:this={img}
       width={metadata.width}

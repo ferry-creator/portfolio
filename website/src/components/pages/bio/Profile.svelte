@@ -147,7 +147,7 @@
     }
 
     .goofy {
-      @apply absolute top-0 left-[3rem] w-[34%];
+      @apply absolute top-0 left-[3rem] w-[25%];
       & :global(img) {
         /* @apply w-full h-full; */
         /* width: auto; */

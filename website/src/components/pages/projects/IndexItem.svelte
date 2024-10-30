@@ -79,9 +79,9 @@
               {#if showStickySummary}
                 <button class="sticky-summary" on:click={onClose} bind:this={closeButton}>
                   <div class="summary">
-                    <img src={itemIcon} alt="Close Icon">
+                    <img src={itemIcon} alt="Close Icon" class="relative">
                     <div class="md:ml-0 ml-1.5">
-                      <span class="year md:mr-3 mr-2.5">
+                      <span class="year md:mr-3 mr-2.5 bg-blur">
                         {year}
                       </span>
                       {#if link}
@@ -94,7 +94,7 @@
                         </a>
                       {/if}
                       <slot name="thumbnail" />
-                      <span class="title ml-1 md:ml-1.5">
+                      <span class="title ml-1 md:ml-1.5 bg-blur">
                         {title}
                       </span>
                       <ul class="md:ml-4 ml-2.5 flairs">
@@ -241,7 +241,7 @@
       .year {
         font-family: "PPFraktionMono";
         @apply text-lg font-bold text-greyDark tracking-tighter;
-        @apply relative bottom-[-1px] z-[1];
+        @apply relative bottom-[-1px];
       }
       & > :global(img) {
         @apply w-[27px];
@@ -354,5 +354,19 @@
       padding-left: 2.5rem;
       padding-bottom: 0.5rem;
     }
+  }
+
+  .bg-blur {
+    filter:
+      drop-shadow(0 0 5px theme(colors.void))
+      drop-shadow(0 0 8px #e7e7e7)
+      drop-shadow(30px 0 12px #e7e7e7)
+      drop-shadow(-30px 0 12px #e7e7e7)
+      drop-shadow(0 0 20px #e7e7e7)
+    ;
+  }
+
+  .sticky-summary > .summary > div :global(img) {
+    @apply relative z-[1];
   }
 </style>

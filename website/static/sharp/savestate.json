@@ -15,6 +15,9 @@
     "./static/projects/clevertrack/app.png": {
       "q": 20
     },
+    "./static/projects/clevertrack/truck-frontpage.png": {
+      "q": 40
+    },
     "./static/projects/clevertrack/hubble-drawing.png": {
       "q": 15
     },
@@ -45,7 +48,7 @@
     "./static/projects/index/gamedev/flipit-sketch.png": {
       "q": 15
     },
-    "./static/projects/index/gamedev/flipit.png": {
+    "./static/projects/index/gamedev/flipit-cropped.png": {
       "q": 30
     },
     "./static/projects/index/gamedev/incubator.png": {

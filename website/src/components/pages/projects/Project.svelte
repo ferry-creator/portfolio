@@ -224,7 +224,7 @@
 
   .details-accordion :global(summary) {
     @media screen(md) {
-      display: inline;
+      /* display: inline; */
       padding-right: 4rem;
     }
   }

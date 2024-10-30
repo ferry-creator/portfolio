@@ -9,6 +9,9 @@
   import Project from '$components/pages/projects/Project.svelte'
   import TagModals from '$components/pages/projects/TagModals.svelte'
 
+  import GradesBar from '$components/pages/projects/GradesBar.svelte'
+  import DtuGrades from '$components/pages/projects/DTUGrades.svelte'
+
   import IndexItem from '$components/pages/projects/IndexItem.svelte'
 
   import TimelineItem from '$components/pages/projects/TimelineItem.svelte'
@@ -62,7 +65,7 @@
       <LogoSeperator />
     </div>
     <div class="max-w-[60rem] mx-auto">
-      <div class="relative">
+      <!-- <div class="relative">
         <div class="hackerimg mb-[5rem]">
           <span class="left-[var(--pin-margin)]">
             <Pin --color="white" />
@@ -75,7 +78,7 @@
             playing counter-strike rn
           </p>
         </div>
-      </div>
+      </div> -->
       <div class="mt-[3rem]">
         <Project
           title="Symbolik.ai"
@@ -97,18 +100,25 @@
             <PSplitTextW>
               <ParagraphSplit>
                 <p slot="paragraph">
-                  What I'm building: 
-                  An AI co-worker, that office employees interact with and train in their tasks,
-                  simply by talking to the AI co-worker. The AI system builds a mental model (in a knowledge-like graph structure)
-                  which enables cheap automations once the system has correctly understood a task.
+                  I'm building "Dolphin" - an AI co-worker that learns an office job
+                  by watching and talking to office workers while they do their tasks.
                   <br><br>
-                  While I was studying webdev in 2018 and 19', I was working a part time job in
-                  a webshop warehouse. I was eventually promoted into their office space,
-                  but I was so bored that I began trying to automate my tasks.
+                  Basically: <strong>Dolphin empowers office workers to automate!</strong>
+                  <br><br>
+                  After a trip to Guatemala - where I met and lived with other young AI
+                  entrepreneurs - I was inspired to pivot away from the initial product
+                  "Mind Mapper", which was a visual programming interface with reasoning
+                  and logic powered by LLMs.
+                  <br><br>
+                  Dolphin uses some of those initial ideas for building
+                  <strong>mental models</strong> to generalize observations
+                  made while watching the office workers.
                   <br><br>
                   Today, millions of humans are employed in office cubicles,
                   doing very easy and boring manual labor on computers.
                   It's expensive for businesses, and oftens comes with high employee turnover rates.
+                  After working such a job myself, I became very passionate to find ways of
+                  automating it since it just feels very wasteful of human resources.
                   <br><br>
                   I worked directly together with two big Danish coorporations and their office workers
                   to understand how it might be possible to finally solve this problem by utilizing AI.
@@ -207,14 +217,14 @@
                   - track vehicles and and provide insights based on data.
                 </p>
               </ContentBox>
-              <!-- <Image
+              <Image
+                src="/projects/clevertrack/truck-frontpage.png"
+                alt="Clevertrack Website landingpage first frame design"
+              />
+              <!-- <img
                 src="/projects/clevertrack/truck-frontpage.webp"
                 alt="Clevertrack Website landingpage first frame design"
               /> -->
-              <img
-                src="/projects/clevertrack/truck-frontpage.webp"
-                alt="Clevertrack Website landingpage first frame design"
-              />
               <div class="flex items-center">
                 <div class="w-1/3">
                   <Image
@@ -340,6 +350,22 @@
             > -->
           </div>
           <div slot="details" class="project-details">
+            <div class="grades">
+              <GradesBar>
+                <img
+                  slot="thumbnail" alt="project icon"
+                  src="/projects/DTU/logo.svg"
+                >
+                <div slot="details">
+                  <ContentBox clear>
+                    <p class="pb-6 pt-2">
+                      Some selected courses and grades.
+                    </p>
+                  </ContentBox>
+                  <DtuGrades />
+                </div>
+              </GradesBar>
+            </div>
             <PSplitTextW>
               <ParagraphSplit>
                 <p slot="paragraph">
@@ -836,10 +862,13 @@
           </div>
         </IndexItem>
 
+        <!-- <TimelineItem>
+          <div class="pb-8"/>
+        </TimelineItem> -->
+
         <IndexItem
           title="Danguitar"
           year=2019
-          link="https://www.danguitar.dk/"
           flairs={[
             { text: "Office Job", color: "black" },
             { text: "Python", color: "green" },
@@ -862,10 +891,9 @@
                 creating a performance monitor for the customer service department,
                 that would display important KPIs.
                 <br><br>
-                I ended up building a solution from scratch. This was early
-                in my career, and I had no guidance from more experienced developers.
-                I was more motivated by finally getting to write code, than solving the
-                problem. The mindset of a junior developer!
+                I ended up building a solution from scratch, which of course
+                was a big mistake since it quickly became a nightmare to maintain.
+                I was a junior!
               </p>
             </ContentBox>           
           </div>
@@ -883,6 +911,9 @@
             { text: "Blender 3D", color: "orange" },
             { text: "C#", color: "blue" },
           ]}
+          on:open={() => {playVideos([
+            'flipit', 'rainbow-fps', 'physics',
+          ])}}
         >
           <img
             slot="thumbnail" alt="project icon"
@@ -890,33 +921,122 @@
           >
           <div slot="details" class="project-details">
             <PSplitTextW>
-              <ParagraphSplit>
+              <ParagraphSplit itemsCenter>
                 <p slot="paragraph">
-                  In 2022 I led the software team of a 3-week IoT project.
-                  We built a "sourdough hotel" that automatically nutured and
-                  measured a sourdough mixture, sending information to users phone.
-                  I was involved in all the software layers: embedded programming, devops,
-                  and server-side <strong>Node-RED</strong>.
+                  In my first year of high school me and some friends
+                  got accepted into an <i>"entrepreneurship playground"</i>
+                  program that the school offered. It included offices
+                  and mentorship from teachers from the school outside
+                  of normal school hours.
                   <br><br>
-                  I also spun up a quick
-                  <a href="https://kryptokongerne.vercel.app/" target="_blank">blog site</a>
-                  , to document our progress.
+                  We got accepted after pitching our idea for a mobile
+                  game called "Flipit" that was about - well flipping
+                  a ball around.
+                  <br><br>
+                  The game never took off. This taught me that
+                  approaching entrepreneurship from your passion
+                  instead of from assessing what the market needs
+                  is a very tough position to play in.
                 </p>
                 <div slot="split" class="split">
-                  <!-- svelte-ignore a11y-media-has-caption -->
-                  <video controls>
-                    <source src="/projects/symbolik-ai/ai-mode-compressed.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                  </video>
+                  <!-- <Image
+                    src="/projects/symbolik-ai/dolphin-login.png"
+                    alt="Dolphin Login Screenshot"
+                  /> -->
+
+                  <div class="flex gap-4">
+                    <div class="w-1/2">
+                      <Video loop playsinline wfull bind:this={vids['flipit']}>
+                        <source src="/projects/index/gamedev/flipit.webm" type="video/webm">
+                      </Video>
+                    </div>
+                    <div class="w-1/2">
+                      <img
+                        src="/projects/index/gamedev/flipit-cropped.png"
+                        alt="Flipit mobile game devlog screenshot"
+                      />
+                    </div>
+                  </div>
                 </div>
               </ParagraphSplit>
+              <div class="pt-4 flex gap-4">
+                <div>
+                  <img
+                    class="h-full"
+                    src="/projects/index/gamedev/flipit-microtransactions.png"
+                    alt="Flipit mobile game paper sketch"
+                  />
+                </div>
+                <div>
+                  <img
+                    class="h-full"
+                    src="/projects/index/gamedev/flipit-sketch.png"
+                    alt="Flipit mobile game paper sketch"
+                  />
+                </div>
+              </div>
+              <div class="pt-4">
+                <img
+                  src="/projects/index/gamedev/incubator.png"
+                  alt="High school incubator office"
+                />
+              </div>
+              <ContentBox clear>
+                <p class="pt-4">
+                  This is an image of our small office where we
+                  were accompanied by 4 other groups of game developers
+                  from the school. <strong>Good memories!</strong>
+                </p>
+              </ContentBox>
+              <div class="pt-6 flex gap-4">
+                <div class="flex-1">
+                  <Video loop playsinline bind:this={vids['rainbow-fps']}>
+                    <source src="/projects/index/gamedev/rainbow-fps.webm" type="video/webm">
+                  </Video>
+                </div>
+                <div class="flex-[1.1422]">
+                  <Video loop playsinline bind:this={vids['physics']}>
+                    <source src="/projects/index/gamedev/physics.webm" type="video/webm">
+                  </Video>
+                </div>
+              </div>
+              <ContentBox clear>
+                <p class="pt-4">
+                  In our final year, we went on a one-month study trip
+                  to Seattle to engage with the thriving gamedev
+                  environment there and to create a game that would be
+                  reviewed by industry professionals. We developed a
+                  cute game called
+                  <a href="https://wackywizards.itch.io/epicshop" target="_blank">
+                    EpicShop
+                  </a>
+                  , on which my good friend Esben Kran and I worked
+                  together on character design and SFX.
+                  <br><br>
+                  I recorded a video from our
+                  <a href="https://www.youtube.com/watch?v=AwIJAL0Qhzk" target="_blank">
+                    playtest session
+                  </a> with the industry proffesionals.
+                  <br><br>
+                  Most members of our group actually continued working on the game
+                  after we returned back home. I chose to shift my focus to other
+                  projects, and also slightly away from gamedev - I was getting really
+                  into design at this time. But because of their continued efforts
+                  the game even ended up making it into a
+                  <a href="https://www.youtube.com/watch?v=gY9-2ZlivPY" target="_blank">
+                    YouTube video
+                  </a>
+                  from a channel that plays random indie games - completely organically!
+                  We were all thrilled when we discovered that.
+                </p>
+              </ContentBox>
             </PSplitTextW>
           </div>
         </IndexItem>
 
         <IndexItem
           title="Other Jobs"
-          year="----"
+          year="0123"
           flairs={[
             { text: "Cold Canvas", color: "blue" },
             { text: "Service", color: "green" },
@@ -1106,5 +1226,10 @@
       @apply absolute transform -translate-y-1/2;
       @apply w-[55%] top-[calc(50%-27%)] -right-6 rotate-0;
     }
+  }
+
+  .grades {
+    border: 5px solid greenyellow;
+    @apply p-5 mt-1 mb-2 rounded-2xl;
   }
 </style>

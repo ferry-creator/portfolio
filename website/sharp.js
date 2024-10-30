@@ -24,7 +24,7 @@ const images = {
   "./static/projects/symbolik-ai/dolphin-spotlight-request.png": { q: 30 },
   "./static/projects/clevertrack/thumbnail.png": { q: 30 },
   "./static/projects/clevertrack/app.png": { q: 20 },
-  // "./static/projects/clevertrack/truck-frontpage.jpg": { q: 20 },
+  "./static/projects/clevertrack/truck-frontpage.png": { q: 40 },
   "./static/projects/clevertrack/hubble-drawing.png": { q: 15 },
   "./static/projects/clevertrack/illustrations.png": { q: 25 },
   "./static/projects/DTU/thumbnail.png": { q: 30 },
@@ -36,7 +36,7 @@ const images = {
   "./static/projects/index/mostly-code/standpoint.png": { q: 30 },
   "./static/projects/index/gamedev/flipit-microtransactions.png": { q: 30 },
   "./static/projects/index/gamedev/flipit-sketch.png": { q: 15 },
-  "./static/projects/index/gamedev/flipit.png": { q: 30 },
+  "./static/projects/index/gamedev/flipit-cropped.png": { q: 30 },
   "./static/projects/index/gamedev/incubator.png": { q: 30 },
 
   "./static/images/hackerpose.png": { q: 30 },
